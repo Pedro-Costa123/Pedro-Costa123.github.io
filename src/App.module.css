@@ -43,8 +43,24 @@
   align-items: center;
 }
 
-.social_icon > *{
+.social_icon > * {
   margin: 0 10px;
   height: 6vmin;
 }
 
+/*Mobile*/
+@media (max-width: 600px) {
+  .appLogo {
+    height: 65vmin;
+  }
+
+  p {
+    font-size: calc(21px + 2vmin);
+  }
+
+  .social_icon > * {
+    margin: 0 10px;
+    height: 15vmin;
+  }
+}
+/*Mobile*/
