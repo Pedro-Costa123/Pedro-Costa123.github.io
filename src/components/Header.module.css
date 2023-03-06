@@ -1,0 +1,14 @@
+.header {
+  background-color: #424242;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 0.25rem;
+    font-size: small;
+  }
+}
