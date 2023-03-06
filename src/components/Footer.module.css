@@ -3,8 +3,8 @@
   color: #fff;
   padding: 0.5rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .social_icons {
@@ -15,27 +15,24 @@
 
 .social_icon > * {
   margin: 0 10px;
-  height: 6vmin;
+  height: 4vmin;
 }
 
 .footer p {
-  font-size: calc(1px + 2vmin);
+  font-size: 2vmin;
 }
 
 /*Mobile*/
 @media only screen and (max-width: 600px) {
   .footer {
     padding: 1rem;
-    flex-direction: row;
-    justify-content: space-evenly;
   }
 
   .social_icon > * {
-    margin: 0 10px;
-    height: 9vmin;
+    height: 8vmin;
   }
 
   .footer p {
-    font-size: calc(5px + 2vmin);
+    font-size: 3vmin;
   }
 }
