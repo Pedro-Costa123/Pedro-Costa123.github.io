@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import logo from "./assets/logo.svg";
 import githubLogo from "./assets/github.svg";
 import linkedInLogo from "./assets/linkedin.svg";
