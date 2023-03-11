@@ -35,7 +35,11 @@ https://pedro-costa123.github.io/
 
 * [React Bootstrap](https://react-bootstrap.github.io/)
 
-TODO: Change css to modules
+* [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages)
+
+
+
+
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/pedro-costa-a2173213b/
