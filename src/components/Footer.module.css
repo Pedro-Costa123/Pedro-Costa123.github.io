@@ -1,0 +1,41 @@
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  background-color: #eee;
+}
+
+.title {
+  margin: 0;
+}
+
+.title:first-child {
+  margin-right: auto;
+}
+
+.social_icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social_icon > * {
+  margin: 0 10px;
+  height: 4vmin;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .mainFooter {
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .social_icon > * {
+    height: 7vmin;
+  }
+}
+/* Mobile */

@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  height: 100vh;
+  /* ******************************************************** CHANGE TO 100% *************************************************/
+  padding: 10px;
+}
+
+.center {
+  text-align: center;
+}

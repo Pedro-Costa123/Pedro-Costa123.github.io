@@ -1,31 +1,45 @@
-import "./Header.css";
+import classes from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header>
+    <header className={classes.mainHeader}>
       <h1>Pedro Costa</h1>
       <nav>
-        <ul>
-          <li>
-            <a href="#">Home</a>
+        <ul className={classes.headerNavUl}>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#home">
+              Home
+            </a>
           </li>
-          <li>
-            <a href="#">About Me</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#about">
+              About Me
+            </a>
           </li>
-          <li>
-            <a href="#">Education</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#education">
+              Education
+            </a>
           </li>
-          <li>
-            <a href="#">Skills</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#skills">
+              Skills
+            </a>
           </li>
-          <li>
-            <a href="#">Projects</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#projects">
+              Projects
+            </a>
           </li>
-          <li>
-            <a href="#">Languages & Certifications</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#languages">
+              Languages & Certifications
+            </a>
           </li>
-          <li>
-            <a href="#">Contact</a>
+          <li className={classes.headerNavLi}>
+            <a className={classes.headerNavA} href="#contact">
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
