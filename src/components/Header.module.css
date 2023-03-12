@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  height: auto;
+  min-height: 8vh;
   background-color: #eee;
 }
 

@@ -4,11 +4,19 @@
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
-  height: 100vh;
+  min-height: 87vh;
   /* ******************************************************** CHANGE TO 100% *************************************************/
-  padding: 10px;
+  padding: 15px;
 }
 
 .center {
   text-align: center;
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .main {
+    min-height: 100vh;
+  }
+}
+/* Mobile */
