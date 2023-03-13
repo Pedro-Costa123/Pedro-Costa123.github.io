@@ -7,39 +7,28 @@ const Header = () => {
       <nav>
         <ul className={classes.headerNavUl}>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#home">
-              Home
-            </a>
+            <button className={classes.headerNavButton}>Home</button>
           </li>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#about">
-              About Me
-            </a>
+            <button className={classes.headerNavButton}>About Me</button>
           </li>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#education">
-              Education
-            </a>
+            <button className={classes.headerNavButton}>Education</button>
           </li>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#skills">
-              Skills
-            </a>
+            <button className={classes.headerNavButton}>Skills</button>
           </li>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#projects">
-              Projects
-            </a>
+            <button className={classes.headerNavButton}>Projects</button>
           </li>
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#languages">
+            <button className={classes.headerNavButton}>
               Languages & Certifications
-            </a>
+            </button>
           </li>
+          
           <li className={classes.headerNavLi}>
-            <a className={classes.headerNavA} href="#contact">
-              Contact
-            </a>
+            <button className={classes.headerNavButton}>Contact</button>
           </li>
         </ul>
       </nav>

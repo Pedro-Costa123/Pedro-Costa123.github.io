@@ -18,12 +18,14 @@
   margin-right: 20px;
 }
 
-.headerNavA {
-  text-decoration: none;
+.headerNavButton {
   color: #333;
+  border: none;
+  padding: 0;
+  background: none;
 }
 
-.headerNavA:hover {
+.headerNavButton:hover {
   font-weight: 600;
   color: #333;
 }
