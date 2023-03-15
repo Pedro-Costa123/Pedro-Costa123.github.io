@@ -10,7 +10,7 @@ const Header = () => {
             <button className={classes.headerNavButton}>Home</button>
           </li>
           <li className={classes.headerNavLi}>
-            <button className={classes.headerNavButton}>About Me</button>
+            <button className={classes.headerNavButton}>About</button>
           </li>
           <li className={classes.headerNavLi}>
             <button className={classes.headerNavButton}>Education</button>
@@ -26,7 +26,6 @@ const Header = () => {
               Languages & Certifications
             </button>
           </li>
-          
           <li className={classes.headerNavLi}>
             <button className={classes.headerNavButton}>Contact</button>
           </li>

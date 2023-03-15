@@ -5,12 +5,16 @@
   align-items: center;
   background-color: #f9f9f9;
   min-height: 87vh;
-  /* ******************************************************** CHANGE TO 100% *************************************************/
   padding: 15px;
 }
 
-.center {
+.text > h1, h2, h3, h4, h5, hr {
   text-align: center;
+}
+
+/*Remove after done*/
+.workProgress {
+  padding: 30px;
 }
 
 /* Mobile */
