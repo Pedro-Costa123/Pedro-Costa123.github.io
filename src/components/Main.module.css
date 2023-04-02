@@ -2,19 +2,44 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #f9f9f9;
   min-height: 87vh;
   padding: 15px;
 }
 
-.text > h1, h2, h3, h4, h5, hr {
+.mainText > h1,
+h2,
+h3,
+h4,
+h5,
+hr {
   text-align: center;
 }
 
-/*Remove after done*/
-.workProgress {
-  padding: 30px;
+hr {
+  width: 35%;
+  margin: 15px auto;
+}
+
+.aboutText {
+  padding-top: 15px;
+  padding-left: 5vh;
+  padding-right: 5vh;
+}
+
+.aboutText > h4 {
+  font-weight: bold;
+}
+
+.aboutText > p {
+  text-align: justify;
+}
+
+@media only screen and (min-width: 1200px) {
+  .aboutText {
+    padding-left: 50vh;
+    padding-right: 50vh;
+  }
 }
 
 /* Mobile */
