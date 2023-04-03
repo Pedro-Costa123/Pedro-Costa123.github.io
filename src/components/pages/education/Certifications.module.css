@@ -1,0 +1,23 @@
+.contentTitle {
+  font-weight: bold;
+}
+
+.certifications {
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.titleCert {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.dateCert {
+  font-size: 14px;
+  color: #8b8b8b;
+  margin-bottom: 5px;
+}
+
+.liCert {
+  margin: 15px 0;
+}

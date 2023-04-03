@@ -1,0 +1,15 @@
+.contentTitle {
+  font-weight: bold;
+}
+
+.skills {
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.skills > ul > li {
+  font-size: 17px;
+}
