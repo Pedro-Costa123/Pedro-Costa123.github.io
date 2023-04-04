@@ -13,10 +13,49 @@
   padding-right: 5vh;
 }
 
+.centeringLanguages {
+  padding-top: 15px;
+  padding-left: 9vh;
+  padding-right: 9vh;
+}
+
+@media only screen and (min-width: 1200px) {
+  /*Text more centered in width >= 1200px screens*/
+  .centering {
+    padding-left: 50vh;
+    padding-right: 50vh;
+  }
+
+  .centeringLanguages {
+    padding-left: 60vh;
+    padding-right: 60vh;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInElement {
+  animation: fadeIn 1s ease-in-out;
+}
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
   .main {
     min-height: 100vh;
+  }
+
+  .centeringLanguages {
+    padding-left: 3vh;
+    padding-right: 3vh;
   }
 }
 /* Mobile */

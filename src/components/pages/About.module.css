@@ -10,11 +10,3 @@
 .justify {
   text-align: justify;
 }
-
-@media only screen and (min-width: 1200px) {
-  /*Text more centered in width >= 1200px screens*/
-  .aboutText {
-    padding-left: 50vh;
-    padding-right: 50vh;
-  }
-}

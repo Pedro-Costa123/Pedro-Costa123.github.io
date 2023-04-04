@@ -16,40 +16,50 @@ const Main = () => {
 
   return (
     <main className={classes.main}>
-      {ContentCtx.home ? <Home /> : <></>}
+      {ContentCtx.home ? (
+        <div className={classes.fadeInElement}>
+          <Home />
+        </div>
+      ) : (
+        <></>
+      )}
 
       {ContentCtx.about ? (
-        <>
+        <div className={classes.fadeInElement}>
           <div className={classes.centering}>
             <About />
           </div>
-        </>
+        </div>
       ) : (
         <></>
       )}
 
       {ContentCtx.education ? (
-        <>
+        <div className={classes.fadeInElement}>
           <div className={classes.centering}>
             <Education />
           </div>
           <div className={classes.centering}>
             <Certifications />
           </div>
-          <div className={classes.centering}>
+          <div className={classes.centeringLanguages}>
             <Languages />
           </div>
           <div className={classes.centering}>
             <Skills />
           </div>
-        </>
+        </div>
       ) : (
         <></>
       )}
 
-      {ContentCtx.work ? <></> : <></>}
+      {ContentCtx.work ? <div className={classes.fadeInElement}></div> : <></>}
 
-      {ContentCtx.contact ? <></> : <></>}
+      {ContentCtx.contact ? (
+        <div className={classes.fadeInElement}></div>
+      ) : (
+        <></>
+      )}
     </main>
   );
 };
