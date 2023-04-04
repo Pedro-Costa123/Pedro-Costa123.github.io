@@ -10,6 +10,9 @@ import Education from "./pages/education/Education";
 import Certifications from "./pages/education/Certifications";
 import Languages from "./pages/education/Languages";
 import Skills from "./pages/education/Skills";
+import Work from "./pages/work/Work";
+import Projects from "./pages/work/Projects";
+import Contact from "./pages/Contact";
 
 const Main = () => {
   const ContentCtx = useContext(Context);
@@ -53,10 +56,25 @@ const Main = () => {
         <></>
       )}
 
-      {ContentCtx.work ? <div className={classes.fadeInElement}></div> : <></>}
+      {ContentCtx.work ? (
+        <div className={classes.fadeInElement}>
+          <div className={classes.centering}>
+            <Work />
+          </div>
+          <div className={classes.centering}>
+            <Projects />
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
 
       {ContentCtx.contact ? (
-        <div className={classes.fadeInElement}></div>
+        <div className={classes.fadeInElement}>
+          <div className={classes.centering}>
+            <Contact />
+          </div>
+        </div>
       ) : (
         <></>
       )}

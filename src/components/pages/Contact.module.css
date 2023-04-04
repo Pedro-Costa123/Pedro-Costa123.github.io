@@ -1,0 +1,44 @@
+.contentTitle {
+  font-weight: bold;
+}
+
+.contactForm {
+  max-width: 250vh;
+  margin: 25px 0;
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 2px solid rgb(146, 146, 146);
+}
+
+.submitButton {
+  background-color: rgb(146, 146, 146);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: rgb(117, 117, 117);
+}

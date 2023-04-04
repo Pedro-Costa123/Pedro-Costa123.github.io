@@ -18,15 +18,15 @@ const About = () => {
           quick learner, constantly seeking new knowledge and skills to improve
           my abilities.
         </p>
-        <p className={classes.justify}>
-          I am excited to pursue a career in the field of software developer /
-          software engineer and am currently available for work. I would be
-          honored to bring my skills and enthusiasm to a team that is dedicated
-          to making a positive impact in the world of technology.
-        </p>
       </div>
     </>
   );
 };
 
 export default About;
+
+/*
+        <p className={classes.justify}>
+          Currently working at Capgemini as a Java Software Engineer.
+        </p>
+*/
