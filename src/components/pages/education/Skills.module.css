@@ -13,3 +13,11 @@
 .skills > ul > li {
   font-size: 17px;
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .skills {
+    flex-direction: column;
+  }
+}
+/* Mobile */
