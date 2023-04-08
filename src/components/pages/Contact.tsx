@@ -20,7 +20,6 @@ const Contact = () => {
       setEmailValid(false);
     }
 
-    // Check if subject is not empty
     if (!subject.trim()) {
       setSubjectValid(true);
       return;
@@ -28,7 +27,6 @@ const Contact = () => {
       setSubjectValid(false);
     }
 
-    // Check if message is not empty
     if (!message.trim()) {
       setMessageValid(true);
       return;
