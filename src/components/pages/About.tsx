@@ -18,15 +18,12 @@ const About = () => {
           quick learner, constantly seeking new knowledge and skills to improve
           my abilities.
         </p>
+        <p className={classes.justify}>
+          Currently working at Capgemini as a Java Software Engineer.
+        </p>
       </div>
     </>
   );
 };
 
 export default About;
-
-/*
-        <p className={classes.justify}>
-          Currently working at Capgemini as a Java Software Engineer.
-        </p>
-*/
