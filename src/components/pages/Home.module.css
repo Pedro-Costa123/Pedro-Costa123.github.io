@@ -11,3 +11,37 @@ hr {
   width: 30vh;
   margin: 15px auto;
 }
+
+/* Typing Aninmation */
+@keyframes typing {
+  0% {
+    width: 0;
+    margin: 0 auto;
+  }
+  100% {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.typing_animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(50, end);
+}
+
+.typing_animation::after {
+  content: "|";
+  display: inline-block;
+  animation: blink-caret 0.75s infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
