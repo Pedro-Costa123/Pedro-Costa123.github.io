@@ -27,7 +27,7 @@ hr {
 .typing_animation {
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 3s steps(50, end);
+  animation: typing 5s steps(80, end);
 }
 
 .typing_animation::after {
@@ -43,5 +43,12 @@ hr {
   }
   50% {
     opacity: 1;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .typing_animation {
+    animation: typing 2.5s steps(50, end);
   }
 }
