@@ -21,3 +21,13 @@
 .liCert {
   margin: 15px 0;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #333;
+  font-weight: 600;
+}
