@@ -42,14 +42,14 @@ const Main = () => {
           <div className={classes.centering}>
             <Education />
           </div>
-          <div className={classes.centering}>
-            <Certifications />
-          </div>
           <div className={classes.centeringLanguages}>
             <Languages />
           </div>
           <div className={classes.centering}>
             <Skills />
+          </div>
+          <div className={classes.centering}>
+            <Certifications />
           </div>
         </div>
       ) : (
