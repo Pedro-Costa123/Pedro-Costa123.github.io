@@ -9,6 +9,18 @@ const Certifications = () => {
           <li>
             <p className={classes.titleCert}>
               <a
+                href="https://www.credly.com/badges/1856a10c-5999-4e4e-badb-d7c1aa83659b/linked_in_profile"
+                target="_blank"
+                rel="noreferrer"
+              >
+                AWS Certified Cloud Practitioner
+              </a>
+            </p>
+            <p className={classes.dateCert}>Jun - 2023</p>
+          </li>
+          <li>
+            <p className={classes.titleCert}>
+              <a
                 href="https://www.credly.com/badges/f0bf0ccb-9c40-45ec-9866-45f16e6c345a/linked_in_profile"
                 target="_blank"
                 rel="noreferrer"
