@@ -11,6 +11,8 @@ const Skills = () => {
           <li>Ionic</li>
           <li>Angular</li>
           <li>Django</li>
+          <li>Docker</li>
+          <li>AWS</li>
         </ul>
         <ul>
           <li>Java</li>
@@ -18,6 +20,7 @@ const Skills = () => {
           <li>JavaScript/TypeScript</li>
           <li>Kotlin</li>
           <li>C/C++</li>
+          <li>SQL</li>
         </ul>
       </div>
     </>
