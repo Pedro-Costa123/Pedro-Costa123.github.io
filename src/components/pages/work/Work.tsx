@@ -6,11 +6,11 @@ const Work = () => {
   const [timePassed, setTimePassed] = useState("");
 
   useEffect(() => {
-    const date1 = new Date("April 21, 2023");
+    const date1 = new Date("April 1, 2023");
     const date2 = new Date();
     const timeDifference = date2.getTime() - date1.getTime();
     const monthsPassed = Math.floor(
-      timeDifference / (1000 * 60 * 60 * 24 * 30)
+      timeDifference / (1000 * 60 * 60 * 24 * 30) + 1
     );
     const yearsPassed = Math.floor(monthsPassed / 12);
 
