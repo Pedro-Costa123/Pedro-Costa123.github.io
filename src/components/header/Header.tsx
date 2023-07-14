@@ -60,7 +60,6 @@ const Header = () => {
                 changeTab("Work");
               }}
             >
-              
               Work/Projects
             </button>
           </li>
