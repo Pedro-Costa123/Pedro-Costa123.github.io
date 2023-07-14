@@ -1,18 +1,18 @@
 import { useContext } from "react";
 
-import { Context } from "../context/context";
+import { Context } from "../../context/context";
 
 import classes from "./Main.module.css";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Education from "./pages/education/Education";
-import Certifications from "./pages/education/Certifications";
-import Languages from "./pages/education/Languages";
-import Skills from "./pages/education/Skills";
-import Work from "./pages/work/Work";
-import Projects from "./pages/work/Projects";
-import Contact from "./pages/Contact";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Education from "../pages/education/Education";
+import Certifications from "../pages/education/Certifications";
+import Languages from "../pages/education/Languages";
+import Skills from "../pages/education/Skills";
+import Work from "../pages/work/Work";
+import Projects from "../pages/work/Projects";
+import Contact from "../pages/Contact";
 
 const Main = () => {
   const ContentCtx = useContext(Context);

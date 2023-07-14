@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   min-height: 8vh;
   background-color: #eee;
 }
@@ -12,11 +12,15 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .headerNavLi {
   margin-left: 10px;
   margin-right: 10px;
+  margin: 10px 0;
+  font-size: 14px;
 }
 
 .headerNavButton {
@@ -35,21 +39,3 @@
   font-weight: 600;
   color: #333;
 }
-
-/* Mobile */
-@media only screen and (max-width: 600px) {
-  .mainHeader {
-    padding: 10px;
-  }
-
-  .headerNavUl {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .headerNavLi {
-    margin: 10px 0;
-    font-size: 14px;
-  }
-}
-/* Mobile */

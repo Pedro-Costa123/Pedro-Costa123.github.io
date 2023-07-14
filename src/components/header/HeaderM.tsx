@@ -1,7 +1,7 @@
 import { useContext } from "react";
 
-import classes from "./Header.module.css";
-import { Context } from "../context/context";
+import classes from "./HeaderM.module.css";
+import { Context } from "../../context/context";
 
 const Header = () => {
   const ContentCtx = useContext(Context);
@@ -60,7 +60,6 @@ const Header = () => {
                 changeTab("Work");
               }}
             >
-              
               Work/Projects
             </button>
           </li>

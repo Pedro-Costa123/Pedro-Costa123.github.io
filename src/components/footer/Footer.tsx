@@ -1,5 +1,5 @@
-import githubLogo from "../assets/github.svg";
-import linkedInLogo from "../assets/linkedin.svg";
+import githubLogo from "../../assets/github.svg";
+import linkedInLogo from "../../assets/linkedin.svg";
 
 import classes from "./Footer.module.css";
 
