@@ -3,8 +3,8 @@ import classes from "./About.module.css";
 const About = () => {
   return (
     <>
-      <h4 className={classes.contentTitle}>About Me</h4>
       <div className={classes.about}>
+        <h4 className={classes.contentTitle}>About Me</h4>
         <p className={classes.justify}>
           As a final year student in computer science and engineering, I have a
           diverse skill set that includes Java, Kotlin, Python, JavaScript,
