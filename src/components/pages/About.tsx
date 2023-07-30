@@ -6,11 +6,13 @@ const About = () => {
       <div className={classes.about}>
         <h4 className={classes.contentTitle}>About Me</h4>
         <p className={classes.justify}>
-          As a final year student in computer science and engineering, I have a
-          diverse skill set that includes Java, Kotlin, Python, JavaScript,
-          TypeScript, Dart, and frameworks like Flutter, Ionic, Angular, and
-          React.js. I am passionate about creating innovative solutions and
-          leveraging technology to solve complex problems.
+          Bachelor's degree in Computer Science and Engineering.
+        </p>
+        <p className={classes.justify}>
+          I have a diverse skill set that includes Java, Kotlin, Python,
+          JavaScript, TypeScript, Dart, and frameworks like Flutter, Ionic,
+          Angular, and React.js. I am passionate about creating innovative
+          solutions and leveraging technology to solve complex problems.
         </p>
         <p className={classes.justify}>
           With my knowledge and skills, I am confident in my ability to take on

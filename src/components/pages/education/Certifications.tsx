@@ -9,6 +9,18 @@ const Certifications = () => {
           <li>
             <p className={classes.titleCert}>
               <a
+                href="https://www.udemy.com/certificate/UC-c81fc5cb-b296-4699-af45-a2abc8332e5b/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Spring Boot 3, Spring 6 & Hibernate for Beginners
+              </a>
+            </p>
+            <p className={classes.dateCert}>Jul - 2023</p>
+          </li>
+          <li>
+            <p className={classes.titleCert}>
+              <a
                 href="https://www.credly.com/badges/1856a10c-5999-4e4e-badb-d7c1aa83659b/linked_in_profile"
                 target="_blank"
                 rel="noreferrer"
