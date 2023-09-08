@@ -2,7 +2,7 @@
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-<h1 align="center">Pedro Costa - Portfolio</h1>
+<h1 align="center">Pedro Costa - Portfolio </h1>
 
 ## Deployment
 https://pedro-costa123.github.io/
