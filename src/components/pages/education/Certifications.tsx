@@ -9,6 +9,18 @@ const Certifications = () => {
           <li>
             <p className={classes.titleCert}>
               <a
+                href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=281345D1FFB392B626E4E08B0E2D6845E0E047BE6A724B27A1535E805AF22D40"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Oracle Certified Associate, Java SE 8 Programmer
+              </a>
+            </p>
+            <p className={classes.dateCert}>Sep - 2023</p>
+          </li>
+          <li>
+            <p className={classes.titleCert}>
+              <a
                 href="https://www.udemy.com/certificate/UC-c81fc5cb-b296-4699-af45-a2abc8332e5b/"
                 target="_blank"
                 rel="noreferrer"
