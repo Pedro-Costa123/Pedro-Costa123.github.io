@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import classes from "./HeaderM.module.css";
 import { Context } from "../../context/context";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Header = () => {
   const ContentCtx = useContext(Context);
