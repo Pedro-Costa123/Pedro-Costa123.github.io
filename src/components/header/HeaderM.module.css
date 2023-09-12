@@ -17,25 +17,5 @@
 }
 
 .headerNavLi {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.headerNavButton {
-  color: #333;
-  border: none;
-  padding: 0;
-  background: none;
-}
-
-.headerNavButton:hover {
-  font-weight: 600;
-  color: #333;
-}
-
-.buttonActive {
-  font-weight: 600;
-  color: #333;
+  text-align: center;
 }

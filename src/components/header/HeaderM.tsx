@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import classes from "./HeaderM.module.css";
 import { Context } from "../../context/context";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const Header = () => {
   const ContentCtx = useContext(Context);
@@ -13,70 +14,53 @@ const Header = () => {
   return (
     <header className={classes.mainHeader}>
       <h1>Pedro Costa</h1>
-      <nav>
-        <ul className={classes.headerNavUl}>
-          <li className={classes.headerNavLi}>
-            <button
-              className={`${classes.headerNavButton} ${
-                ContentCtx.home ? classes.buttonActive : ""
-              }`}
+      <Navbar expand="sm" className={classes.headerNavUl}>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav>
+            <Nav.Link
               onClick={() => {
                 changeTab("Home");
               }}
+              className={classes.headerNavLi}
             >
               Home
-            </button>
-          </li>
-          <li className={classes.headerNavLi}>
-            <button
-              className={`${classes.headerNavButton} ${
-                ContentCtx.about ? classes.buttonActive : ""
-              }`}
+            </Nav.Link>
+            <Nav.Link
               onClick={() => {
                 changeTab("About");
               }}
+              className={classes.headerNavLi}
             >
               About
-            </button>
-          </li>
-          <li className={classes.headerNavLi}>
-            <button
-              className={`${classes.headerNavButton} ${
-                ContentCtx.education ? classes.buttonActive : ""
-              }`}
+            </Nav.Link>
+            <Nav.Link
               onClick={() => {
                 changeTab("Education");
               }}
+              className={classes.headerNavLi}
             >
               Education
-            </button>
-          </li>
-          <li className={classes.headerNavLi}>
-            <button
-              className={`${classes.headerNavButton} ${
-                ContentCtx.work ? classes.buttonActive : ""
-              }`}
+            </Nav.Link>
+            <Nav.Link
               onClick={() => {
                 changeTab("Work");
               }}
+              className={classes.headerNavLi}
             >
-              Work/Projects
-            </button>
-          </li>
-          <li className={classes.headerNavLi}>
-            <button
-              className={`${classes.headerNavButton} ${
-                ContentCtx.contact ? classes.buttonActive : ""
-              }`}
+              Work
+            </Nav.Link>
+            <Nav.Link
               onClick={() => {
                 changeTab("Contact");
               }}
+              className={classes.headerNavLi}
             >
               Contact
-            </button>
-          </li>
-        </ul>
-      </nav>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 };
