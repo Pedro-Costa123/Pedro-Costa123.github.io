@@ -13,7 +13,6 @@ const Header = () => {
 
   return (
     <header className={classes.mainHeader}>
-      <h1>Pedro Costa</h1>
       <Navbar expand="sm" className={classes.headerNavUl}>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -61,6 +60,7 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <h1>Pedro Costa</h1>
     </header>
   );
 };
