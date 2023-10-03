@@ -4,8 +4,9 @@
 }
 
 .about {
-  margin: 20px 0;
-  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .justify {
@@ -13,4 +14,25 @@
   hyphens: auto;
   -webkit-hyphens: auto;
   word-spacing: -0.05em;
+}
+
+.imageContainer {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.textContainer {
+  flex: 2;
+}
+
+img {
+  max-width: 230px;
+  border: 5px solid black;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .imageContainer {
+    display: none;
+  }
 }
