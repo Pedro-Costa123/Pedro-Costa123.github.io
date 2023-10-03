@@ -7,7 +7,7 @@ const About = () => {
       <div className={classes.about}>
         <div className={classes.imageContainer}>
           <img
-            className="rounded-circle shadow-lg"
+            className={`rounded-circle shadow-lg ${classes.image}`}
             src={photo}
             alt="Pedro Costa"
           />
