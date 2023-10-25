@@ -35,4 +35,8 @@
   top: 0;
   left: 0;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
