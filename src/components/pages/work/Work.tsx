@@ -1,40 +1,64 @@
 import { useEffect, useState } from "react";
 
 import classes from "./Work.module.css";
+import Job from "../../../models/job";
 
 const Work = () => {
-  const [timePassed, setTimePassed] = useState("");
+  const [jobs, setJobs] = useState([] as Job[]);
 
   useEffect(() => {
-    const date1 = new Date("April 1, 2023");
+    fetch("data/jobs.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setJobs(data.jobs);
+      });
+  }, []);
+
+  const workTime = (startMonth: string, startYear: string) => {
+    const date1 = new Date(`${startMonth} 1, ${startYear}`);
     const date2 = new Date();
+
     const timeDifference = date2.getTime() - date1.getTime();
+
     const monthsPassed = Math.floor(
       timeDifference / (1000 * 60 * 60 * 24 * 30) + 1
     );
+
     const yearsPassed = Math.floor(monthsPassed / 12);
 
     if (yearsPassed === 0) {
-      setTimePassed(`${monthsPassed % 12} months`);
+      return `${monthsPassed % 12} months`;
     } else if (monthsPassed === 1) {
-      setTimePassed(`${monthsPassed % 12} month`);
+      return `${monthsPassed % 12} month`;
     } else {
-      setTimePassed(`${yearsPassed} years and ${monthsPassed % 12} months`);
+      return `${yearsPassed} years and ${monthsPassed % 12} months`;
     }
-  }, []);
+  };
 
   return (
     <>
       <h4 className={classes.contentTitle}>Work</h4>
-      <div className={classes.works}>
-        <p className={classes.workTitle}>Java Software Engineer @ Capgemini</p>
-        <p className={classes.info}>Internship</p>
-        <p className={classes.info}>Lisbon, Portugal</p>
-        <p className={classes.dates}>
-          April 2023 - Present &#xB7; {timePassed}
-        </p>
-        <p className={classes.description}></p>
-      </div>
+      {jobs.map((job) => (
+        <div className={classes.works} key={job.title}>
+          <p className={classes.workTitle}>
+            {job.title} @ {job.company}
+          </p>
+          <p className={classes.info}>{job.type}</p>
+          <p className={classes.info}>{job.location}</p>
+          {job.endMonth === "" && job.endYear === 0 ? (
+            <p className={classes.dates}>
+              {job.startMonth} {job.startYear} - Present &#xB7;{" "}
+              {workTime(job.startMonth, job.startYear.toString())}
+            </p>
+          ) : (
+            <p className={classes.dates}>
+              {job.startMonth} {job.startYear} - {job.endMonth} {job.endYear}{" "}
+              &#xB7; {workTime(job.startMonth, job.startYear.toString())}
+            </p>
+          )}
+          <p className={classes.description}></p>
+        </div>
+      ))}
     </>
   );
 };
