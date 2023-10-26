@@ -6,15 +6,10 @@ const Skills = () => {
   const [frameworks, setFrameworks] = useState([] as string[]);
 
   useEffect(() => {
-    fetch("data/programming_languages.json")
+    fetch("data/skills.json")
       .then((res) => res.json())
       .then((data) => {
         setPLanguages(data.programming_languages);
-      });
-
-    fetch("data/frameworks.json")
-      .then((res) => res.json())
-      .then((data) => {
         setFrameworks(data.frameworks);
       });
   }, []);
