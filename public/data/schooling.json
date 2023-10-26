@@ -1,0 +1,14 @@
+{
+  "schoolings": [
+    {
+      "institution": "Universidade Lusófona",
+      "degree": "Bachelor's degree, Computer Science and Engineering",
+      "startMonth": "Sep",
+      "startYear": 2019,
+      "endMonth": "Jun",
+      "endYear": 2023,
+      "grade": 15,
+      "scale": "(1-20)"
+    }
+  ]
+}
