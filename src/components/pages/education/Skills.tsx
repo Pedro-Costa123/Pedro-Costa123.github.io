@@ -1,26 +1,37 @@
+import { useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 
 const Skills = () => {
+  const [pLanguages, setPLanguages] = useState([] as string[]);
+  const [frameworks, setFrameworks] = useState([] as string[]);
+
+  useEffect(() => {
+    fetch("data/programming_languages.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setPLanguages(data.programming_languages);
+      });
+
+    fetch("data/frameworks.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setFrameworks(data.frameworks);
+      });
+  }, []);
+
   return (
     <>
       <h4 className={classes.contentTitle}>Skills</h4>
       <div className={classes.skills}>
         <ul>
-          <li>React.js</li>
-          <li>Flutter</li>
-          <li>Ionic</li>
-          <li>Angular</li>
-          <li>Django</li>
-          <li>Docker</li>
-          <li>AWS</li>
+          {frameworks.map((framework) => (
+            <li key={framework}>{framework}</li>
+          ))}
         </ul>
         <ul>
-          <li>Java</li>
-          <li>Python</li>
-          <li>JavaScript/TypeScript</li>
-          <li>Kotlin</li>
-          <li>C/C++</li>
-          <li>SQL</li>
+          {pLanguages.map((language) => (
+            <li key={language}>{language}</li>
+          ))}
         </ul>
       </div>
     </>
