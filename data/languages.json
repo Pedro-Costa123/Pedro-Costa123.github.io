@@ -1,0 +1,16 @@
+{
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": 90
+    },
+    {
+      "name": "Portuguese",
+      "proficiency": 100
+    },
+    {
+      "name": "Spanish",
+      "proficiency": 40
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "frameworks": [
+    "React.js",
+    "Flutter",
+    "Ionic",
+    "Angular",
+    "Django",
+    "Docker",
+    "AWS"
+  ],
+  "programming_languages": [
+    "Java",
+    "Python",
+    "JavaScript/TypeScript",
+    "Kotlin",
+    "C/C++",
+    "SQL"
+  ]
+}

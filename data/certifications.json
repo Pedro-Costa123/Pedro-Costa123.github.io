@@ -1,0 +1,64 @@
+{
+  "certifications": [
+    {
+      "name": "Oracle Certified Associate, Java SE 8 Programmer",
+      "month": "Sep",
+      "year": 2023,
+      "url": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=281345D1FFB392B626E4E08B0E2D6845E0E047BE6A724B27A1535E805AF22D40"
+    },
+    {
+      "name": "Spring Boot 3, Spring 6 & Hibernate for Beginners",
+      "month": "Jul",
+      "year": 2023,
+      "url": "https://www.udemy.com/certificate/UC-c81fc5cb-b296-4699-af45-a2abc8332e5b/"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "month": "Jun",
+      "year": 2023,
+      "url": "https://www.credly.com/badges/1856a10c-5999-4e4e-badb-d7c1aa83659b/linked_in_profile"
+    },
+    {
+      "name": "Professional Scrum Master™ I (PSM I)",
+      "month": "May",
+      "year": 2023,
+      "url": "https://www.credly.com/badges/f0bf0ccb-9c40-45ec-9866-45f16e6c345a/linked_in_profile"
+    },
+    {
+      "name": "EF Level 16 - Upper Advanced - CEFR Level C2",
+      "month": "May",
+      "year": 2023,
+      "url": ""
+    },
+    {
+      "name": "The Complete C Programming Bootcamp (25 hours)",
+      "month": "May",
+      "year": 2023,
+      "url": "https://www.udemy.com/certificate/UC-f8fd054a-7272-4129-aeaa-4ffc5275fb00/"
+    },
+    {
+      "name": "React - The Complete Guide (incl Hooks, React Router, Redux) (48.5 hours)",
+      "month": "Feb",
+      "year": 2023,
+      "url": "https://www.udemy.com/certificate/UC-8c283f13-953c-4daa-9d30-2519e188d4a3/"
+    },
+    {
+      "name": "Unreal Engine 5 C++ Developer: Learn C++ & Make Video Games (29.5 hours)",
+      "month": "Nov",
+      "year": 2022,
+      "url": "https://www.udemy.com/certificate/UC-3161e477-aab4-4bcc-a460-7358622b1acf/"
+    },
+    {
+      "name": "Flutter & Dart - The Complete Guide [2022 Edition] (42.5 hours)",
+      "month": "Oct",
+      "year": 2022,
+      "url": "https://www.udemy.com/certificate/UC-8a62570b-fda9-4f77-811f-c62d28b8ef51/"
+    },
+    {
+      "name": "Cambrige English Level 1 Certificate in ESOL International (First) - B2",
+      "month": "Jun",
+      "year": 2018,
+      "url": ""
+    }
+  ]
+}
