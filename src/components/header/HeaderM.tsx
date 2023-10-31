@@ -13,11 +13,15 @@ const Header = () => {
 
   return (
     <header className={classes.mainHeader}>
-      <Navbar expand="sm" className={classes.headerNavUl}>
+      <Navbar collapseOnSelect expand="sm" className={classes.headerNavUl}>
+        <Navbar.Brand>
+          <h1>Pedro Costa</h1>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <Nav.Link
+              href="#"
               onClick={() => {
                 changeTab("Home");
               }}
@@ -26,6 +30,7 @@ const Header = () => {
               Home
             </Nav.Link>
             <Nav.Link
+              href="#"
               onClick={() => {
                 changeTab("About");
               }}
@@ -34,6 +39,7 @@ const Header = () => {
               About
             </Nav.Link>
             <Nav.Link
+              href="#"
               onClick={() => {
                 changeTab("Education");
               }}
@@ -42,6 +48,7 @@ const Header = () => {
               Education
             </Nav.Link>
             <Nav.Link
+              href="#"
               onClick={() => {
                 changeTab("Work");
               }}
@@ -50,6 +57,7 @@ const Header = () => {
               Work
             </Nav.Link>
             <Nav.Link
+              href="#"
               onClick={() => {
                 changeTab("Contact");
               }}
@@ -60,7 +68,6 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <h1>Pedro Costa</h1>
     </header>
   );
 };
