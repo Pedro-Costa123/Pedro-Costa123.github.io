@@ -1,3 +1,6 @@
+import Company from "../models/company";
+import Job from "../models/job";
+
 export const workTime = (
   startMonth: string,
   startYear: string,
@@ -27,4 +30,28 @@ export const workTime = (
   } else {
     return `${yearsPassed} years and ${monthsPassed % 12} months`;
   }
+};
+
+export const loadCompanies = (data: any): Company[] => {
+  const loadedCompanies = [] as Company[];
+  for (let company of data.jobs) {
+    const companyJobs = [] as Job[];
+    for (let job of company.positions) {
+      const newJob = new Job(
+        job.title,
+        job.company,
+        job.type,
+        job.location,
+        job.description,
+        job.startMonth,
+        job.startYear,
+        job.endMonth,
+        job.endYear
+      );
+      companyJobs.push(newJob);
+    }
+    const newCompany = new Company(company.name, companyJobs);
+    loadedCompanies.push(newCompany);
+  }
+  return loadedCompanies;
 };

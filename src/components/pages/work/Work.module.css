@@ -13,12 +13,6 @@
   margin-bottom: 5px;
 }
 
-.description {
-  font-size: 14px;
-  margin-bottom: 5px;
-  text-align: justify;
-}
-
 .dates {
   font-size: 14px;
   color: #8b8b8b;
@@ -32,8 +26,19 @@
 }
 
 .description {
+  font-size: 14px;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
   word-spacing: -0.05em;
+  margin-bottom: 5px;
+}
+
+.job {
+  margin-left: 25px;
+}
+
+.workTitleSub {
+  font-weight: 500;
+  margin-bottom: 5px;
 }

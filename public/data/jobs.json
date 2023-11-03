@@ -1,26 +1,31 @@
 {
   "jobs": [
     {
-      "title": "Full Stack Developer",
-      "company": "Capgemini Portugal",
-      "type": "Full-time",
-      "location": "Lisbon, Portugal",
-      "description": "",
-      "startMonth": "November",
-      "startYear": 2023,
-      "endMonth": "",
-      "endYear": 0
-    },
-    {
-      "title": "Java Software Engineer",
-      "company": "Capgemini Portugal",
-      "type": "Internship",
-      "location": "Lisbon, Portugal",
-      "description": "",
-      "startMonth": "April",
-      "startYear": 2023,
-      "endMonth": "November",
-      "endYear": 2023
+      "name": "Capgemini Portugal",
+      "positions": [
+        {
+          "title": "Full Stack Developer",
+          "company": "Capgemini Portugal",
+          "type": "Full-time",
+          "location": "Lisbon, Portugal",
+          "description": "",
+          "startMonth": "November",
+          "startYear": 2023,
+          "endMonth": "",
+          "endYear": 0
+        },
+        {
+          "title": "Java Software Engineer",
+          "company": "Capgemini Portugal",
+          "type": "Internship",
+          "location": "Lisbon, Portugal",
+          "description": "",
+          "startMonth": "April",
+          "startYear": 2023,
+          "endMonth": "November",
+          "endYear": 2023
+        }
+      ]
     }
   ]
 }

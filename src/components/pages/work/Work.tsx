@@ -1,55 +1,55 @@
+import React from "react";
 import { useEffect, useState } from "react";
 
 import classes from "./Work.module.css";
-import Job from "../../../models/job";
-import { workTime } from "../../../utils/utils";
+import { loadCompanies } from "../../../utils/utils";
+import Company from "../../../models/company";
+import JobData from "./JobData";
 
 const Work = () => {
-  const [jobs, setJobs] = useState([] as Job[]);
+  const [companies, setCompanies] = useState([] as Company[]);
 
   useEffect(() => {
     fetch("data/jobs.json")
       .then((res) => res.json())
       .then((data) => {
-        setJobs(data.jobs);
+        const loadedCompanies = loadCompanies(data);
+        setCompanies(loadedCompanies);
       });
   }, []);
 
   return (
     <>
       <h4 className={classes.contentTitle}>Work</h4>
-      {jobs.map((job) => (
-        <div className={classes.works} key={job.title}>
-          <p className={classes.workTitle}>
-            {job.title} @ {job.company}
-          </p>
-          <p className={classes.info}>{job.type}</p>
-          <p className={classes.info}>{job.location}</p>
-          <p className={classes.description}>{job.description}</p>
-          {job.endMonth === "" && job.endYear === 0 ? (
-            <p className={classes.dates}>
-              {job.startMonth} {job.startYear} - Present &#xB7;{" "}
-              {workTime(
-                job.startMonth,
-                job.startYear.toString(),
-                job.endMonth,
-                job.endYear.toString()
-              )}
-            </p>
+
+      {/* Companies */}
+      {companies.map((company) => (
+        <React.Fragment key={company.name}>
+          {/* If more then one position and X company, create a list */}
+          {company.positions.length > 1 ? (
+            <ul className={classes.works}>
+              <p className={classes.workTitle}>{company.name}</p>
+              {company.positions.map((job) => (
+                <li className={classes.job} key={job.title}>
+                  <p className={classes.workTitleSub}>{job.title}</p>
+                  <JobData job={job} />
+                </li>
+              ))}
+            </ul>
           ) : (
-            <p className={classes.dates}>
-              {job.startMonth} {job.startYear} - {job.endMonth} {job.endYear}{" "}
-              &#xB7;{" "}
-              {workTime(
-                job.startMonth,
-                job.startYear.toString(),
-                job.endMonth,
-                job.endYear.toString()
-              )}
-            </p>
+            <>
+              {/* If company only got one position */}
+              {company.positions.map((job) => (
+                <div className={classes.works} key={job.title}>
+                  <p className={classes.workTitle}>
+                    {job.title} @ {job.company}
+                  </p>
+                  <JobData job={job} />
+                </div>
+              ))}
+            </>
           )}
-          <p className={classes.description}></p>
-        </div>
+        </React.Fragment>
       ))}
     </>
   );
