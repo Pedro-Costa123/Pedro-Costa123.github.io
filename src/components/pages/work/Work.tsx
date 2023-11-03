@@ -25,6 +25,7 @@ const Work = () => {
           </p>
           <p className={classes.info}>{job.type}</p>
           <p className={classes.info}>{job.location}</p>
+          <p className={classes.description}>{job.description}</p>
           {job.endMonth === "" && job.endYear === 0 ? (
             <p className={classes.dates}>
               {job.startMonth} {job.startYear} - Present &#xB7;{" "}

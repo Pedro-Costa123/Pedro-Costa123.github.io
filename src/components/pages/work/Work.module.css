@@ -30,3 +30,10 @@
   color: black;
   margin-bottom: 5px;
 }
+
+.description {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: -0.05em;
+}
