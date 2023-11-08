@@ -23,10 +23,10 @@ export const workTime = (
 
   const yearsPassed = Math.floor(monthsPassed / 12);
 
-  if (yearsPassed === 0) {
-    return `${monthsPassed % 12} months`;
-  } else if (monthsPassed === 1) {
-    return `${monthsPassed % 12} month`;
+  if (monthsPassed === 1) {
+    return `1 month`;
+  } else if (yearsPassed === 0) {
+    return `${monthsPassed} months`;
   } else {
     return `${yearsPassed} years and ${monthsPassed % 12} months`;
   }
