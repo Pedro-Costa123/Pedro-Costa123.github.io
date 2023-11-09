@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import photo from "../../assets/PedroCosta.jpeg";
+import photo from "../../../assets/PedroCosta.jpeg";
 import classes from "./About.module.css";
 
 const About = () => {
