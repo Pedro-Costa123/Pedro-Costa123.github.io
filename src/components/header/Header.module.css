@@ -36,6 +36,7 @@
 .buttonActive {
   font-weight: 600;
   color: #333;
+  border-bottom: 2px solid #333;
 }
 
 .notHomePage {
