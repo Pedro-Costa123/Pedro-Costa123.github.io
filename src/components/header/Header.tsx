@@ -1,18 +1,26 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import classes from "./Header.module.css";
 import { Context } from "../../context/context";
 
 const Header = () => {
   const ContentCtx = useContext(Context);
+  const [currentPage, setCurrentPage] = useState("Home");
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
+    setCurrentPage(text);
   };
 
   return (
-    <header className={classes.mainHeader}>
-      <h1>Pedro Costa</h1>
+    <header
+      className={`${classes.mainHeader} ${
+        currentPage === "Home" ? classes.notHomePage : ""
+      }`}
+    >
+      {currentPage !== "Home" && (
+        <h2 className={classes.fadeInElement}>Pedro Costa</h2>
+      )}
       <nav>
         <ul className={classes.headerNavUl}>
           <li className={classes.headerNavLi}>
