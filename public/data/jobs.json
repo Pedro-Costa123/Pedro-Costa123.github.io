@@ -2,6 +2,7 @@
   "jobs": [
     {
       "name": "Capgemini Portugal",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Capgemini_logo.svg/1280px-Capgemini_logo.svg.png",
       "positions": [
         {
           "title": "Full Stack Developer",

@@ -50,7 +50,7 @@ export const loadCompanies = (data: any): Company[] => {
       );
       companyJobs.push(newJob);
     }
-    const newCompany = new Company(company.name, companyJobs);
+    const newCompany = new Company(company.name, company.logo, companyJobs);
     loadedCompanies.push(newCompany);
   }
   return loadedCompanies;
