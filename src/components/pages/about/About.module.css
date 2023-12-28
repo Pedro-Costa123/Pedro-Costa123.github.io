@@ -27,7 +27,13 @@
 
 .image {
   max-width: 230px;
-  border: 5px solid black;
+  box-shadow: 12px 12px 81px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 200px;
+}
+
+.image:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
 }
 
 /* Mobile */
