@@ -55,3 +55,9 @@
 .fadeInElement {
   animation: fadeIn 1s ease-in-out;
 }
+
+@media only screen and (min-height: 1500px) {
+  .mainHeader {
+    min-height: 5vh;
+  }
+}
