@@ -1,17 +1,18 @@
 {
   "frameworks": [
+    "Spring Boot",
     "React.js",
     "Flutter",
     "Ionic",
     "Angular",
-    "Django",
     "Docker",
     "AWS"
   ],
   "programming_languages": [
     "Java",
-    "Python",
     "JavaScript/TypeScript",
+    "Dart",
+    "Python",
     "Kotlin",
     "C/C++",
     "SQL"
