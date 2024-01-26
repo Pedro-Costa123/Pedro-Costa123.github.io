@@ -1,5 +1,8 @@
 .contentTitle {
   font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .skills {
@@ -8,16 +11,47 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.skills > ul {
+  list-style: none;
+  padding: 0px;
 }
 
 .skills > ul > li {
   font-size: 17px;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-/* Mobile */
+.skills > ul > li:hover {
+  background-color: #f0f0f0;
+}
+
+.logo {
+  width: 35px;
+  height: auto;
+  margin-right: 5px;
+}
+
 @media only screen and (max-width: 600px) {
   .skills {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .skills > ul > li {
+    font-size: 18px;
+    padding: 5px;
   }
 }
-/* Mobile */
