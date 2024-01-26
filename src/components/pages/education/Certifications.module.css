@@ -7,6 +7,10 @@
   padding: 10px;
 }
 
+.certifications ul li {
+  list-style-type: "-  ";
+}
+
 .titleCert {
   font-size: 17px;
   margin-bottom: 5px;
@@ -16,10 +20,6 @@
   font-size: 14px;
   color: #8b8b8b;
   margin-bottom: 5px;
-}
-
-.liCert {
-  margin: 15px 0;
 }
 
 a {
