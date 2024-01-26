@@ -6,7 +6,7 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes.mainFooter}>
-      <p className={classes.title}>&copy; 2023 Pedro Costa</p>
+      <p className={classes.title}>&copy; 2024 Pedro Costa</p>
       <div className={classes.social_icons}>
         <a
           href="https://www.linkedin.com/in/pedro-costa-a2173213b/"
