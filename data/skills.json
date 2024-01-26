@@ -1,20 +1,20 @@
 {
   "frameworks": [
-    "Spring Boot",
-    "React.js",
-    "Flutter",
-    "Ionic",
-    "Angular",
-    "Docker",
-    "AWS"
+    { "name": "Spring Boot", "logo": "logo_skills/springboot.svg" },
+    { "name": "React.js", "logo": "logo_skills/react.svg" },
+    { "name": "Flutter", "logo": "logo_skills/flutter.svg" },
+    { "name": "Ionic", "logo": "logo_skills/ionic.svg" },
+    { "name": "Angular", "logo": "logo_skills/angular.svg" },
+    { "name": "Docker", "logo": "logo_skills/docker.svg" },
+    { "name": "AWS", "logo": "logo_skills/aws.svg" }
   ],
   "programming_languages": [
-    "Java",
-    "JavaScript/TypeScript",
-    "Dart",
-    "Python",
-    "Kotlin",
-    "C/C++",
-    "SQL"
+    { "name": "Java", "logo": "logo_skills/java.svg" },
+    { "name": "TypeScript", "logo": "logo_skills/typescript.svg" },
+    { "name": "Dart", "logo": "logo_skills/dart.svg" },
+    { "name": "Python", "logo": "logo_skills/python.svg" },
+    { "name": "Kotlin", "logo": "logo_skills/kotlin.svg" },
+    { "name": "C/C++", "logo": "logo_skills/cplusplus.svg" },
+    { "name": "SQL", "logo": "logo_skills/sql.svg" }
   ]
 }
