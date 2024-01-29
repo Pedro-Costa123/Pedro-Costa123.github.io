@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 import classes from "./Education.module.css";
 import Schooling from "../../../models/schooling";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Education = () => {
   const [schooling, setSchooling] = useState([] as Schooling[]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("data/schooling.json")
       .then((res) => res.json())
       .then((data) => {
         setSchooling(data.schoolings);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Education</h4>
+        <LoadingSpinner />
+      </>
+    );
+  }
 
   return (
     <>

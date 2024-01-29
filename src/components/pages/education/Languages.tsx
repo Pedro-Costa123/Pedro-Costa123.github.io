@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 import classes from "./Languages.module.css";
 import Language from "../../../models/language";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Languages = () => {
   const [languages, setLanguages] = useState([] as Language[]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("data/languages.json")
       .then((res) => res.json())
       .then((data) => {
         setLanguages(data.languages);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Languages</h4>
+        <LoadingSpinner />
+      </>
+    );
+  }
 
   return (
     <>

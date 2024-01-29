@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 import Skill from "../../../models/skill";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Skills = () => {
   const [pLanguages, setPLanguages] = useState([] as Skill[]);
   const [frameworks, setFrameworks] = useState([] as Skill[]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("data/skills.json")
@@ -12,8 +14,18 @@ const Skills = () => {
       .then((data) => {
         setPLanguages(data.programming_languages);
         setFrameworks(data.frameworks);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Skills</h4>
+        <LoadingSpinner />
+      </>
+    );
+  }
 
   return (
     <>

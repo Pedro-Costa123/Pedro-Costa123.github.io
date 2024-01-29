@@ -1,13 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
 import classes from "./Work.module.css";
 import { loadCompanies } from "../../../utils/utils";
 import Company from "../../../models/company";
 import JobData from "./JobData";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Work = () => {
   const [companies, setCompanies] = useState([] as Company[]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("data/jobs.json")
@@ -15,8 +16,18 @@ const Work = () => {
       .then((data) => {
         const loadedCompanies = loadCompanies(data);
         setCompanies(loadedCompanies);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Work</h4>
+        <LoadingSpinner />
+      </>
+    );
+  }
 
   return (
     <>

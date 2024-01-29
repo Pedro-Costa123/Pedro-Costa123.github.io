@@ -1,17 +1,29 @@
 import { useEffect, useState } from "react";
 import classes from "./Projects.module.css";
 import Project from "../../../models/project";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Projects = () => {
   const [projects, setProjects] = useState([] as Project[]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("data/projects.json")
       .then((res) => res.json())
       .then((data) => {
         setProjects(data.projects);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Projects</h4>
+        <LoadingSpinner />
+      </>
+    );
+  }
 
   return (
     <>
