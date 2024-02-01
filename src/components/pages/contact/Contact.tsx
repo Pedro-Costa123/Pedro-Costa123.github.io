@@ -39,10 +39,19 @@ const Contact = () => {
     setIsFormSubmitted(true);
 
     //old version
-    window.open(`mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`);
+    if (
+      !emailInvalid &&
+      !subjectInvalid &&
+      !messageInvalid &&
+      isFormSubmitted
+    ) {
+      window.open(
+        `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
+      );
+    }
 
     //new version need better security implementation
-    // if (!emailInvalid && !subjectInvalid && !messageInvalid) {
+    // if (!emailInvalid && !subjectInvalid && !messageInvalid && isFormSubmitted) {
     //   const AWS = require("aws-sdk");
 
     //   AWS.config.update({
