@@ -4,6 +4,15 @@
 	http://jedwatson.github.io/classnames
 */
 
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*! https://mths.be/punycode v1.3.2 by @mathias */
+
 /**
  * @license React
  * react-dom.production.min.js
