@@ -48,3 +48,7 @@
   font-size: smaller;
   margin-top: -15px;
 }
+
+.errorSendingEmail {
+  text-align: center;
+}
