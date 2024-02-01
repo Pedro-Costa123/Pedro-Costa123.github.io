@@ -4,11 +4,12 @@ import classes from "./Work.module.css";
 import { loadCompanies } from "../../../utils/utils";
 import Company from "../../../models/company";
 import JobData from "./JobData";
-import LoadingSpinner from "../LoadingSpinner";
+import LoadingSpinner from "../../others/Loading";
 
 const Work = () => {
   const [companies, setCompanies] = useState([] as Company[]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("data/jobs.json")
@@ -17,8 +18,23 @@ const Work = () => {
         const loadedCompanies = loadCompanies(data);
         setCompanies(loadedCompanies);
         setLoading(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading(false);
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Work</h4>
+        <p className={classes.justify}>
+          Sorry, we couldn't load the information. Please, try again later.
+        </p>
+      </>
+    );
+  }
 
   if (loading) {
     return (

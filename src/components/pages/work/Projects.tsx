@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import classes from "./Projects.module.css";
 import Project from "../../../models/project";
-import LoadingSpinner from "../LoadingSpinner";
+import Loading from "../../others/Loading";
 
 const Projects = () => {
   const [projects, setProjects] = useState([] as Project[]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("data/projects.json")
@@ -13,14 +14,29 @@ const Projects = () => {
       .then((data) => {
         setProjects(data.projects);
         setLoading(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading(false);
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Projects</h4>
+        <p className={classes.justify}>
+          Sorry, we couldn't load the information. Please, try again later.
+        </p>
+      </>
+    );
+  }
 
   if (loading) {
     return (
       <>
         <h4 className={classes.contentTitle}>Projects</h4>
-        <LoadingSpinner />
+        <Loading />
       </>
     );
   }

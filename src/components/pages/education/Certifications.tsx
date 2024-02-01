@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import classes from "./Certifications.module.css";
 import Certification from "../../../models/certification";
-import LoadingSpinner from "../LoadingSpinner";
+import Loading from "../../others/Loading";
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState([] as Certification[]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("data/certifications.json")
@@ -13,14 +14,29 @@ const Certifications = () => {
       .then((data) => {
         setCertifications(data.certifications);
         setLoading(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading(false);
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Certifications</h4>
+        <p className={classes.justify}>
+          Sorry, we couldn't load the information. Please, try again later.
+        </p>
+      </>
+    );
+  }
 
   if (loading) {
     return (
       <>
         <h4 className={classes.contentTitle}>Certifications</h4>
-        <LoadingSpinner />
+        <Loading />
       </>
     );
   }

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 import Skill from "../../../models/skill";
-import LoadingSpinner from "../LoadingSpinner";
+import Loading from "../../others/Loading";
 
 const Skills = () => {
   const [pLanguages, setPLanguages] = useState([] as Skill[]);
   const [frameworks, setFrameworks] = useState([] as Skill[]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("data/skills.json")
@@ -15,14 +16,29 @@ const Skills = () => {
         setPLanguages(data.programming_languages);
         setFrameworks(data.frameworks);
         setLoading(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading(false);
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Skills</h4>
+        <p className={classes.justify}>
+          Sorry, we couldn't load the information. Please, try again later.
+        </p>
+      </>
+    );
+  }
 
   if (loading) {
     return (
       <>
         <h4 className={classes.contentTitle}>Skills</h4>
-        <LoadingSpinner />
+        <Loading />
       </>
     );
   }

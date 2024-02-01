@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import classes from "./Education.module.css";
 import Schooling from "../../../models/schooling";
-import LoadingSpinner from "../LoadingSpinner";
+import Loading from "../../others/Loading";
 
 const Education = () => {
   const [schooling, setSchooling] = useState([] as Schooling[]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     fetch("data/schooling.json")
@@ -13,14 +14,29 @@ const Education = () => {
       .then((data) => {
         setSchooling(data.schoolings);
         setLoading(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setLoading(false);
       });
   }, []);
+
+  if (error) {
+    return (
+      <>
+        <h4 className={classes.contentTitle}>Education</h4>
+        <p className={classes.justify}>
+          Sorry, we couldn't load the information. Please, try again later.
+        </p>
+      </>
+    );
+  }
 
   if (loading) {
     return (
       <>
         <h4 className={classes.contentTitle}>Education</h4>
-        <LoadingSpinner />
+        <Loading />
       </>
     );
   }
