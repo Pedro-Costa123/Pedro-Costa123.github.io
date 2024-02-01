@@ -10,7 +10,7 @@ const Contact = () => {
   const [subjectInvalid, setSubjectInvalid] = useState(false);
   const [messageInvalid, setMessageInvalid] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
   useEffect(() => {
     if (isFormSubmitted) {
@@ -39,69 +39,69 @@ const Contact = () => {
     setIsFormSubmitted(true);
 
     //old version
-    //window.open(`mailto:${email}?subject=${subject}&body=${message}`);
+    window.open(`mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`);
 
-    //new version
-    if (!emailInvalid && !subjectInvalid && !messageInvalid) {
-      const AWS = require("aws-sdk");
+    //new version need better security implementation
+    // if (!emailInvalid && !subjectInvalid && !messageInvalid) {
+    //   const AWS = require("aws-sdk");
 
-      AWS.config.update({
-        region: process.env.REACT_APP_AWS_REGION,
-        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-      });
+    //   AWS.config.update({
+    //     region: process.env.REACT_APP_AWS_REGION,
+    //     accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    //     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+    //   });
 
-      var params = {
-        Destination: {
-          ToAddresses: ["pedrocostaalves@live.com.pt"],
-        },
-        Message: {
-          Body: {
-            Text: {
-              Charset: "UTF-8",
-              Data: "From: " + email + "\nMessage: " + message,
-            },
-          },
-          Subject: {
-            Charset: "UTF-8",
-            Data: subject,
-          },
-        },
-        Source: "pedrocostaalves@live.com.pt",
-      };
+    //   var params = {
+    //     Destination: {
+    //       ToAddresses: ["pedrocostaalves@live.com.pt"],
+    //     },
+    //     Message: {
+    //       Body: {
+    //         Text: {
+    //           Charset: "UTF-8",
+    //           Data: "From: " + email + "\nMessage: " + message,
+    //         },
+    //       },
+    //       Subject: {
+    //         Charset: "UTF-8",
+    //         Data: subject,
+    //       },
+    //     },
+    //     Source: "pedrocostaalves@live.com.pt",
+    //   };
 
-      var sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
-        .sendEmail(params)
-        .promise();
+    //   var sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
+    //     .sendEmail(params)
+    //     .promise();
 
-      sendPromise.catch((error: any) => {
-        console.error(error, error.stack);
-        setError(true);
-      });
+    //   sendPromise.catch((error: any) => {
+    //     console.error(error, error.stack);
+    //     setError(true);
+    //   });
 
-      if (!error) {
-        alert("Message sent successfully!");
-        //reset form
-        setEmail("");
-        setSubject("");
-        setMessage("");
+    //   if (!error) {
+    //     alert("Message sent successfully!");
+    //     //reset form
+    //     setEmail("");
+    //     setSubject("");
+    //     setMessage("");
 
-        //isFormSubmitted to false
-        setIsFormSubmitted(false);
+    //     //isFormSubmitted to false
+    //     setIsFormSubmitted(false);
 
-        //got to main page
-        window.location.href = "/";
-      }
-    }
+    //     //got to main page
+    //     window.location.href = "/";
+    //   }
+    // }
   };
 
-  if (error) {
-    return (
-      <p className={classes.errorSendingEmail}>
-        An error occurred while sending the message. Please try again later.
-      </p>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <p className={classes.errorSendingEmail}>
+  //       An error occurred while sending the message. Please try again later.
+  //     </p>
+  //   );
+  // }
 
   return (
     <>
