@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 import classes from "./Contact.module.css";
 
-import AWS from "../../../awsConfig";
-
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -45,6 +43,14 @@ const Contact = () => {
 
     //new version
     if (!emailInvalid && !subjectInvalid && !messageInvalid) {
+      const AWS = require("aws-sdk");
+
+      AWS.config.update({
+        region: process.env.REACT_APP_AWS_REGION,
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+      });
+
       var params = {
         Destination: {
           ToAddresses: ["pedrocostaalves@live.com.pt"],
