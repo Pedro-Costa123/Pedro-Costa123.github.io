@@ -6,111 +6,76 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [emailInvalid, setEmailInvalid] = useState(false);
-  const [subjectInvalid, setSubjectInvalid] = useState(false);
-  const [messageInvalid, setMessageInvalid] = useState(false);
+  const [formValidation, setFormValidation] = useState({
+    email: false,
+    subject: false,
+    message: false,
+  });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    const sendEmail = async () => {
+      if (
+        !formValidation.email &&
+        !formValidation.subject &&
+        !formValidation.message &&
+        isFormSubmitted
+      ) {
+        //old way of sending email
+        window.open(
+          `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
+        );
+        setError(false);
+
+        //new way of sending email
+        // try {
+        //   const response = await fetch(
+        //     "URL",
+        //     {
+        //       mode: "cors",
+        //       method: "POST",
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //       body: JSON.stringify({ email, subject, message }),
+        //     }
+        //   );
+
+        //   if (response.ok) {
+        //     console.log("Email sent successfully");
+        //     window.location.href = "";
+        //   } else {
+        //     setError(true);
+        //   }
+        // } catch (error) {
+        //   setError(true);
+        // }
+      }
+    };
+
     if (isFormSubmitted) {
-      if (!/\S+@\S+\.\S+/.test(email)) {
-        setEmailInvalid(true);
-      } else {
-        setEmailInvalid(false);
-      }
-
-      if (!subject.trim()) {
-        setSubjectInvalid(true);
-      } else {
-        setSubjectInvalid(false);
-      }
-
-      if (!message.trim()) {
-        setMessageInvalid(true);
-      } else {
-        setMessageInvalid(false);
-      }
+      sendEmail();
     }
-  }, [email, subject, message, isFormSubmitted]);
+  }, [email, subject, message, isFormSubmitted, formValidation]);
 
-  const handleSubmit = (event: React.SyntheticEvent) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setFormValidation({
+      email: !/\S+@\S+\.\S+/.test(email),
+      subject: !subject.trim(),
+      message: !message.trim(),
+    });
     setIsFormSubmitted(true);
-
-    //old version
-    if (
-      !emailInvalid &&
-      !subjectInvalid &&
-      !messageInvalid &&
-      isFormSubmitted
-    ) {
-      window.open(
-        `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
-      );
-    }
-
-    //new version need better security implementation
-    // if (!emailInvalid && !subjectInvalid && !messageInvalid && isFormSubmitted) {
-    //   const AWS = require("aws-sdk");
-
-    //   AWS.config.update({
-    //     region: process.env.REACT_APP_AWS_REGION,
-    //     accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-    //     secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
-    //   });
-
-    //   var params = {
-    //     Destination: {
-    //       ToAddresses: ["pedrocostaalves@live.com.pt"],
-    //     },
-    //     Message: {
-    //       Body: {
-    //         Text: {
-    //           Charset: "UTF-8",
-    //           Data: "From: " + email + "\nMessage: " + message,
-    //         },
-    //       },
-    //       Subject: {
-    //         Charset: "UTF-8",
-    //         Data: subject,
-    //       },
-    //     },
-    //     Source: "pedrocostaalves@live.com.pt",
-    //   };
-
-    //   var sendPromise = new AWS.SES({ apiVersion: "2010-12-01" })
-    //     .sendEmail(params)
-    //     .promise();
-
-    //   sendPromise.catch((error: any) => {
-    //     console.error(error, error.stack);
-    //     setError(true);
-    //   });
-
-    //   if (!error) {
-    //     alert("Message sent successfully!");
-    //     //reset form
-    //     setEmail("");
-    //     setSubject("");
-    //     setMessage("");
-
-    //     //isFormSubmitted to false
-    //     setIsFormSubmitted(false);
-
-    //     //got to main page
-    //     window.location.href = "/";
-    //   }
-    // }
   };
 
-  // if (error) {
-  //   return (
-  //     <p className={classes.errorSendingEmail}>
-  //       An error occurred while sending the message. Please try again later.
-  //     </p>
-  //   );
-  // }
+  if (error) {
+    return (
+      <p className={classes.errorSendingEmail}>
+        An error occurred while sending the message. Please try again later.
+      </p>
+    );
+  }
 
   return (
     <>
@@ -128,7 +93,7 @@ const Contact = () => {
           onChange={(event) => setEmail(event.target.value)}
           required
         />
-        {emailInvalid && (
+        {formValidation.email && (
           <p className={classes.error}>Please enter a valid email address</p>
         )}
         <label className={classes.label} htmlFor="subject">
@@ -143,7 +108,7 @@ const Contact = () => {
           onChange={(event) => setSubject(event.target.value)}
           required
         />
-        {subjectInvalid && (
+        {formValidation.subject && (
           <p className={classes.error}>Subject cannot be empty</p>
         )}
         <label className={classes.label} htmlFor="message">
@@ -157,7 +122,7 @@ const Contact = () => {
           onChange={(event) => setMessage(event.target.value)}
           required
         ></textarea>
-        {messageInvalid && (
+        {formValidation.message && (
           <p className={classes.error}>Message cannot be empty</p>
         )}
         <input className={classes.submitButton} type="submit" value="Submit" />
