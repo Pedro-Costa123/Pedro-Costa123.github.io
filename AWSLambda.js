@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 
 exports.handler = async (event) => {
   try {
-    const { httpMethod, headers } = event;
+    const { httpMethod } = event;
 
     // Handle OPTIONS request separately
     if (httpMethod === "OPTIONS") {
