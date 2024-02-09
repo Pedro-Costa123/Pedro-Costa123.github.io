@@ -40,8 +40,8 @@ exports.handler = async (event) => {
       const mailOptions = {
         from: "pedrocostaalves@live.com.pt",
         to: "pedrocostaalves@live.com.pt",
-        subject: subject,
-        text: `From: ${email}\n\nMessage: ${message}`,
+        subject: "Pedro Costa - Portfolio",
+        text: `From: ${email}\nSubject: ${subject}\nMessage: ${message}`,
       };
 
       // Send the email
