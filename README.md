@@ -37,6 +37,10 @@ https://pedro-costa123.github.io/
 
 * [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages)
 
+* [AWS Lambda](https://aws.amazon.com/lambda/)
+
+* [AWS SES](https://aws.amazon.com/ses/)
+
 
 
 
