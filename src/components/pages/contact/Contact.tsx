@@ -23,34 +23,34 @@ const Contact = () => {
         isFormSubmitted
       ) {
         //old way of sending email
-        window.open(
-          `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
-        );
-        setError(false);
+        // window.open(
+        //   `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
+        // );
+        // setError(false);
 
         //new way of sending email
-        // try {
-        //   const response = await fetch(
-        //     "URL",
-        //     {
-        //       mode: "cors",
-        //       method: "POST",
-        //       headers: {
-        //         "Content-Type": "application/json",
-        //       },
-        //       body: JSON.stringify({ email, subject, message }),
-        //     }
-        //   );
+        try {
+          const response = await fetch(
+            "https://ec0atsa0ic.execute-api.eu-west-3.amazonaws.com/default/SendAutoEmail",
+            {
+              mode: "cors",
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, subject, message }),
+            }
+          );
 
-        //   if (response.ok) {
-        //     console.log("Email sent successfully");
-        //     window.location.href = "";
-        //   } else {
-        //     setError(true);
-        //   }
-        // } catch (error) {
-        //   setError(true);
-        // }
+          if (response.ok) {
+            window.alert("Email sent successfully");
+            window.location.href = "";
+          } else {
+            setError(true);
+          }
+        } catch (error) {
+          setError(true);
+        }
       }
     };
 
