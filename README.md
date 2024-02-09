@@ -5,7 +5,7 @@
 <h1 align="center">Pedro Costa - Portfolio </h1>
 
 ## Deployment
-https://pedro-costa123.github.io/
+https://pedro-costa.dev/
 
 ## Built With
 * [![React][React.js]][React-url]
@@ -40,6 +40,8 @@ https://pedro-costa123.github.io/
 * [AWS Lambda](https://aws.amazon.com/lambda/)
 
 * [AWS SES](https://aws.amazon.com/ses/)
+
+* [Namecheap](https://www.namecheap.com/)
 
 
 
