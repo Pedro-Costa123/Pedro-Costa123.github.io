@@ -13,7 +13,7 @@ exports.handler = async (event) => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin":
-            "http://localhost:3000, https://pedro-costa123.github.io",
+            "http://localhost:3000, https://pedro-costa123.github.io, https://pedro-costa.dev",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "OPTIONS, POST",
         },
@@ -51,7 +51,7 @@ exports.handler = async (event) => {
         statusCode: 200,
         headers: {
           "Access-Control-Allow-Origin":
-            "http://localhost:3000, https://pedro-costa123.github.io",
+            "http://localhost:3000, https://pedro-costa123.github.io, https://pedro-costa.dev",
           "Access-Control-Allow-Headers": "Content-Type",
           "Access-Control-Allow-Methods": "OPTIONS, POST",
         },
@@ -64,7 +64,7 @@ exports.handler = async (event) => {
       statusCode: 405,
       headers: {
         "Access-Control-Allow-Origin":
-          "http://localhost:3000, https://pedro-costa123.github.io",
+          "http://localhost:3000, https://pedro-costa123.github.io, https://pedro-costa.dev",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "OPTIONS, POST",
       },
@@ -76,7 +76,7 @@ exports.handler = async (event) => {
       statusCode: 500,
       headers: {
         "Access-Control-Allow-Origin":
-          "http://localhost:3000, https://pedro-costa123.github.io",
+          "http://localhost:3000, https://pedro-costa123.github.io, https://pedro-costa.dev",
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Methods": "OPTIONS, POST",
       },
