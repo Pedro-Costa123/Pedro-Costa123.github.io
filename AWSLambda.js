@@ -38,7 +38,7 @@ exports.handler = async (event) => {
 
       // Define email options
       const mailOptions = {
-        from: "pedrocostaalves@live.com.pt",
+        from: "website@pedro-costa.dev",
         to: "pedrocostaalves@live.com.pt",
         subject: "Pedro Costa - Portfolio",
         text: `From: ${email}\nSubject: ${subject}\nMessage: ${message}`,
