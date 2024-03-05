@@ -41,6 +41,8 @@ https://pedro-costa.dev/
 
 * [AWS SES](https://aws.amazon.com/ses/)
 
+* [AWS API Gateway](https://aws.amazon.com/api-gateway/)
+
 * [Namecheap](https://www.namecheap.com/)
 
 
