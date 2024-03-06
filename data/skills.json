@@ -15,6 +15,6 @@
     { "name": "Python", "logo": "logo_skills/python.svg" },
     { "name": "Kotlin", "logo": "logo_skills/kotlin.svg" },
     { "name": "C/C++", "logo": "logo_skills/cplusplus.svg" },
-    { "name": "SQL", "logo": "logo_skills/sql.svg" }
+    { "name": "Git", "logo": "logo_skills/git.svg" }
   ]
 }
