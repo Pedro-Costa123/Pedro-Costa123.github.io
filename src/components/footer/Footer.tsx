@@ -1,5 +1,6 @@
 import githubLogo from "../../assets/github.svg";
 import linkedInLogo from "../../assets/linkedin.svg";
+import DarkMode from "../others/DarkMode/DarkMode";
 
 import classes from "./Footer.module.css";
 
@@ -7,6 +8,7 @@ const Footer = () => {
   return (
     <footer className={classes.mainFooter}>
       <p className={classes.title}>&copy; 2024 Pedro Costa</p>
+      <DarkMode />
       <div className={classes.social_icons}>
         <a
           href="https://www.linkedin.com/in/pedro-costa-a2173213b/"

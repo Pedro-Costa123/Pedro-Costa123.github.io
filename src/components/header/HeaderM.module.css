@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 8px;
   min-height: 8vh;
-  background-color: #eee;
+  background-color: var(--body_background_footer);
 }
 
 .headerNavUl {
@@ -15,4 +15,8 @@
 
 .headerNavLi {
   text-align: center;
+}
+
+.navbar_color {
+  color: var(--body_color);
 }

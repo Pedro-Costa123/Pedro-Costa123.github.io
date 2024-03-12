@@ -6,7 +6,7 @@
   max-width: 250vh;
   margin: 25px 0;
   padding: 10px;
-  background-color: #eee;
+  background-color: var(--body_background_footer);
   border-radius: 10px;
 }
 
@@ -23,16 +23,18 @@
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
+  background-color: var(--input_background);
+  color: var(--body_color);
 }
 
 .input:focus {
   outline: none !important;
-  border: 2px solid rgb(146, 146, 146);
+  border: 2px solid var(--button_background);
 }
 
 .submitButton {
-  background-color: rgb(146, 146, 146);
-  color: white;
+  background-color: var(--button_background);
+  color: var(--button);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -40,7 +42,7 @@
 }
 
 .submitButton:hover {
-  background-color: rgb(117, 117, 117);
+  background-color: var(--button_hover);
 }
 
 .error {

@@ -4,7 +4,8 @@
   align-items: center;
   justify-items: center;
   padding: 20px;
-  background-color: #eee;
+  background-color: var(--body_background_footer);
+  color: var(--body_color);
 }
 
 .title {

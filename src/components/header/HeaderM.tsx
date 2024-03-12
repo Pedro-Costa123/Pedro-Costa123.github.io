@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import classes from "./HeaderM.module.css";
 import { Context } from "../../context/context";
@@ -11,11 +11,35 @@ const Header = () => {
     ContentCtx.changeContent(text);
   };
 
+  useEffect(() => {
+    const body = document.body;
+    const nav = document.getElementsByTagName("nav")[0];
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "data-theme"
+        ) {
+          if (body.getAttribute("data-theme") === "dark") {
+            nav.setAttribute("data-bs-theme", "dark");
+          } else {
+            nav.removeAttribute("data-bs-theme");
+          }
+        }
+      });
+    });
+
+    observer.observe(body, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <header className={classes.mainHeader}>
       <Navbar collapseOnSelect expand="sm" className={classes.headerNavUl}>
         <Navbar.Brand>
-          <h1>Pedro Costa</h1>
+          <h1 className={classes.navbar_color}>Pedro Costa</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -25,7 +49,7 @@ const Header = () => {
               onClick={() => {
                 changeTab("Home");
               }}
-              className={classes.headerNavLi}
+              className={`${classes.headerNavLi} ${classes.navbar_color}`}
             >
               Home
             </Nav.Link>
@@ -34,7 +58,7 @@ const Header = () => {
               onClick={() => {
                 changeTab("About");
               }}
-              className={classes.headerNavLi}
+              className={`${classes.headerNavLi} ${classes.navbar_color}`}
             >
               About
             </Nav.Link>
@@ -43,7 +67,7 @@ const Header = () => {
               onClick={() => {
                 changeTab("Education");
               }}
-              className={classes.headerNavLi}
+              className={`${classes.headerNavLi} ${classes.navbar_color}`}
             >
               Education
             </Nav.Link>
@@ -52,7 +76,7 @@ const Header = () => {
               onClick={() => {
                 changeTab("Work");
               }}
-              className={classes.headerNavLi}
+              className={`${classes.headerNavLi} ${classes.navbar_color}`}
             >
               Work
             </Nav.Link>
@@ -61,7 +85,7 @@ const Header = () => {
               onClick={() => {
                 changeTab("Contact");
               }}
-              className={classes.headerNavLi}
+              className={`${classes.headerNavLi} ${classes.navbar_color}`}
             >
               Contact
             </Nav.Link>

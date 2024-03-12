@@ -1,3 +1,27 @@
+:root {
+  --body_background: #f9f9f9;
+  --body_color: #242424;
+  --body_background_footer: #eee;
+  --header_color: #333;
+  --proficency: lightgrey;
+  --button: white;
+  --button_background: rgb(146, 146, 146);
+  --button_hover: rgb(117, 117, 117);
+  --input_background: #f9f9f9;
+}
+
+[data-theme="dark"] {
+  --body_background: #222831;
+  --body_color: #76ABAE;
+  --body_background_footer: #31363F;
+  --header_color: #76ABAE;
+  --proficency: #21252c;
+  --button: #76ABAE;
+  --button_background: #21252c;
+  --button_hover: #171b20;
+  --input_background: #3a3f47;
+}
+
 body {
   margin: 0;
   padding: 0;

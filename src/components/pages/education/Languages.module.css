@@ -19,7 +19,7 @@
 }
 
 .proficiency {
-  background-color: #eee;
+  background-color: var(--body_background_footer);
   border-radius: 5px;
   height: 20px;
   margin-top: 5px;
@@ -28,8 +28,8 @@
 }
 
 .bar {
-  background-color: lightgray;
-  border-radius: 5px;
+  background-color: var(--proficency);
+  border-radius: 3px;
   height: 100%;
   position: absolute;
   top: 0;

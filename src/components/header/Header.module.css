@@ -5,7 +5,8 @@
   align-items: center;
   padding: 20px;
   min-height: 12vh;
-  background-color: #f9f9f9;
+  background-color: var(--body_background);
+  color: var(--body_color);
 }
 
 .headerNavUl {
@@ -21,7 +22,7 @@
 }
 
 .headerNavButton {
-  color: #333;
+  color: var(--header_color);;
   border: none;
   padding: 0;
   background: none;
@@ -29,14 +30,14 @@
 
 .headerNavButton:hover {
   font-weight: 600;
-  color: #333;
-  border-bottom: 2px solid #333;
+  color: var(--header_color);
+  border-bottom: 2px solid var(--header_color);
 }
 
 .buttonActive {
   font-weight: 600;
-  color: #333;
-  border-bottom: 2px solid #333;
+  color: var(--header_color);
+  border-bottom: 2px solid var(--header_color);
 }
 
 .notHomePage {
