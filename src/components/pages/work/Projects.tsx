@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Projects.module.css";
 import Project from "../../../models/project";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const Projects = () => {
   const [projects, setProjects] = useState([] as Project[]);

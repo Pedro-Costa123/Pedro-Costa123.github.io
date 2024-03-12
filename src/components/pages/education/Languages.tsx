@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Languages.module.css";
 import Language from "../../../models/language";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const Languages = () => {
   const [languages, setLanguages] = useState([] as Language[]);
