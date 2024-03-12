@@ -25,6 +25,7 @@
 .social_icon > * {
   margin: 0 10px;
   height: 30px;
+  filter: var(--icons_color);
 }
 
 .social_icon > *:hover {
