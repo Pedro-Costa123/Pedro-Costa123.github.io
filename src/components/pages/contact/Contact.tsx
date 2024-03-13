@@ -2,6 +2,34 @@ import { useEffect, useState } from "react";
 
 import classes from "./Contact.module.css";
 
+/**
+ * Contact Component
+ *
+ * This component renders a contact form and handles form submission.
+ * It uses the useState and useEffect hooks from React, and CSS modules for styling.
+ *
+ * The component maintains several state variables: 'email', 'subject', 'message', 'formValidation', 'isFormSubmitted', and 'error'.
+ * 'email', 'subject', and 'message' are the form inputs.
+ * 'formValidation' is an object indicating whether each form input is valid.
+ * 'isFormSubmitted' is a boolean indicating whether the form has been submitted.
+ * 'error' is a boolean indicating whether an error occurred while sending the email.
+ *
+ * The component includes a useEffect hook that sends an email when the form is submitted and all form inputs are valid.
+ * The email is sent by making a POST request to an AWS Lambda function.
+ * If the request is successful, an alert is displayed and the page is refreshed.
+ * If the request fails, 'error' is set to true.
+ *
+ * The component includes a handleSubmit function that validates the form inputs and sets 'isFormSubmitted' to true.
+ * The function is attached to the 'onSubmit' event of the form.
+ *
+ * The component conditionally renders different content based on the state.
+ * If 'error' is true, it renders a message indicating that an error occurred.
+ * Otherwise, it renders the form.
+ * The form includes input fields for 'email', 'subject', and 'message', and a submit button.
+ * Each input field includes an 'onChange' event handler that updates the corresponding state variable.
+ * If a form input is invalid when the form is submitted, an error message is displayed.
+ *
+ */
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -22,13 +50,6 @@ const Contact = () => {
         !formValidation.message &&
         isFormSubmitted
       ) {
-        //old way of sending email
-        // window.open(
-        //   `mailto:pedrocostaalves@live.com.pt?subject=${subject}&body=From: ${email}%0D%0AMessage: ${message}`
-        // );
-        // setError(false);
-
-        //new way of sending email
         try {
           const response = await fetch(
             "https://ec0atsa0ic.execute-api.eu-west-3.amazonaws.com/default/SendAutoEmail",

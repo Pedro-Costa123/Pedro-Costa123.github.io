@@ -6,6 +6,30 @@ import Company from "../../../models/company";
 import JobData from "./JobData";
 import LoadingSpinner from "../../others/Loading/Loading";
 
+/**
+ * Work Component
+ *
+ * This component fetches and displays a list of work experiences.
+ * It uses the useState and useEffect hooks from React, and CSS modules for styling.
+ *
+ * The component maintains three state variables: 'companies', 'loading', and 'error'.
+ * 'companies' is an array of Company objects.
+ * 'loading' is a boolean indicating whether the data is currently being fetched.
+ * 'error' is a boolean indicating whether an error occurred while fetching the data.
+ *
+ * The component includes a useEffect hook that fetches the data from 'data/jobs.json' when the component mounts.
+ * If the fetch is successful, 'companies' is set to the loaded companies, and 'loading' is set to false.
+ * If the fetch fails, 'error' is set to true, and 'loading' is set to false.
+ *
+ * The component conditionally renders different content based on the state.
+ * If 'error' is true, it renders a message indicating that the data could not be loaded.
+ * If 'loading' is true, it renders a loading spinner.
+ * Otherwise, it renders a list of work experiences.
+ * Each work experience includes the company name, job title, and job details.
+ * If a company has more than one job, the jobs are displayed in a list.
+ * If a company has only one job, the job is displayed without a list.
+ *
+ */
 const Work = () => {
   const [companies, setCompanies] = useState([] as Company[]);
   const [loading, setLoading] = useState(true);
