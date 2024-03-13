@@ -14,6 +14,25 @@ import Work from "../pages/work/Work";
 import Projects from "../pages/work/Projects";
 import Contact from "../pages/contact/Contact";
 
+/**
+ * Main Component
+ *
+ * This component serves as the main content area of the website.
+ * It uses CSS modules for styling and the Context API for managing state.
+ *
+ * The component imports and uses the Context to determine which page content to display.
+ * It conditionally renders different components based on the state of the Context.
+ *
+ * The component includes the following pages: Home, About, Education, Work, and Contact.
+ * Each page is represented by a separate component, which is imported at the top of the file.
+ *
+ * The Education page includes additional components for Languages, Skills, and Certifications.
+ * The Work page includes an additional component for Projects.
+ *
+ * Each page component is wrapped in a div with the 'fadeInElement' class for animation purposes.
+ * Some components are also wrapped in a div with the 'centering' or 'centeringLanguages' class for layout purposes.
+ *
+ */
 const Main = () => {
   const ContentCtx = useContext(Context);
 
