@@ -21,7 +21,7 @@
 
 .info {
   font-size: 14px;
-  color: black;
+  color: var(--body_color);
   margin-bottom: 5px;
 }
 

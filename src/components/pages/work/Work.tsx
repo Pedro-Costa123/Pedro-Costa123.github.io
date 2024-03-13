@@ -4,7 +4,7 @@ import classes from "./Work.module.css";
 import { loadCompanies } from "../../../utils/utils";
 import Company from "../../../models/company";
 import JobData from "./JobData";
-import LoadingSpinner from "../../others/Loading";
+import LoadingSpinner from "../../others/Loading/Loading";
 
 const Work = () => {
   const [companies, setCompanies] = useState([] as Company[]);

@@ -34,6 +34,7 @@
   width: 35px;
   height: auto;
   margin-right: 5px;
+  filter: var(--icons_color);
 }
 
 @media only screen and (max-width: 600px) {

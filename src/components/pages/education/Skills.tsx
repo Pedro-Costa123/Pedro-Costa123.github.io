@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Skills.module.css";
 import Skill from "../../../models/skill";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const Skills = () => {
   const [pLanguages, setPLanguages] = useState([] as Skill[]);

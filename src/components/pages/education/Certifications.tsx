@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Certifications.module.css";
 import Certification from "../../../models/certification";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState([] as Certification[]);

@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: var(--body_background);
   padding: 15px;
   flex: 1;
   overflow-y: auto;
+  color: var(--body_color);
 }
 
 .centering {

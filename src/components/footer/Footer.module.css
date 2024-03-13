@@ -4,7 +4,8 @@
   align-items: center;
   justify-items: center;
   padding: 20px;
-  background-color: #eee;
+  background-color: var(--body_background_footer);
+  color: var(--body_color);
 }
 
 .title {
@@ -24,6 +25,7 @@
 .social_icon > * {
   margin: 0 10px;
   height: 30px;
+  filter: var(--icons_color);
 }
 
 .social_icon > *:hover {

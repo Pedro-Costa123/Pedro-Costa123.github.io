@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Education.module.css";
 import Schooling from "../../../models/schooling";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const Education = () => {
   const [schooling, setSchooling] = useState([] as Schooling[]);

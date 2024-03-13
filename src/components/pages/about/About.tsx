@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import photo from "../../../assets/PedroCosta.jpeg";
 import classes from "./About.module.css";
-import Loading from "../../others/Loading";
+import Loading from "../../others/Loading/Loading";
 
 const About = () => {
   const [about, setAbout] = useState([] as string[]);
