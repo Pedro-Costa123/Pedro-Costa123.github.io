@@ -20,3 +20,7 @@
 .navbar_color {
   color: var(--body_color);
 }
+
+nav[data-bs-theme="dark"] .headerNavLi.navbar_color {
+  color: var(--body_color);
+}
