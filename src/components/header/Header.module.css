@@ -5,7 +5,7 @@
   align-items: center;
   padding: 20px;
   min-height: 12vh;
-  background-color: var(--body_background);
+  background: linear-gradient(to right, var(--body_background), var(--body_background_end));
   color: var(--body_color);
 }
 

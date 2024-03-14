@@ -19,7 +19,7 @@
 }
 
 .proficiency {
-  background-color: var(--body_background_footer);
+  background-color: var(--bar);
   border-radius: 5px;
   height: 20px;
   margin-top: 5px;
