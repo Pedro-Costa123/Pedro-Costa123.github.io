@@ -1,7 +1,8 @@
 :root {
   --body_background: #f9f9f9;
+  --body_background_end: #cecece;
   --body_color: #242424;
-  --body_background_footer: #eee;
+  --bar: #eee;
   --header_color: #333;
   --proficency: lightgrey;
   --button: white;
@@ -13,8 +14,9 @@
 
 [data-theme="dark"] {
   --body_background: #222831;
+  --body_background_end: #323944;
   --body_color: #76abae;
-  --body_background_footer: #31363f;
+  --bar: #31363f;
   --header_color: #76abae;
   --proficency: #21252c;
   --button: #76abae;

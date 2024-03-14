@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding: 8px;
   min-height: 8vh;
-  background-color: var(--body_background_footer);
+  background: linear-gradient(to right, var(--body_background), var(--body_background_end));
 }
 
 .headerNavUl {

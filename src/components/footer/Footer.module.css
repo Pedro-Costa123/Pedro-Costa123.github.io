@@ -4,7 +4,7 @@
   align-items: center;
   justify-items: center;
   padding: 20px;
-  background-color: var(--body_background_footer);
+  background: linear-gradient(to right, var(--body_background), var(--body_background_end));
   color: var(--body_color);
 }
 
