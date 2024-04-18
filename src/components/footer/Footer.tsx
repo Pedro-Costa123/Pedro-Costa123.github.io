@@ -25,7 +25,7 @@ const Footer = () => {
       <DarkMode />
       <div className={classes.social_icons}>
         <a
-          href="https://www.linkedin.com/in/pedro-costa-a2173213b/"
+          href="https://www.linkedin.com/in/pedro-m-da-costa/"
           className={classes.social_icon}
           target="_blank"
           rel="noreferrer"
