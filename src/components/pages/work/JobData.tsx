@@ -28,6 +28,18 @@ const JobData = ({ job }: JobDataProps) => {
       <p className={classes.info}>{job.type}</p>
       <p className={classes.info}>{job.location}</p>
       <p className={classes.description}>{job.description}</p>
+      {job.keyFeatures && job.keyFeatures.length > 0 && (
+        <>
+          <p className={classes.info}>Key Features:</p>
+          <ul className={classes.description}>
+            {job.keyFeatures.map((feature, index) => (
+              <li key={index} className={classes.featureItem}>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
       {job.endMonth === "" && job.endYear === 0 ? (
         <p className={classes.dates}>
           {job.startMonth} {job.startYear} - Present &#xB7;{" "}

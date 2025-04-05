@@ -79,6 +79,7 @@ export const loadCompanies = (data: any): Company[] => {
         job.type,
         job.location,
         job.description,
+        job.keyFeatures,
         job.startMonth,
         job.startYear,
         job.endMonth,

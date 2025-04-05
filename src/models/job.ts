@@ -4,6 +4,7 @@ class Job {
   type: string;
   location: string;
   description: string;
+  keyFeatures: string[];
   startMonth: string;
   startYear: number;
   endMonth: string;
@@ -15,6 +16,7 @@ class Job {
     type: string,
     location: string,
     description: string,
+    keyFeatures: string[],
     startMonth: string,
     startYear: number,
     endMonth: string,
@@ -25,6 +27,7 @@ class Job {
     this.type = type;
     this.location = location;
     this.description = description;
+    this.keyFeatures = keyFeatures;
     this.startMonth = startMonth;
     this.startYear = startYear;
     this.endMonth = endMonth;
