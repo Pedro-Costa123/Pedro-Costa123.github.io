@@ -25,13 +25,13 @@ const DarkMode = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   const setDarkMode = () => {
-    document.querySelector("body")?.setAttribute("data-theme", "dark");
+    document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");
     setTheme("dark");
   };
 
   const setLightMode = () => {
-    document.querySelector("body")?.setAttribute("data-theme", "light");
+    document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");
     setTheme("light");
   };
@@ -47,7 +47,7 @@ const DarkMode = () => {
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
-      document.querySelector("body")?.setAttribute("data-theme", localTheme);
+      document.documentElement.setAttribute("data-theme", localTheme);
     }
   }, []);
 

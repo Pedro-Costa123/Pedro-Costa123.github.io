@@ -2,6 +2,7 @@
   --body_background: #f9f9f9;
   --body_background_end: #cecece;
   --body_color: #242424;
+  --particle_color: #242424;
   --bar: #eee;
   --header_color: #333;
   --proficency: lightgrey;
@@ -15,6 +16,7 @@
 [data-theme="dark"] {
   --body_background: #222831;
   --body_background_end: #323944;
+  --particle_color: #76abae;
   --body_color: #76abae;
   --bar: #31363f;
   --header_color: #76abae;
