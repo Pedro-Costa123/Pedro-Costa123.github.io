@@ -6,7 +6,13 @@
       "startMonth": "Feb",
       "startYear": 2023,
       "endMonth": "",
-      "endYear": 0
+      "endYear": 0,
+      "urls" :[
+        {
+          "name": "Pedro-Costa123.github.io",
+          "url": "https://github.com/Pedro-Costa123/Pedro-Costa123.github.io"
+        }
+      ]
     },
     {
       "name": "BestRide (startup) / Final Year Project",
@@ -14,7 +20,17 @@
       "startMonth": "Sep",
       "startYear": 2021,
       "endMonth": "Sep",
-      "endYear": 2022
+      "endYear": 2022,
+      "urls" :[
+        {
+          "name": "TFC-BestRide-Frontend-Professional",
+          "url": "https://github.com/Pedro-Costa-Uni-Projects/TFC-BestRide-Frontend-Professional"
+        },
+        {
+          "name": "TFC-BestRide-Frontend-Tourist",
+          "url": "https://github.com/Pedro-Costa-Uni-Projects/TFC-BestRide-Frontend-Tourist"
+        }
+      ]
     }
   ]
 }
