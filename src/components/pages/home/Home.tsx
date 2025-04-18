@@ -18,7 +18,10 @@ const Home = () => {
   return (
     <div className={classes.homeText}>
       <h1 className={classes.typing_animation}>Hi, I'm Pedro Costa</h1>
-      <h4>Software Developer</h4>
+      <h4 className={classes.typing_animation}>
+        <span className={classes.showFullLine}>Software Developer | Tech Enthusiast | Problem Solver</span>
+        <span className={classes.showMobileOnly}>Software Developer</span>
+      </h4>
       <hr />
       <h4>Welcome to My Website</h4>
     </div>

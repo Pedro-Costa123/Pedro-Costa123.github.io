@@ -81,6 +81,23 @@ const Projects = () => {
             </p>
           )}
           <p className={classes.description}>{project.description}</p>
+          <div>
+            <p className={classes.description}>Repositories:</p>
+            <ul>
+              {project.urls.map((url, urlIndex) => (
+                <li key={urlIndex}>
+                  <a
+                    className={classes.description}
+                    href={url.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {url.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ))}
     </>

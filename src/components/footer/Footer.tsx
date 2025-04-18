@@ -21,7 +21,7 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes.mainFooter}>
-      <p className={classes.title}>&copy; 2024 Pedro Costa</p>
+      <p className={classes.title}>&copy; 2025 Pedro Costa</p>
       <DarkMode />
       <div className={classes.social_icons}>
         <a

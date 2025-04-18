@@ -1,3 +1,5 @@
+import ProjectUrls from "./projects-urls";
+
 class Project {
   name: string;
   description: string;
@@ -5,6 +7,7 @@ class Project {
   startYear: number;
   endMonth: string;
   endYear: number;
+  urls: ProjectUrls[];
 
   constructor(
     name: string,
@@ -12,7 +15,8 @@ class Project {
     startMonth: string,
     startYear: number,
     endMonth: string,
-    endYear: number
+    endYear: number,
+    urls: ProjectUrls[]
   ) {
     this.name = name;
     this.description = description;
@@ -20,6 +24,7 @@ class Project {
     this.startYear = startYear;
     this.endMonth = endMonth;
     this.endYear = endYear;
+    this.urls = urls;
   }
 }
 
