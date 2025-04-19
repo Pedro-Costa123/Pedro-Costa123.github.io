@@ -22,7 +22,6 @@ export default function BackgroundParticles({ isMobile }: BackgroundParticlesPro
 
     setColor(getColor());
 
-    // Optional: if you want it to react to theme changes, you could use a MutationObserver:
     const observer = new MutationObserver(() => {
       setColor(getColor());
     });

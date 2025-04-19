@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import classes from "./HeaderM.module.css";
 import { Context } from "../../context/context";
@@ -24,30 +24,6 @@ const Header = () => {
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
   };
-
-  useEffect(() => {
-    const body = document.body;
-    const nav = document.getElementsByTagName("nav")[0];
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "data-theme"
-        ) {
-          if (body.getAttribute("data-theme") === "dark") {
-            nav.setAttribute("data-bs-theme", "dark");
-          } else {
-            nav.removeAttribute("data-bs-theme");
-          }
-        }
-      });
-    });
-
-    observer.observe(body, { attributes: true });
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <header className={classes.mainHeader}>

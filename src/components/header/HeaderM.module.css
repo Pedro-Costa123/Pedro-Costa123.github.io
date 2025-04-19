@@ -21,6 +21,6 @@
   color: var(--body_color);
 }
 
-nav[data-bs-theme="dark"] .headerNavLi.navbar_color {
-  color: var(--body_color);
+[data-theme="dark"] nav .headerNavLi.navbar_color {
+  color: var(--body_color) !important;
 }

@@ -68,3 +68,30 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+/*
+  * Light/Dark mode for mobile header hamburger icon since its an SVG image
+ */
+html[data-theme="light"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23242424' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+html[data-theme="dark"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2376abae' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+html[data-theme="light"] .navbar-toggler {
+  border-color: #242424 !important;
+}
+
+html[data-theme="dark"] .navbar-toggler {
+  border-color: #76abae !important;
+}
+
+html[data-theme="light"] .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem #242424 !important;
+}
+
+html[data-theme="dark"] .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem #76abae !important;
+}
