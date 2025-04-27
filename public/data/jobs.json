@@ -11,12 +11,15 @@
           "location": "Lisbon, Portugal",
           "description": "Continuation from the java junior developer position until 04/2024. Where my project changed to a tolling company doing only backend development. Solely responsible for an epic within a larger project, focusing on the development of a Spring Boot Java backend.",
           "keyFeatures": [
-            "Designing and implementing communication with other microservices using Kafka",
+            "Designing and implementing communication with other microservices using Kafka and OpenFeign",
             "Integrating with external services such as SFTP servers and AWS S3",
             "Collaborating with Business Analysts to ensure clear understanding of project requirements",
             "Assisting the QA team in identifying testing needs",
             "Onboarding new colleagues",
             "Deploying environments to dev and QA",
+            "Supporting incident management by analyzing root causes and providing quick resolutions",
+            "Documenting technical solutions, APIs, and best practices for internal knowledge sharing",
+            "Improving and maintaining existing legacy code",
             "Providing constructive feedback on areas for improvement"
           ],
           "startMonth": "November",
