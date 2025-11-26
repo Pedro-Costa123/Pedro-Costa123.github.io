@@ -1,6 +1,22 @@
 {
   "jobs": [
     {
+      "name": "Critical TechWorks",
+      "logo": "https://www.criticaltechworks.com/media/11khfrdf/ctw_logo.svg",
+      "positions": [
+        {
+          "title": "Full Stack Developer",
+          "company": "Critical TechWorks",
+          "type": "Full-time",
+          "location": "Lisbon, Portugal",
+          "startMonth": "October",
+          "startYear": 2025,
+          "endMonth": "",
+          "endYear": 0
+        }
+      ]
+    },
+    {
       "name": "Capgemini Portugal",
       "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Capgemini_logo.svg/1280px-Capgemini_logo.svg.png",
       "positions": [
@@ -24,8 +40,8 @@
           ],
           "startMonth": "November",
           "startYear": 2023,
-          "endMonth": "",
-          "endYear": 0
+          "endMonth": "October",
+          "endYear": 2025
         },
         {
           "title": "Java Software Engineer",
