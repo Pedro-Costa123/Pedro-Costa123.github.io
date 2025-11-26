@@ -16,6 +16,7 @@ import Job from "../models/job";
  * The function returns a string representing the duration in years and months.
  * If only one month has passed, it returns '1 month'.
  * If less than a year has passed, it returns the number of months followed by 'months'.
+ * If an exact number of years has passed, it returns the number of years followed by 'years'.
  * If a year or more has passed, it returns the number of years followed by 'years' and the remaining number of months followed by 'months'.
  *
  */
@@ -45,6 +46,8 @@ export const workTime = (
     return `1 month`;
   } else if (yearsPassed === 0) {
     return `${monthsPassed} months`;
+  } else if (monthsPassed % 12 === 0) {
+    return `${yearsPassed} years`;
   } else {
     return `${yearsPassed} years and ${monthsPassed % 12} months`;
   }
