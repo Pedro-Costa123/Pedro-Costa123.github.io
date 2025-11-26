@@ -77,7 +77,9 @@ const Languages = () => {
                   className={classes.bar}
                   style={{ width: `${language.proficiency}%` }}
                 >
-                  {language.proficiency}%
+                  {language.proficiency === 100
+                    ? "Native"
+                    : `${language.proficiency}%`}
                 </span>
               </div>
             </div>
