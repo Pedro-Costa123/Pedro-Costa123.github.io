@@ -24,3 +24,15 @@
   color: #8b8b8b;
   margin-bottom: 5px;
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .projects {
+    padding: 5px 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .projectTitle {
+    text-align: center;
+  }
+}
