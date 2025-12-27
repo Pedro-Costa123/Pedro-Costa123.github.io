@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import classes from "./Certifications.module.css";
 import Certification from "../../../models/certification";
+import Recertification from "../../../models/recertification";
 import Loading from "../../others/Loading/Loading";
 
 /**
@@ -80,9 +81,26 @@ const Certifications = () => {
                   </a>
                 )}
               </p>
-              <p className={classes.dateCert}>
-                {certification.month} - {certification.year}
-              </p>
+              {certification.yearExpiration === 0 ||
+              certification.monthExpiration === "" ? (
+                <p className={classes.dateCert}>
+                  Issued: {certification.month} {certification.year}
+                </p>
+              ) : (
+                <p className={classes.dateCert}>
+                  Issued: {certification.month} {certification.year} &#xB7;
+                  Expires: {certification.monthExpiration}{" "}
+                  {certification.yearExpiration}
+                </p>
+              )}
+              {certification.recertification && (
+                <p className={classes.dateCert}>
+                  Recertification:{" "}
+                  {certification.recertification
+                    .map(([month, year]: Recertification) => `${month} ${year}`)
+                    .join(" , ")}
+                </p>
+              )}
             </li>
           ))}
         </ul>
