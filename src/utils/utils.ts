@@ -95,3 +95,10 @@ export const loadCompanies = (data: any): Company[] => {
   }
   return loadedCompanies;
 };
+
+/**
+ * getCurrentYear Function
+ *
+ * Returns the current year as a number.
+ */
+export const getCurrentYear = (): number => new Date().getFullYear();

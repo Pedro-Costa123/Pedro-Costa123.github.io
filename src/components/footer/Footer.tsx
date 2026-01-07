@@ -1,6 +1,7 @@
 import githubLogo from "../../assets/github.svg";
 import linkedInLogo from "../../assets/linkedin.svg";
 import DarkMode from "../others/DarkMode/DarkMode";
+import { getCurrentYear } from "../../utils/utils";
 
 import classes from "./Footer.module.css";
 
@@ -21,7 +22,7 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes.mainFooter}>
-      <p className={classes.title}>&copy; 2025 Pedro Costa</p>
+      <p className={classes.title}>&copy; {getCurrentYear()} Pedro Costa</p>
       <DarkMode />
       <div className={classes.social_icons}>
         <a
