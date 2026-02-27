@@ -25,60 +25,42 @@ const Header = () => {
     ContentCtx.changeContent(text);
   };
 
+  const navItems = [
+    { label: "Home", key: "home", value: "Home" },
+    { label: "About", key: "about", value: "About" },
+    { label: "Education", key: "education", value: "Education" },
+    { label: "Work", key: "work", value: "Work" },
+    { label: "Contact", key: "contact", value: "Contact" },
+  ] as const;
+
   return (
     <header className={classes.mainHeader}>
       <Navbar collapseOnSelect expand="sm" className={classes.headerNavUl}>
         <Navbar.Brand>
-          <h1 className={classes.navbar_color}>Pedro Costa</h1>
+          <h1 className={classes.brandTitle}>Pedro Costa</h1>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            <Nav.Link
-              href="#"
-              onClick={() => {
-                changeTab("Home");
-              }}
-              className={`${classes.headerNavLi} ${classes.navbar_color}`}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#"
-              onClick={() => {
-                changeTab("About");
-              }}
-              className={`${classes.headerNavLi} ${classes.navbar_color}`}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              href="#"
-              onClick={() => {
-                changeTab("Education");
-              }}
-              className={`${classes.headerNavLi} ${classes.navbar_color}`}
-            >
-              Education
-            </Nav.Link>
-            <Nav.Link
-              href="#"
-              onClick={() => {
-                changeTab("Work");
-              }}
-              className={`${classes.headerNavLi} ${classes.navbar_color}`}
-            >
-              Work
-            </Nav.Link>
-            <Nav.Link
-              href="#"
-              onClick={() => {
-                changeTab("Contact");
-              }}
-              className={`${classes.headerNavLi} ${classes.navbar_color}`}
-            >
-              Contact
-            </Nav.Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className={classes.toggleButton} />
+        <Navbar.Collapse id="basic-navbar-nav" className={classes.collapsePanel}>
+          <Nav className={classes.navLinks}>
+            {navItems.map((item) => {
+              const isActive = ContentCtx[item.key];
+
+              return (
+                <Nav.Link
+                  key={item.value}
+                  href="#"
+                  onClick={(event) => {
+                    event.preventDefault();
+                    changeTab(item.value);
+                  }}
+                  className={`${classes.headerNavLi} ${
+                    isActive ? classes.activeLink : ""
+                  }`}
+                >
+                  {item.label}
+                </Nav.Link>
+              );
+            })}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

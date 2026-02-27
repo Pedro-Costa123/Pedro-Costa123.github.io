@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import classes from "./Header.module.css";
 import { Context } from "../../context/context";
@@ -21,29 +21,34 @@ import { Context } from "../../context/context";
  */
 const Header = () => {
   const ContentCtx = useContext(Context);
-  const [currentPage, setCurrentPage] = useState("Home");
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
-    setCurrentPage(text);
   };
+
+  const isHome = ContentCtx.home;
 
   return (
     <header
       className={`${classes.mainHeader} ${
-        currentPage === "Home" ? classes.notHomePage : ""
+        isHome ? classes.notHomePage : ""
       }`}
     >
-      {currentPage !== "Home" && (
-        <h2 className={classes.fadeInElement}>Pedro Costa</h2>
-      )}
-      <nav>
+      <div
+        className={`${classes.brandWrapper} ${
+          isHome ? classes.brandHidden : classes.fadeInElement
+        }`}
+      >
+        <h2 className={classes.brandTitle}>Pedro Costa</h2>
+      </div>
+      <nav aria-label="Primary navigation">
         <ul className={classes.headerNavUl}>
           <li className={classes.headerNavLi}>
             <button
               className={`${classes.headerNavButton} ${
                 ContentCtx.home ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Home");
               }}
@@ -56,6 +61,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.about ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("About");
               }}
@@ -68,6 +74,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.education ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Education");
               }}
@@ -80,6 +87,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.work ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Work");
               }}
@@ -92,6 +100,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.contact ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Contact");
               }}
