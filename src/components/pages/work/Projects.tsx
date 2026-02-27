@@ -67,39 +67,43 @@ const Projects = () => {
   return (
     <>
       <h4 className={classes.contentTitle}>Projects</h4>
-      {projects.map((project) => (
-        <div className={classes.projects} key={project.name}>
-          <p className={classes.projectTitle}>{project.name}</p>
-          {project.endMonth === "" && project.endYear === 0 ? (
-            <p className={classes.dates}>
-              {project.startMonth} {project.startYear} - Present
-            </p>
-          ) : (
-            <p className={classes.dates}>
-              {project.startMonth} {project.startYear} - {project.endMonth}{" "}
-              {project.endYear}
-            </p>
-          )}
-          <p className={classes.description}>{project.description}</p>
-          <div>
-            <p className={classes.description}>Repositories:</p>
-            <ul>
-              {project.urls.map((url, urlIndex) => (
-                <li key={urlIndex}>
-                  <a
-                    className={classes.description}
-                    href={url.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {url.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ))}
+      <div className={classes.projectsList}>
+        {projects.map((project) => (
+          <article className={classes.projects} key={project.name}>
+            <div className={classes.projectHeader}>
+              <p className={classes.projectTitle}>{project.name}</p>
+              {project.endMonth === "" && project.endYear === 0 ? (
+                <p className={classes.dates}>
+                  {project.startMonth} {project.startYear} - Present
+                </p>
+              ) : (
+                <p className={classes.dates}>
+                  {project.startMonth} {project.startYear} - {project.endMonth}{" "}
+                  {project.endYear}
+                </p>
+              )}
+            </div>
+            <p className={classes.description}>{project.description}</p>
+            <div className={classes.repositories}>
+              <p className={classes.repoTitle}>Repositories</p>
+              <ul className={classes.repoList}>
+                {project.urls.map((url, urlIndex) => (
+                  <li className={classes.repoItem} key={urlIndex}>
+                    <a
+                      className={classes.repoLink}
+                      href={url.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {url.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
     </>
   );
 };

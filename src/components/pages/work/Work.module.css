@@ -1,18 +1,33 @@
 .contentTitle {
-  font-weight: bold;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.workList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-top: 1rem;
 }
 
 .works {
-  margin: 20px 0;
-  padding: 10px;
+  margin: 0;
+  padding: 0.8rem 0.9rem;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid var(--bar);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .workTitle {
-  font-size: 18px;
+  font-size: 0.85rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8b8b8b;
+  margin-bottom: 0.55rem;
 }
 
 .dates {
@@ -33,20 +48,38 @@
   hyphens: auto;
   -webkit-hyphens: auto;
   word-spacing: -0.05em;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .job {
-  margin-left: 25px;
+  margin-left: 0;
+  list-style: none;
+  padding-top: 0.72rem;
+  margin-top: 0.72rem;
+  border-top: 1px solid var(--bar);
 }
 
 .workTitleSub {
   font-weight: 500;
-  margin-bottom: 5px;
+  font-size: 0.97rem;
+  margin-bottom: 0.4rem;
+}
+
+.jobList {
+  margin: 0;
+  padding: 0;
+}
+
+.singleJob {
+  padding-top: 0.25rem;
+}
+
+.featureItem {
+  margin-bottom: 0.3rem;
 }
 
 .logo {
-  max-height: 40px;
+  max-height: 42px;
   width: auto;
   object-fit: contain;
 }
@@ -54,11 +87,11 @@
 .companyContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 0.85rem;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .companyInfo {
@@ -72,27 +105,20 @@
   }
   .companyContainer {
     flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    text-align: center;
+    gap: 0.25rem;
+    align-items: flex-start;
+    text-align: left;
   }
   .works {
-    padding: 5px 0;
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+    padding: 0.72rem 0.75rem;
   }
-  .works ul {
-    padding: 0;
-    margin: 0;
-  }
-
   .job {
     margin-left: 0;
-    margin-top: 8px;
+    margin-top: 0.65rem;
+    padding-top: 0.65rem;
   }
   .workTitle,
   .workTitleSub {
-    text-align: center;
+    text-align: left;
   }
 }
