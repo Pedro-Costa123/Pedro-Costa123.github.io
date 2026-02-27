@@ -14,7 +14,7 @@
   padding: 0.95rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--bar);
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.04) 100%);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .university {
