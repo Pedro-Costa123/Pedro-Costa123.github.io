@@ -102,50 +102,56 @@ const Contact = () => {
     <>
       <h4 className={classes.contentTitle}>Contact</h4>
       <form className={classes.contactForm} onSubmit={handleSubmit} noValidate>
-        <label className={classes.label} htmlFor="email">
-          Email:
-        </label>
-        <input
-          className={classes.input}
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-        />
-        {formValidation.email && (
-          <p className={classes.error}>Please enter a valid email address</p>
-        )}
-        <label className={classes.label} htmlFor="subject">
-          Subject:
-        </label>
-        <input
-          className={classes.input}
-          type="text"
-          id="subject"
-          name="subject"
-          value={subject}
-          onChange={(event) => setSubject(event.target.value)}
-          required
-        />
-        {formValidation.subject && (
-          <p className={classes.error}>Subject cannot be empty</p>
-        )}
-        <label className={classes.label} htmlFor="message">
-          Message:
-        </label>
-        <textarea
-          className={classes.input}
-          id="message"
-          name="message"
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          required
-        ></textarea>
-        {formValidation.message && (
-          <p className={classes.error}>Message cannot be empty</p>
-        )}
+        <div className={classes.fieldGroup}>
+          <label className={classes.label} htmlFor="email">
+            Email:
+          </label>
+          <input
+            className={classes.input}
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+          />
+          {formValidation.email && (
+            <p className={classes.error}>Please enter a valid email address</p>
+          )}
+        </div>
+        <div className={classes.fieldGroup}>
+          <label className={classes.label} htmlFor="subject">
+            Subject:
+          </label>
+          <input
+            className={classes.input}
+            type="text"
+            id="subject"
+            name="subject"
+            value={subject}
+            onChange={(event) => setSubject(event.target.value)}
+            required
+          />
+          {formValidation.subject && (
+            <p className={classes.error}>Subject cannot be empty</p>
+          )}
+        </div>
+        <div className={classes.fieldGroup}>
+          <label className={classes.label} htmlFor="message">
+            Message:
+          </label>
+          <textarea
+            className={classes.input}
+            id="message"
+            name="message"
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            required
+          ></textarea>
+          {formValidation.message && (
+            <p className={classes.error}>Message cannot be empty</p>
+          )}
+        </div>
         <input className={classes.submitButton} type="submit" value="Submit" />
       </form>
     </>
