@@ -6,18 +6,15 @@ import { Context } from "../../context/context";
 /**
  * Header Component
  *
- * This component renders a navigation bar with links to different sections of the website.
- * It uses CSS modules for styling, and the Context API for managing state.
+ * Renders the main navigation used to switch portfolio sections through app context.
  *
- * The component maintains a state variable 'currentPage' to keep track of the currently selected page.
- * When a navigation button is clicked, the 'changeTab' function is called, which updates the 'currentPage' state and calls the 'changeContent' function from the context to update the current content.
- *
- * The navigation bar includes links to Home, About, Education, Work/Projects, and Contact sections.
- * The 'changeTab' function is attached to the 'onClick' event of each button.
- * The button for the current page is highlighted by adding the 'buttonActive' class.
- *
- * The component also conditionally renders a heading with the text 'Pedro Costa' when the current page is not 'Home'.
- *
+ * Current behavior:
+ * - Uses `Context` flags (`home`, `about`, `education`, `work`, `contact`) to highlight
+ *   the active navigation button.
+ * - Calls `changeContent(section)` when a button is clicked.
+ * - Hides the `Pedro Costa` brand on the Home page and shows it with a fade-in animation
+ *   on all other sections.
+ * - Applies different header alignment on Home vs. non-Home views.
  */
 const Header = () => {
   const ContentCtx = useContext(Context);
@@ -31,7 +28,7 @@ const Header = () => {
   return (
     <header
       className={`${classes.mainHeader} ${
-        isHome ? classes.notHomePage : ""
+        !isHome ? "" : classes.notHomePage
       }`}
     >
       <div
