@@ -64,21 +64,26 @@ const About = () => {
   }
 
   return (
-    <>
-      <div className={classes.about}>
-        <div className={classes.imageContainer}>
-          <img className={classes.image} src={photo} alt="Pedro Costa" />
-        </div>
-        <div className={classes.textContainer}>
-          <h4 className={classes.contentTitle}>About Me</h4>
+    <div className={classes.about}>
+      <figure className={classes.imageContainer}>
+        <img className={classes.image} src={photo} alt="Pedro Costa" />
+      </figure>
+      <div className={classes.textContainer}>
+        <h4 className={classes.contentTitle}>About Me</h4>
+        <div className={classes.copy}>
           {about.map((paragraph, index) => (
-            <p className={classes.justify} key={index}>
+            <p
+              className={`${classes.justify} ${
+                index === 0 ? classes.leadParagraph : ""
+              }`}
+              key={index}
+            >
               {paragraph}
             </p>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
