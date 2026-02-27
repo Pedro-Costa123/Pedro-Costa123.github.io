@@ -1,25 +1,38 @@
 .contentTitle {
-  font-weight: bold;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .certifications {
-  margin: 20px 0;
-  padding: 10px;
+  margin-top: 1rem;
 }
 
-.certifications ul li {
-  list-style-type: "-  ";
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.item {
+  border: 1px solid var(--bar);
+  border-radius: 10px;
+  padding: 0.82rem 0.9rem;
+  background: rgba(0, 0, 0, 0.04);
 }
 
 .titleCert {
-  font-size: 17px;
-  margin-bottom: 5px;
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
 }
 
 .dateCert {
-  font-size: 14px;
+  margin: 0.3rem 0 0;
+  font-size: 0.84rem;
   color: #8b8b8b;
-  margin-bottom: 5px;
 }
 
 a {
@@ -30,4 +43,26 @@ a {
 a:hover {
   color: var(--header_color);
   font-weight: 600;
+}
+
+.justify {
+  margin-top: 0.7rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .certifications {
+    margin-top: 0.85rem;
+  }
+
+  .list {
+    gap: 0.72rem;
+  }
+
+  .item {
+    padding: 0.72rem 0.75rem;
+  }
+
+  .titleCert {
+    font-size: 0.95rem;
+  }
 }

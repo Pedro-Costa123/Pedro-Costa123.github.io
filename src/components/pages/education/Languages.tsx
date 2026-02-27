@@ -68,23 +68,27 @@ const Languages = () => {
     <>
       <h4 className={classes.contentTitle}>Languages</h4>
       <div className={classes.languages}>
-        {languages.map((language) => (
-          <div key={language.name}>
-            <div className={classes.language}>
-              <p>{language.name}</p>
-              <div className={classes.proficiency}>
+        {languages.map((language) => {
+          const label =
+            language.proficiency === 100
+              ? "Native"
+              : `${language.proficiency}%`;
+
+          return (
+            <div className={classes.language} key={language.name}>
+              <div className={classes.languageHeader}>
+                <p className={classes.name}>{language.name}</p>
+                <p className={classes.value}>{label}</p>
+              </div>
+              <div className={classes.proficiency} aria-label={label}>
                 <span
                   className={classes.bar}
                   style={{ width: `${language.proficiency}%` }}
-                >
-                  {language.proficiency === 100
-                    ? "Native"
-                    : `${language.proficiency}%`}
-                </span>
+                />
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </>
   );
