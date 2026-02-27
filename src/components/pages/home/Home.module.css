@@ -1,33 +1,95 @@
-.homeText > h1,
-h2,
-h3,
-h4,
-h5,
-hr {
+.homeText {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  width: min(92%, 760px);
+  margin: 0 auto;
+  padding: 1.1rem 1.2rem 1.2rem;
   text-align: center;
+  border: 1px solid rgba(127, 127, 127, 0.3);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(127, 127, 127, 0.1), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(127, 127, 127, 0.06), transparent 58%);
+  backdrop-filter: blur(2px);
 }
 
-.homeText > hr {
-  width: 30vh;
-  margin: 15px auto;
+.header > * {
+  margin: 0;
 }
 
-/* Typing Aninmation */
-@keyframes typing {
-  0% {
-    width: 0;
-    margin: 0 auto;
-  }
-  100% {
-    width: 100%;
-    margin: 0 auto;
-  }
+.welcomeText {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  padding: 0.2rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 127, 127, 0.36);
+  font-size: clamp(0.72rem, 0.86vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .typing_animation {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
+  line-height: 1.08;
+  letter-spacing: 0.005em;
+  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
+  font-weight: 650;
   animation: typing 5s steps(80, end);
+}
+
+.introText {
+  opacity: 0.84;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin-top: 0.88rem;
+  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
+  font-weight: 520;
+  line-height: 1.42;
+  letter-spacing: 0.015em;
+}
+
+.dividerRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 0.56rem;
+  margin-top: 1rem;
+}
+
+.divider {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid rgba(127, 127, 127, 0.33);
+}
+
+.dividerDot {
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.75;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .typing_animation::after {
@@ -56,8 +118,39 @@ hr {
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
+  .header {
+    width: 94%;
+    padding: 0.84rem 0.84rem 0.98rem;
+    border-radius: 15px;
+  }
+
+  .welcomeText {
+    margin-bottom: 0.66rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    padding: 0.18rem 0.52rem;
+  }
+
   .typing_animation {
     animation: typing 2.5s steps(50, end);
+    font-size: clamp(1.5rem, 8.1vw, 2rem);
+    line-height: 1.12;
+  }
+
+  .subtitle {
+    margin-top: 0.66rem;
+    font-size: 0.94rem;
+    line-height: 1.38;
+  }
+
+  .dividerRow {
+    column-gap: 0.44rem;
+    margin-top: 0.8rem;
+  }
+
+  .dividerDot {
+    width: 0.24rem;
+    height: 0.24rem;
   }
 
   .showFullLine {
