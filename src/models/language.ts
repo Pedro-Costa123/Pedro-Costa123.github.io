@@ -1,8 +1,8 @@
 class Language {
   name: string;
-  proficiency: number;
+  proficiency: string;
 
-  constructor(name: string, proficiency: number) {
+  constructor(name: string, proficiency: string) {
     this.name = name;
     this.proficiency = proficiency;
   }

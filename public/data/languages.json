@@ -2,11 +2,11 @@
   "languages": [
     {
       "name": "English",
-      "proficiency": 90
+      "proficiency": "C1"
     },
     {
       "name": "Portuguese",
-      "proficiency": 100
+      "proficiency": "Native"
     }
   ]
 }

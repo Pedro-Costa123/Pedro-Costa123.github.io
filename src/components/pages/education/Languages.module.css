@@ -33,27 +33,12 @@
 .value {
   margin: 0;
   font-size: 0.84rem;
-  color: #8b8b8b;
   font-weight: 600;
-}
-
-.proficiency {
-  background-color: var(--bar);
   border-radius: 999px;
-  height: 0.55rem;
-  margin-top: 0.6rem;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.bar {
-  background-color: var(--proficency);
-  border-radius: 999px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  border: 1px solid var(--bar);
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.22rem 0.6rem;
+  white-space: nowrap;
 }
 
 .justify {
