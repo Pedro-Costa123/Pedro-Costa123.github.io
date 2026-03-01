@@ -13,27 +13,37 @@
 
 .projects {
   margin: 0;
-  padding: 0.8rem 0.9rem;
+  padding: 1.1rem 1.15rem;
   border: 1px solid var(--bar);
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .projectTitle {
-  font-size: 0.97rem;
-  font-weight: 500;
-  margin-bottom: 0;
+  font-size: 1.28rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .description {
-  font-size: 14px;
-  margin: 0.75rem 0 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin: 0.9rem 0 0;
   text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: -0.03em;
 }
 
 .dates {
-  font-size: 14px;
-  color: #8b8b8b;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--body_color) 72%, var(--body_background));
   margin: 0;
 }
 
@@ -45,15 +55,17 @@
 }
 
 .repositories {
-  margin-top: 0.85rem;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--body_color) 15%, transparent);
 }
 
 .repoTitle {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8b8b8b;
+  color: var(--header_color);
   margin: 0 0 0.45rem;
 }
 
@@ -72,30 +84,31 @@
 
 .repoLink {
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.88rem;
   color: var(--body_color);
   text-decoration: none;
-  border: 1px solid var(--bar);
+  border: 1px solid color-mix(in srgb, var(--body_color) 22%, transparent);
   border-radius: 999px;
-  padding: 0.25rem 0.6rem;
-  background: rgba(0, 0, 0, 0.03);
+  padding: 0.38rem 0.72rem;
+  background: color-mix(in srgb, var(--body_color) 10%, transparent);
 }
 
 .repoLink:hover {
-  background: var(--bar);
+  background: color-mix(in srgb, var(--body_color) 16%, transparent);
 }
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
   .projects {
-    padding: 0.72rem 0.75rem;
+    padding: 0.9rem;
   }
   .projectHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.25rem;
+    gap: 0.35rem;
   }
   .projectTitle {
+    font-size: 1.12rem;
     text-align: left;
   }
 }

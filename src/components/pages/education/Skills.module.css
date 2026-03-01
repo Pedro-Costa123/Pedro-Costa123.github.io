@@ -13,25 +13,31 @@
 
 .skillGroup {
   border: 1px solid var(--bar);
-  border-radius: 10px;
-  padding: 0.8rem 0.9rem;
-  background: rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 1.1rem 1.15rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .groupTitle {
   margin: 0;
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8b8b8b;
+  color: var(--header_color);
 }
 
 .list {
   list-style: none;
-  margin: 0.55rem 0 0;
+  margin: 0.85rem 0 0;
   padding: 0;
   display: grid;
-  gap: 0.35rem;
+  gap: 0.45rem;
 }
 
 .skillItem {
@@ -47,7 +53,7 @@
 }
 
 .skillItem:hover {
-  background-color: var(--bar);
+  background-color: color-mix(in srgb, var(--body_color) 10%, transparent);
 }
 
 .logo {
@@ -69,7 +75,7 @@
   }
 
   .skillGroup {
-    padding: 0.72rem 0.75rem;
+    padding: 0.9rem;
   }
 
   .skillItem {

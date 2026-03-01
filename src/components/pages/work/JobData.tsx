@@ -25,12 +25,14 @@ type JobDataProps = {
 const JobData = ({ job }: JobDataProps) => {
   return (
     <>
-      <p className={classes.info}>{job.type}</p>
-      <p className={classes.info}>{job.location}</p>
-      <p className={classes.description}>{job.description}</p>
+      <div className={classes.metaRow}>
+        <p className={classes.info}>{job.type}</p>
+        <p className={classes.info}>{job.location}</p>
+      </div>
+      {job.description && <p className={classes.description}>{job.description}</p>}
       {job.keyFeatures && job.keyFeatures.length > 0 && (
-        <>
-          <p className={classes.info}>Key Features:</p>
+        <section className={classes.featureSection}>
+          <p className={classes.sectionLabel}>Key Features</p>
           <ul className={classes.description}>
             {job.keyFeatures.map((feature, index) => (
               <li key={index} className={classes.featureItem}>
@@ -38,28 +40,34 @@ const JobData = ({ job }: JobDataProps) => {
               </li>
             ))}
           </ul>
-        </>
+        </section>
       )}
       {job.endMonth === "" && job.endYear === 0 ? (
-        <p className={classes.dates}>
-          {job.startMonth} {job.startYear} - Present &#xB7;{" "}
-          {workTime(
-            job.startMonth,
-            job.startYear.toString(),
-            job.endMonth,
-            job.endYear.toString()
-          )}
-        </p>
+        <div className={classes.timeline}>
+          <p className={classes.sectionLabel}>Timeline</p>
+          <p className={classes.dates}>
+            {job.startMonth} {job.startYear} - Present &#xB7;{" "}
+            {workTime(
+              job.startMonth,
+              job.startYear.toString(),
+              job.endMonth,
+              job.endYear.toString()
+            )}
+          </p>
+        </div>
       ) : (
-        <p className={classes.dates}>
-          {job.startMonth} {job.startYear} - {job.endMonth} {job.endYear} &#xB7;{" "}
-          {workTime(
-            job.startMonth,
-            job.startYear.toString(),
-            job.endMonth,
-            job.endYear.toString()
-          )}
-        </p>
+        <div className={classes.timeline}>
+          <p className={classes.sectionLabel}>Timeline</p>
+          <p className={classes.dates}>
+            {job.startMonth} {job.startYear} - {job.endMonth} {job.endYear} &#xB7;{" "}
+            {workTime(
+              job.startMonth,
+              job.startYear.toString(),
+              job.endMonth,
+              job.endYear.toString()
+            )}
+          </p>
+        </div>
       )}
     </>
   );

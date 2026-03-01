@@ -18,21 +18,29 @@
 
 .item {
   border: 1px solid var(--bar);
-  border-radius: 10px;
-  padding: 0.82rem 0.9rem;
-  background: rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  padding: 1.1rem 1.15rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .titleCert {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .dateCert {
-  margin: 0.3rem 0 0;
-  font-size: 0.84rem;
-  color: #8b8b8b;
+  margin: 0.75rem 0 0;
+  padding-top: 0.75rem;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--body_color) 72%, var(--body_background));
+  border-top: 1px solid color-mix(in srgb, var(--body_color) 15%, transparent);
 }
 
 a {
@@ -59,7 +67,7 @@ a:hover {
   }
 
   .item {
-    padding: 0.72rem 0.75rem;
+    padding: 0.9rem;
   }
 
   .titleCert {

@@ -11,10 +11,15 @@
 }
 
 .language {
-  padding: 0.8rem 0.9rem;
+  padding: 1.1rem 1.15rem;
   border: 1px solid var(--bar);
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .languageHeader {
@@ -26,18 +31,18 @@
 
 .name {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
 .value {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 600;
   border-radius: 999px;
-  border: 1px solid var(--bar);
-  background: rgba(0, 0, 0, 0.04);
-  padding: 0.22rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--body_color) 22%, transparent);
+  background: color-mix(in srgb, var(--body_color) 10%, transparent);
+  padding: 0.38rem 0.72rem;
   white-space: nowrap;
 }
 
@@ -52,7 +57,7 @@
   }
 
   .language {
-    padding: 0.7rem 0.75rem;
+    padding: 0.9rem;
   }
 
   .name {

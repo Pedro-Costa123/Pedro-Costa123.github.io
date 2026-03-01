@@ -77,12 +77,16 @@ const Work = () => {
           <article className={classes.works} key={company.name}>
             <div className={classes.companyContainer}>
               <div className={classes.companyInfo}>
-                <p className={classes.workTitle}>{company.name}</p>
+                <div className={classes.companyHeader}>
+                  <p className={classes.workTitle}>{company.name}</p>
+                </div>
                 {company.positions.length > 1 ? (
                   <ul className={classes.jobList}>
                     {company.positions.map((job) => (
                       <li className={classes.job} key={job.title}>
-                        <p className={classes.workTitleSub}>{job.title}</p>
+                        <div className={classes.jobHeader}>
+                          <p className={classes.workTitleSub}>{job.title}</p>
+                        </div>
                         <JobData job={job} />
                       </li>
                     ))}
@@ -90,7 +94,9 @@ const Work = () => {
                 ) : (
                   company.positions.map((job) => (
                     <div className={classes.singleJob} key={job.title}>
-                      <p className={classes.workTitleSub}>{job.title}</p>
+                      <div className={classes.jobHeader}>
+                        <p className={classes.workTitleSub}>{job.title}</p>
+                      </div>
                       <JobData job={job} />
                     </div>
                   ))

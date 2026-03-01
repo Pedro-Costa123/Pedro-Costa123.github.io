@@ -11,34 +11,43 @@
 }
 
 .education {
-  padding: 0.95rem 1rem;
-  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  border-radius: 16px;
   border: 1px solid var(--bar);
-  background: rgba(0, 0, 0, 0.04);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .university {
   margin: 0;
-  font-size: 1.02rem;
-  font-weight: 700;
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .degree {
-  margin: 0.25rem 0 0;
-  font-size: 0.98rem;
+  margin: 0.35rem 0 0;
+  font-size: 0.97rem;
+  line-height: 1.6;
   font-weight: 500;
 }
 
 .dates {
-  margin: 0.35rem 0 0;
-  font-size: 0.86rem;
-  color: #8b8b8b;
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--body_color) 72%, var(--body_background));
 }
 
 .grade {
-  margin: 0.45rem 0 0;
-  font-size: 0.9rem;
+  margin: 0.9rem 0 0;
+  padding-top: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 700;
+  border-top: 1px solid color-mix(in srgb, var(--body_color) 15%, transparent);
 }
 
 .justify {
@@ -52,7 +61,7 @@
   }
 
   .education {
-    padding: 0.8rem 0.85rem;
+    padding: 0.9rem;
   }
 
   .university {
