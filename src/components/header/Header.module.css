@@ -8,6 +8,8 @@
   min-height: 12vh;
   background: linear-gradient(to right, var(--body_background), var(--body_background_end));
   color: var(--body_color);
+  border-bottom: 1px solid color-mix(in srgb, var(--header_color) 18%, transparent);
+  box-shadow: 0 14px 30px -28px color-mix(in srgb, var(--header_color) 55%, transparent);
 }
 
 .brandWrapper {
