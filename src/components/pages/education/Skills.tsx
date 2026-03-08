@@ -69,30 +69,36 @@ const Skills = () => {
     <>
       <h4 className={classes.contentTitle}>Skills</h4>
       <div className={classes.skills}>
-        <ul>
-          {frameworks.map((framework) => (
-            <li key={framework.name}>
-              <img
-                className={classes.logo}
-                src={framework.logo}
-                alt={framework.name}
-              />
-              {framework.name}
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {pLanguages.map((language) => (
-            <li key={language.name}>
-              <img
-                className={classes.logo}
-                src={language.logo}
-                alt={language.name}
-              />
-              {language.name}
-            </li>
-          ))}
-        </ul>
+        <section className={classes.skillGroup}>
+          <h5 className={classes.groupTitle}>Frameworks</h5>
+          <ul className={classes.list}>
+            {frameworks.map((framework) => (
+              <li className={classes.skillItem} key={framework.name}>
+                <img
+                  className={classes.logo}
+                  src={framework.logo}
+                  alt={framework.name}
+                />
+                <span>{framework.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section className={classes.skillGroup}>
+          <h5 className={classes.groupTitle}>Programming Languages</h5>
+          <ul className={classes.list}>
+            {pLanguages.map((language) => (
+              <li className={classes.skillItem} key={language.name}>
+                <img
+                  className={classes.logo}
+                  src={language.logo}
+                  alt={language.name}
+                />
+                <span>{language.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </>
   );

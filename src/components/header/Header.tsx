@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import classes from "./Header.module.css";
 import { Context } from "../../context/context";
@@ -6,44 +6,46 @@ import { Context } from "../../context/context";
 /**
  * Header Component
  *
- * This component renders a navigation bar with links to different sections of the website.
- * It uses CSS modules for styling, and the Context API for managing state.
+ * Renders the main navigation used to switch portfolio sections through app context.
  *
- * The component maintains a state variable 'currentPage' to keep track of the currently selected page.
- * When a navigation button is clicked, the 'changeTab' function is called, which updates the 'currentPage' state and calls the 'changeContent' function from the context to update the current content.
- *
- * The navigation bar includes links to Home, About, Education, Work/Projects, and Contact sections.
- * The 'changeTab' function is attached to the 'onClick' event of each button.
- * The button for the current page is highlighted by adding the 'buttonActive' class.
- *
- * The component also conditionally renders a heading with the text 'Pedro Costa' when the current page is not 'Home'.
- *
+ * Current behavior:
+ * - Uses `Context` flags (`home`, `about`, `education`, `work`, `contact`) to highlight
+ *   the active navigation button.
+ * - Calls `changeContent(section)` when a button is clicked.
+ * - Hides the `Pedro Costa` brand on the Home page and shows it with a fade-in animation
+ *   on all other sections.
+ * - Applies different header alignment on Home vs. non-Home views.
  */
 const Header = () => {
   const ContentCtx = useContext(Context);
-  const [currentPage, setCurrentPage] = useState("Home");
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
-    setCurrentPage(text);
   };
+
+  const isHome = ContentCtx.home;
 
   return (
     <header
       className={`${classes.mainHeader} ${
-        currentPage === "Home" ? classes.notHomePage : ""
+        !isHome ? "" : classes.notHomePage
       }`}
     >
-      {currentPage !== "Home" && (
-        <h2 className={classes.fadeInElement}>Pedro Costa</h2>
-      )}
-      <nav>
+      <div
+        className={`${classes.brandWrapper} ${
+          isHome ? classes.brandHidden : classes.fadeInElement
+        }`}
+      >
+        <h2 className={classes.brandTitle}>Pedro Costa</h2>
+      </div>
+      <nav aria-label="Primary navigation">
         <ul className={classes.headerNavUl}>
           <li className={classes.headerNavLi}>
             <button
               className={`${classes.headerNavButton} ${
                 ContentCtx.home ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Home");
               }}
@@ -56,6 +58,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.about ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("About");
               }}
@@ -68,6 +71,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.education ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Education");
               }}
@@ -80,6 +84,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.work ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Work");
               }}
@@ -92,6 +97,7 @@ const Header = () => {
               className={`${classes.headerNavButton} ${
                 ContentCtx.contact ? classes.buttonActive : ""
               }`}
+              type="button"
               onClick={() => {
                 changeTab("Contact");
               }}

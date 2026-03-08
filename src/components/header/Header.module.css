@@ -3,10 +3,31 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  gap: 24px;
+  padding: 20px 28px;
   min-height: 12vh;
   background: linear-gradient(to right, var(--body_background), var(--body_background_end));
   color: var(--body_color);
+  border-bottom: 1px solid color-mix(in srgb, var(--header_color) 18%, transparent);
+  box-shadow: 0 14px 30px -28px color-mix(in srgb, var(--header_color) 55%, transparent);
+}
+
+.brandWrapper {
+  min-width: 170px;
+}
+
+.brandTitle {
+  margin: 0;
+  color: var(--body_color);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.brandHidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .headerNavUl {
@@ -14,30 +35,43 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .headerNavLi {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 0;
 }
 
 .headerNavButton {
-  color: var(--header_color);;
+  color: var(--header_color);
   border: none;
-  padding: 0;
+  border-radius: 999px;
+  padding: 8px 14px;
   background: none;
+  font-size: 0.97rem;
+  font-weight: 500;
+  line-height: 1.1;
+  transition: background-color 0.22s ease, transform 0.22s ease, color 0.22s ease;
 }
 
 .headerNavButton:hover {
   font-weight: 600;
   color: var(--header_color);
-  border-bottom: 2px solid var(--header_color);
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .buttonActive {
   font-weight: 600;
   color: var(--header_color);
-  border-bottom: 2px solid var(--header_color);
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.headerNavButton:focus-visible {
+  outline: 2px solid var(--header_color);
+  outline-offset: 2px;
 }
 
 .notHomePage {

@@ -22,8 +22,7 @@ import Loading from "../../others/Loading/Loading";
  * If 'error' is true, it renders a message indicating that the data could not be loaded.
  * If 'loading' is true, it renders a loading spinner.
  * Otherwise, it renders a list of languages.
- * Each language includes the name and a bar representing the proficiency level.
- * The width of the bar is set to the 'proficiency' property of the language, and the text inside the bar is the 'proficiency' property followed by '%'.
+ * Each language includes the name and a text label representing the proficiency level.
  *
  */
 const Languages = () => {
@@ -68,23 +67,16 @@ const Languages = () => {
     <>
       <h4 className={classes.contentTitle}>Languages</h4>
       <div className={classes.languages}>
-        {languages.map((language) => (
-          <div key={language.name}>
-            <div className={classes.language}>
-              <p>{language.name}</p>
-              <div className={classes.proficiency}>
-                <span
-                  className={classes.bar}
-                  style={{ width: `${language.proficiency}%` }}
-                >
-                  {language.proficiency === 100
-                    ? "Native"
-                    : `${language.proficiency}%`}
-                </span>
+        {languages.map((language) => {
+          return (
+            <div className={classes.language} key={language.name}>
+              <div className={classes.languageHeader}>
+                <p className={classes.name}>{language.name}</p>
+                <p className={classes.value}>{language.proficiency}</p>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </>
   );

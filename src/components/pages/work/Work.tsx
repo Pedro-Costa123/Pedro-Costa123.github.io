@@ -72,54 +72,41 @@ const Work = () => {
   return (
     <>
       <h4 className={classes.contentTitle}>Work</h4>
-
-      {/* Companies */}
-      {companies.map((company) => (
-        <React.Fragment key={company.name}>
-          {/* If more then one position and X company, create a list */}
-          {company.positions.length > 1 ? (
-            <ul className={classes.works}>
-              <div className={classes.companyContainer}>
-                <div className={classes.companyInfo}>
+      <div className={classes.workList}>
+        {companies.map((company) => (
+          <article className={classes.works} key={company.name}>
+            <div className={classes.companyContainer}>
+              <div className={classes.companyInfo}>
+                <div className={classes.companyHeader}>
                   <p className={classes.workTitle}>{company.name}</p>
-                  {company.positions.map((job) => (
-                    <li className={classes.job} key={job.title}>
-                      <p className={classes.workTitleSub}>{job.title}</p>
-                      <JobData job={job} />
-                    </li>
-                  ))}
                 </div>
-                <img
-                  src={company.logo}
-                  alt={company.name}
-                  className={classes.logo}
-                />
-              </div>
-            </ul>
-          ) : (
-            <>
-              {/* If company only got one position */}
-              {company.positions.map((job) => (
-                <div className={classes.works} key={job.title}>
-                  <div className={classes.companyContainer}>
-                    <div className={classes.companyInfo}>
-                      <p className={classes.workTitle}>
-                        {job.title} @ {job.company}
-                      </p>
+                {company.positions.length > 1 ? (
+                  <ul className={classes.jobList}>
+                    {company.positions.map((job) => (
+                      <li className={classes.job} key={job.title}>
+                        <div className={classes.jobHeader}>
+                          <p className={classes.workTitleSub}>{job.title}</p>
+                        </div>
+                        <JobData job={job} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  company.positions.map((job) => (
+                    <div className={classes.singleJob} key={job.title}>
+                      <div className={classes.jobHeader}>
+                        <p className={classes.workTitleSub}>{job.title}</p>
+                      </div>
                       <JobData job={job} />
                     </div>
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className={classes.logo}
-                    />
-                  </div>
-                </div>
-              ))}
-            </>
-          )}
-        </React.Fragment>
-      ))}
+                  ))
+                )}
+              </div>
+              <img src={company.logo} alt={company.name} className={classes.logo} />
+            </div>
+          </article>
+        ))}
+      </div>
     </>
   );
 };

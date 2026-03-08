@@ -1,68 +1,158 @@
 .contentTitle {
-  font-weight: bold;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.workList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  margin-top: 1rem;
 }
 
 .works {
-  margin: 20px 0;
-  padding: 10px;
+  margin: 0;
+  padding: 1.1rem 1.15rem;
   width: 100%;
   box-sizing: border-box;
+  border: 1px solid var(--bar);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--body_background) 88%, transparent),
+    color-mix(in srgb, var(--body_background_end) 28%, transparent)
+  );
+  backdrop-filter: blur(2px);
 }
 
 .workTitle {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--header_color);
+  margin: 0;
 }
 
 .dates {
-  font-size: 14px;
-  color: #8b8b8b;
-  margin-bottom: 5px;
+  font-size: 0.92rem;
+  color: color-mix(in srgb, var(--body_color) 72%, var(--body_background));
+  margin: 0;
 }
 
 .info {
-  font-size: 14px;
+  font-size: 0.88rem;
   color: var(--body_color);
-  margin-bottom: 5px;
+  margin: 0;
+  padding: 0.38rem 0.72rem;
+  border: 1px solid color-mix(in srgb, var(--body_color) 22%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--body_color) 10%, transparent);
 }
 
 .description {
-  font-size: 14px;
+  font-size: 0.97rem;
+  line-height: 1.7;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  word-spacing: -0.05em;
-  margin-bottom: 5px;
+  word-spacing: -0.03em;
+  margin: 0;
 }
 
 .job {
-  margin-left: 25px;
+  margin-left: 0;
+  list-style: none;
+  padding-top: 1.15rem;
+  margin-top: 1.15rem;
+  border-top: 1px solid var(--bar);
 }
 
 .workTitleSub {
-  font-weight: 500;
-  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 1.28rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.jobList {
+  margin: 0;
+  padding: 0;
+}
+
+.singleJob {
+  padding-top: 0.75rem;
+}
+
+.featureItem {
+  margin-bottom: 0.4rem;
 }
 
 .logo {
-  max-height: 40px;
-  width: auto;
+  width: 100%;
+  max-width: 132px;
+  max-height: 72px;
+  justify-self: center;
+  align-self: center;
   object-fit: contain;
 }
 
 .companyContainer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 132px;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .companyInfo {
-  flex: 1;
+  min-width: 0;
+}
+
+.companyHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.sectionLabel {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.jobHeader {
+  display: flex;
+  margin-bottom: 0.85rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.9rem;
+}
+
+.featureSection {
+  margin-top: 1rem;
+}
+
+.sectionLabel {
+  color: var(--header_color);
+  margin-bottom: 0.45rem;
+}
+
+.timeline {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--body_color) 15%, transparent);
 }
 
 /* Mobile */
@@ -71,28 +161,29 @@
     display: none;
   }
   .companyContainer {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    text-align: center;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.25rem;
+    align-items: flex-start;
+    text-align: left;
   }
   .works {
-    padding: 5px 0;
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+    padding: 0.9rem;
   }
-  .works ul {
-    padding: 0;
-    margin: 0;
-  }
-
   .job {
     margin-left: 0;
-    margin-top: 8px;
+    margin-top: 0.9rem;
+    padding-top: 0.9rem;
   }
   .workTitle,
   .workTitleSub {
-    text-align: center;
+    text-align: left;
+  }
+  .companyHeader,
+  .jobHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .workTitleSub {
+    font-size: 1.12rem;
   }
 }

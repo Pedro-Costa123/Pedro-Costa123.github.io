@@ -8,22 +8,29 @@ import classes from "./Home.module.css";
  *
  * The component does not accept any props or manage any state.
  * It is intended to be displayed on the home page of the website.
- *
- * The component returns a div with the class 'homeText'.
- * Inside this div, it renders a h1 element with the text 'Hi, I'm Pedro Costa', a h4 element with the text 'Software Developer', a horizontal rule, and another h4 element with the text 'Welcome to My Website'.
- * The h1 element includes the class 'typing_animation' to create a typing animation effect.
- *
  */
 const Home = () => {
   return (
     <div className={classes.homeText}>
-      <h1 className={classes.typing_animation}>Hi, I'm Pedro Costa</h1>
-      <h4 className={classes.typing_animation}>
-        <span className={classes.showFullLine}>Software Developer | Tech Enthusiast | Problem Solver</span>
-        <span className={classes.showMobileOnly}>Software Developer</span>
-      </h4>
-      <hr />
-      <h4>Welcome to My Website</h4>
+      <header className={classes.header}>
+        <p className={classes.welcomeText}>Welcome to My Website</p>
+
+        <h1 className={classes.typing_animation}>
+          <span className={classes.introText}>Hi, I&apos;m </span>
+          Pedro Costa
+        </h1>
+
+        <h2 className={classes.subtitle}>
+          <span className={classes.showFullLine}>Software Developer | Tech Enthusiast | Problem Solver</span>
+          <span className={classes.showMobileOnly}>Software Developer</span>
+        </h2>
+
+        <div className={classes.dividerRow} aria-hidden="true">
+          <hr className={classes.divider} />
+          <span className={classes.dividerDot} />
+          <hr className={classes.divider} />
+        </div>
+      </header>
     </div>
   );
 };

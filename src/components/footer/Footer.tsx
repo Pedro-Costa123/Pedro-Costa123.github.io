@@ -22,25 +22,33 @@ import classes from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={classes.mainFooter}>
-      <p className={classes.title}>&copy; {getCurrentYear()} Pedro Costa</p>
-      <DarkMode />
-      <div className={classes.social_icons}>
-        <a
-          href="https://www.linkedin.com/in/pedro-m-da-costa/"
-          className={classes.social_icon}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={linkedInLogo} alt="LinkedIn Profile" />
-        </a>
-        <a
-          href="https://github.com/Pedro-Costa123"
-          className={classes.social_icon}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={githubLogo} alt="GitHub Profile" />
-        </a>
+      <div className={classes.meta}>
+        <p className={classes.title}>&copy; {getCurrentYear()} Pedro Costa</p>
+      </div>
+
+      <div className={classes.actions}>
+        <DarkMode />
+
+        <div className={classes.social_icons}>
+          <a
+            href="https://www.linkedin.com/in/pedro-m-da-costa/"
+            className={classes.social_icon}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn Profile"
+          >
+            <img src={linkedInLogo} alt="LinkedIn Profile" />
+          </a>
+          <a
+            href="https://github.com/Pedro-Costa123"
+            className={classes.social_icon}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub Profile"
+          >
+            <img src={githubLogo} alt="GitHub Profile" />
+          </a>
+        </div>
       </div>
     </footer>
   );

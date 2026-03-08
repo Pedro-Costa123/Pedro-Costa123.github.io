@@ -69,9 +69,9 @@ const Certifications = () => {
     <>
       <h4 className={classes.contentTitle}>Certifications</h4>
       <div className={classes.certifications}>
-        <ul>
+        <ul className={classes.list}>
           {certifications.map((certification) => (
-            <li key={certification.name}>
+            <li className={classes.item} key={certification.name}>
               <p className={classes.titleCert}>
                 {certification.url === "" ? (
                   certification.name

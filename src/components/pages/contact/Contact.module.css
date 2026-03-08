@@ -1,56 +1,107 @@
 .contentTitle {
   font-weight: bold;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
 
 .contactForm {
+  width: 100%;
   max-width: 250vh;
-  margin: 25px 0;
-  padding: 10px;
+  margin: 16px 0 25px;
+  padding: 20px;
   background-color: var(--body_background_footer);
-  border-radius: 10px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: grid;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 8px;
 }
 
 .label {
-  display: block;
-  margin-bottom: 10px;
+  margin: 0;
   font-weight: bold;
+  line-height: 1.2;
 }
 
 .input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 12px;
+  margin: 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   box-sizing: border-box;
   background-color: var(--input_background);
   color: var(--body_color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea.input {
+  min-height: 140px;
+  resize: vertical;
 }
 
 .input:focus {
-  outline: none !important;
+  outline: none;
   border: 2px solid var(--button_background);
 }
 
 .submitButton {
   background-color: var(--button_background);
   color: var(--button);
-  padding: 10px 20px;
+  padding: 10px 22px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  justify-self: start;
+  margin-top: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .submitButton:hover {
   background-color: var(--button_hover);
+  transform: translateY(-1px);
+}
+
+.submitButton:focus-visible {
+  outline: 2px solid var(--button_hover);
+  outline-offset: 2px;
 }
 
 .error {
   color: red;
-  font-size: smaller;
-  margin-top: -15px;
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .errorSendingEmail {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contactForm {
+    margin: 14px 0 22px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .fieldGroup {
+    gap: 6px;
+  }
+
+  .input {
+    padding: 11px;
+  }
+
+  textarea.input {
+    min-height: 120px;
+  }
+
+  .submitButton {
+    width: 100%;
+    justify-self: stretch;
+  }
 }
