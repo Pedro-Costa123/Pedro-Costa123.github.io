@@ -1,107 +1,138 @@
 .contentTitle {
-  font-weight: bold;
   margin: 0;
-  letter-spacing: 0.02em;
+  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .contactForm {
   width: 100%;
-  max-width: 250vh;
-  margin: 16px 0 25px;
-  padding: 20px;
-  background-color: var(--body_background_footer);
-  border-radius: 12px;
+  margin: 0.95rem 0 0.6rem;
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card);
   box-sizing: border-box;
   display: grid;
-  gap: 14px;
+  gap: 0.88rem;
 }
 
 .fieldGroup {
   display: grid;
-  gap: 8px;
+  gap: 0.42rem;
 }
 
 .label {
   margin: 0;
-  font-weight: bold;
-  line-height: 1.2;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .input {
   width: 100%;
-  padding: 12px;
+  padding: 0.72rem 0.8rem;
   margin: 0;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
   box-sizing: border-box;
   background-color: var(--input_background);
   color: var(--body_color);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--text-subtle);
 }
 
 textarea.input {
-  min-height: 140px;
+  min-height: 150px;
   resize: vertical;
 }
 
 .input:focus {
   outline: none;
-  border: 2px solid var(--button_background);
+  border-color: color-mix(in srgb, var(--header_color) 44%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus-ring) 30%, transparent);
 }
 
 .submitButton {
   background-color: var(--button_background);
   color: var(--button);
-  padding: 10px 22px;
-  border: none;
-  border-radius: 8px;
+  padding: 0.58rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--button_background) 80%, transparent);
+  border-radius: 999px;
   cursor: pointer;
   justify-self: start;
-  margin-top: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 0.25rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .submitButton:hover {
   background-color: var(--button_hover);
+  border-color: color-mix(in srgb, var(--button_hover) 75%, transparent);
   transform: translateY(-1px);
 }
 
 .submitButton:focus-visible {
-  outline: 2px solid var(--button_hover);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 .error {
-  color: red;
-  font-size: 0.85rem;
+  color: #d45454;
+  font-size: 0.82rem;
   margin: 0;
 }
 
+[data-theme="dark"] .error {
+  color: #ff8f8f;
+}
+
 .errorSendingEmail {
+  margin-top: 1rem;
   text-align: center;
+  color: #d45454;
+}
+
+[data-theme="dark"] .errorSendingEmail {
+  color: #ff8f8f;
 }
 
 @media (max-width: 768px) {
-  .contactForm {
-    margin: 14px 0 22px;
-    padding: 16px;
-    gap: 12px;
+  .contentTitle {
+    font-size: 1.2rem;
   }
 
-  .fieldGroup {
-    gap: 6px;
+  .contactForm {
+    margin-top: 0.82rem;
+    border-radius: 16px;
+    gap: 0.76rem;
+    padding: 0.92rem;
+  }
+
+  .label {
+    font-size: 0.76rem;
   }
 
   .input {
-    padding: 11px;
+    padding: 0.66rem 0.7rem;
   }
 
   textarea.input {
-    min-height: 120px;
+    min-height: 126px;
   }
 
   .submitButton {
     width: 100%;
     justify-self: stretch;
+    padding: 0.66rem 1rem;
   }
 }

@@ -1,16 +1,22 @@
 .contentTitle {
   margin: 0;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
   font-weight: 700;
   text-align: left;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   line-height: 1.2;
 }
 
 .about {
   display: grid;
-  grid-template-columns: minmax(180px, 230px) 1fr;
+  grid-template-columns: minmax(170px, 240px) 1fr;
   align-items: start;
-  gap: clamp(1rem, 2.5vw, 2.25rem);
+  gap: clamp(1.1rem, 2.6vw, 2.2rem);
+  padding: clamp(1.05rem, 2.4vw, 1.7rem);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-card);
 }
 
 .imageContainer {
@@ -22,59 +28,69 @@
 .image {
   display: block;
   width: 100%;
-  max-width: 230px;
+  max-width: 225px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 12px 12px 81px 0px rgba(0, 0, 0, 0.75);
-  transition: transform 0.4s ease;
+  border-radius: 26px;
+  border: 1px solid color-mix(in srgb, var(--header_color) 22%, transparent);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
 }
 
 .image:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.95rem;
 }
 
 .copy {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.84rem;
 }
 
 .justify {
   margin: 0;
+  color: var(--text-muted);
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  word-spacing: -0.05em;
-  line-height: 1.75;
+  word-spacing: -0.04em;
+  line-height: 1.72;
 }
 
 .leadParagraph {
   font-size: 1.03rem;
-  line-height: 1.8;
+  line-height: 1.76;
+  color: var(--body_color);
 }
 
 @media only screen and (max-width: 900px) {
   .about {
-    grid-template-columns: minmax(150px, 190px) 1fr;
-    gap: 1.25rem;
+    grid-template-columns: minmax(140px, 190px) 1fr;
+    gap: 1.1rem;
+    padding: 0.95rem;
+    border-radius: var(--radius-md);
   }
 
   .image {
-    max-width: 190px;
+    max-width: 180px;
+    border-radius: 22px;
   }
 }
 
-/* Mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
+  .contentTitle {
+    font-size: 1.25rem;
+  }
+
   .about {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.86rem;
   }
 
   .imageContainer {
@@ -83,20 +99,13 @@
     display: none;
   }
 
-  .image {
-    max-width: 150px;
-  }
-
-  .textContainer {
-    gap: 0.75rem;
-  }
-
+  .textContainer,
   .copy {
-    gap: 0.75rem;
+    gap: 0.68rem;
   }
 
   .leadParagraph {
-    font-size: 1rem;
+    font-size: 0.98rem;
     line-height: 1.7;
   }
 }

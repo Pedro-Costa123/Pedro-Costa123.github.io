@@ -8,10 +8,11 @@
   height: 30px;
   position: relative;
   display: block;
-  background: #ebebeb;
+  background: color-mix(in srgb, var(--surface-muted) 78%, var(--body_background));
+  border: 1px solid var(--border-soft);
   border-radius: 200px;
-  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 3px 10px color-mix(in srgb, #000 24%, transparent),
+    inset 0 -2px 8px color-mix(in srgb, #fff 20%, transparent);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -23,9 +24,13 @@
   position: absolute;
   top: 3px;
   left: 3px;
-  background: linear-gradient(180deg, #777, #3a3a3a);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--header_color) 45%, #fff),
+    color-mix(in srgb, var(--header_color) 65%, #111)
+  );
   border-radius: 180px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px color-mix(in srgb, #000 26%, transparent);
   transition: 0.3s;
 }
 
@@ -36,13 +41,18 @@
 }
 
 .dark_mode_input:checked + .dark_mode_label {
-  background: #242424;
+  background: color-mix(in srgb, var(--surface-inset) 76%, var(--body_background));
+  border-color: color-mix(in srgb, var(--header_color) 40%, transparent);
 }
 
 .dark_mode_input:checked + .dark_mode_label:after {
   left: 62px;
   transform: translateX(-100%);
-  background: linear-gradient(180deg, #777, #3a3a3a);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--header_color) 48%, #fff),
+    color-mix(in srgb, var(--header_color) 68%, #111)
+  );
 }
 
 .dark_mode_label:active:after {
@@ -58,20 +68,25 @@
 
 .dark_mode_label div.light {
   left: 5px;
-  fill: #fff;
+  fill: color-mix(in srgb, var(--button) 85%, var(--body_color));
   transition: 0.3s;
 }
 
 .dark_mode_label div.dark {
   left: 40px;
-  fill: #7e7e7e;
+  fill: color-mix(in srgb, var(--text-subtle) 90%, var(--body_color));
   transition: 0.3s;
 }
 
 .dark_mode_input:checked + .dark_mode_label div.light {
-  fill: #7e7e7e;
+  fill: color-mix(in srgb, var(--text-subtle) 90%, var(--body_color));
 }
 
 .dark_mode_input:checked + .dark_mode_label div.dark {
-  fill: #fff;
+  fill: color-mix(in srgb, var(--button) 85%, var(--body_color));
+}
+
+.dark_mode_input:focus-visible + .dark_mode_label {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
