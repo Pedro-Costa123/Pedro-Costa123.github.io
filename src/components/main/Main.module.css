@@ -1,44 +1,29 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(to right, var(--body_background), var(--body_background_end));
-  padding: 15px;
   flex: 1;
+  padding: clamp(1rem, 2.8vw, 2rem) clamp(0.9rem, 3vw, 2rem) clamp(1.4rem, 3vw, 2.2rem);
   overflow-y: auto;
   color: var(--body_color);
 }
 
-.centering {
-  padding-top: 15px;
-  padding-left: 5vh;
-  padding-right: 5vh;
+.centering,
+.centeringLanguages {
+  width: min(100%, var(--content-max));
+  margin: 0 auto;
+  padding-top: clamp(1rem, 2vw, 1.4rem);
 }
 
 .centeringLanguages {
-  padding-top: 15px;
-  padding-left: 5vh;
-  padding-right: 5vh;
-}
-
-@media only screen and (min-width: 1200px) {
-  /*Text more centered in width >= 1200px screens*/
-  .centering {
-    padding-left: 50vh;
-    padding-right: 50vh;
-  }
-
-  .centeringLanguages {
-    padding-left: 50vh;
-    padding-right: 50vh;
-  }
+  width: min(100%, var(--content-tight));
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -46,18 +31,25 @@
 }
 
 .fadeInElement {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.48s ease-out;
 }
 
-/* Mobile */
-@media only screen and (max-width: 600px) {
-  .main {
-    min-height: 100vh;
-  }
-
+@media only screen and (max-width: 1024px) {
+  .centering,
   .centeringLanguages {
-    padding-left: 5vh;
-    padding-right: 5vh;
+    width: min(100%, 980px);
   }
 }
-/* Mobile */
+
+@media only screen and (max-width: 768px) {
+  .main {
+    padding: 0.95rem 0.75rem 1.35rem;
+    min-height: calc(100vh - 130px);
+  }
+
+  .centering,
+  .centeringLanguages {
+    width: min(100%, 760px);
+    padding-top: 0.85rem;
+  }
+}

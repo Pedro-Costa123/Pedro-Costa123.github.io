@@ -4,16 +4,33 @@
 }
 
 .header {
-  width: min(92%, 760px);
-  margin: 0 auto;
-  padding: 1.1rem 1.2rem 1.2rem;
+  position: relative;
+  width: min(100%, 900px);
+  margin: clamp(0.2rem, 2vw, 1.2rem) auto 0;
+  padding: clamp(1.2rem, 2.8vw, 2rem);
   text-align: center;
-  border: 1px solid rgba(127, 127, 127, 0.3);
-  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 15% 20%, rgba(127, 127, 127, 0.1), transparent 55%),
-    radial-gradient(circle at 85% 80%, rgba(127, 127, 127, 0.06), transparent 58%);
-  backdrop-filter: blur(2px);
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--header_color) 20%, transparent), transparent 45%),
+    radial-gradient(circle at 87% 82%, color-mix(in srgb, var(--header_color) 14%, transparent), transparent 46%),
+    var(--surface-card);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--header_color) 65%, transparent),
+    transparent
+  );
+  opacity: 0.8;
 }
 
 .header > * {
@@ -22,14 +39,16 @@
 
 .welcomeText {
   display: inline-block;
-  margin-bottom: 0.85rem;
-  padding: 0.2rem 0.58rem;
+  margin-bottom: 0.95rem;
+  padding: 0.24rem 0.62rem;
   border-radius: 999px;
-  border: 1px solid rgba(127, 127, 127, 0.36);
-  font-size: clamp(0.72rem, 0.86vw, 0.8rem);
-  font-weight: 600;
-  letter-spacing: 0.11em;
+  border: 1px solid color-mix(in srgb, var(--header_color) 28%, transparent);
+  font-size: clamp(0.68rem, 1.08vw, 0.79rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--header_color) 9%, transparent);
 }
 
 .typing_animation {
@@ -39,11 +58,12 @@
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
-  line-height: 1.08;
+  line-height: 1.05;
   letter-spacing: 0.005em;
-  font-size: clamp(1.9rem, 3.8vw, 2.9rem);
-  font-weight: 650;
-  animation: typing 5s steps(80, end);
+  font-size: clamp(1.95rem, 4.6vw, 3.3rem);
+  font-weight: 700;
+  color: color-mix(in srgb, var(--body_color) 88%, var(--header_color));
+  animation: typing 3.8s steps(70, end);
 }
 
 .introText {
@@ -52,11 +72,12 @@
 }
 
 .subtitle {
-  margin-top: 0.88rem;
-  font-size: clamp(0.98rem, 1.45vw, 1.12rem);
-  font-weight: 520;
-  line-height: 1.42;
-  letter-spacing: 0.015em;
+  margin-top: 0.95rem;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.012em;
+  color: var(--text-muted);
 }
 
 .dividerRow {
@@ -64,30 +85,30 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   column-gap: 0.56rem;
-  margin-top: 1rem;
+  margin-top: 1.05rem;
 }
 
 .divider {
   width: 100%;
   margin: 0;
   border: 0;
-  border-top: 1px solid rgba(127, 127, 127, 0.33);
+  border-top: 1px solid color-mix(in srgb, var(--header_color) 24%, transparent);
 }
 
 .dividerDot {
-  width: 0.28rem;
-  height: 0.28rem;
+  width: 0.38rem;
+  height: 0.38rem;
   border-radius: 999px;
-  background: currentColor;
-  opacity: 0.75;
+  background: color-mix(in srgb, var(--header_color) 74%, var(--body_color));
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--header_color) 14%, transparent);
 }
 
-/* Typing Animation */
 @keyframes typing {
-  0% {
+  from {
     width: 0;
   }
-  100% {
+
+  to {
     width: 100%;
   }
 }
@@ -95,7 +116,8 @@
 .typing_animation::after {
   content: "|";
   display: inline-block;
-  animation: blink-caret 0.75s infinite;
+  color: color-mix(in srgb, var(--header_color) 78%, var(--body_color));
+  animation: blink-caret 0.78s infinite;
 }
 
 .showFullLine {
@@ -111,46 +133,43 @@
   to {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
 }
 
-/* Mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .header {
-    width: 94%;
-    padding: 0.84rem 0.84rem 0.98rem;
-    border-radius: 15px;
+    width: min(100%, 700px);
+    padding: 1.1rem 0.95rem 1rem;
+    border-radius: 18px;
   }
 
   .welcomeText {
-    margin-bottom: 0.66rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    padding: 0.18rem 0.52rem;
+    margin-bottom: 0.7rem;
   }
 
   .typing_animation {
-    animation: typing 2.5s steps(50, end);
-    font-size: clamp(1.5rem, 8.1vw, 2rem);
-    line-height: 1.12;
+    animation: typing 2.45s steps(50, end);
+    font-size: clamp(1.45rem, 8.1vw, 2.2rem);
+    line-height: 1.1;
   }
 
   .subtitle {
-    margin-top: 0.66rem;
-    font-size: 0.94rem;
-    line-height: 1.38;
+    margin-top: 0.72rem;
+    font-size: 0.96rem;
+    line-height: 1.4;
   }
 
   .dividerRow {
-    column-gap: 0.44rem;
-    margin-top: 0.8rem;
+    margin-top: 0.82rem;
   }
 
   .dividerDot {
-    width: 0.24rem;
-    height: 0.24rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--header_color) 12%, transparent);
   }
 
   .showFullLine {

@@ -20,7 +20,7 @@ import BackgroundParticles from "./components/others/BackgroundParticles/Backgro
  *
  * The component includes a useEffect hook that sets up a media query to detect if the device is a mobile device.
  * If the media query matches, 'isMobile' is set to true. Otherwise, 'isMobile' is set to false.
- * The media query is set to match devices with a screen width of 600px or less.
+ * The media query is set to match devices with a screen width of 768px or less.
  *
  * The useEffect hook also sets up an event listener to update 'isMobile' whenever the screen size changes.
  * The event listener is removed when the component unmounts.
@@ -34,7 +34,7 @@ const App = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 600px)");
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
 
     const handleResize = (event: MediaQueryListEvent) => {

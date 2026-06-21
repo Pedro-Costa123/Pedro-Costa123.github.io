@@ -3,9 +3,11 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 16px 20px;
-  background: linear-gradient(to right, var(--body_background), var(--body_background_end));
+  padding: 14px clamp(0.9rem, 3vw, 2rem) 16px;
+  background: color-mix(in srgb, var(--surface-glass) 80%, var(--body_background_footer));
   color: var(--body_color);
+  border-top: 1px solid var(--border-soft);
+  backdrop-filter: blur(12px);
 }
 
 .meta {
@@ -17,71 +19,83 @@
 .title {
   margin: 0;
   line-height: 1.4;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.015em;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
   margin-left: auto;
 }
 
 .social_icons {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .social_icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  transition: background-color 0.2s ease;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface-muted) 72%, transparent);
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .social_icon > * {
-  height: 26px;
+  height: 20px;
   filter: var(--icons_color);
   transition: transform 0.2s ease;
 }
 
-.social_icon > *:hover {
-  transform: scale(1.08);
-}
-
 .social_icon:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: color-mix(in srgb, var(--header_color) 20%, transparent);
+  border-color: color-mix(in srgb, var(--header_color) 32%, transparent);
+  transform: translateY(-1px);
 }
 
-/* Mobile */
-@media only screen and (max-width: 600px) {
+.social_icon:hover > * {
+  transform: scale(1.06);
+}
+
+.social_icon:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media only screen and (max-width: 768px) {
   .mainFooter {
     justify-content: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     padding: 10px;
-    font-size: 12px;
     min-height: 7vh;
     text-align: center;
   }
 
-  .actions {
-    margin-left: 0;
-    gap: 14px;
+  .title {
+    font-size: 0.82rem;
   }
 
-  .social_icon > * {
-    height: 22px;
+  .actions {
+    margin-left: 0;
+    gap: 12px;
   }
 
   .social_icon {
     width: 34px;
     height: 34px;
   }
+
+  .social_icon > * {
+    height: 18px;
+  }
 }
-/* Mobile */
