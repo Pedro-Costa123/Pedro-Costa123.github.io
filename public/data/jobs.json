@@ -9,6 +9,17 @@
           "company": "Critical TechWorks",
           "type": "Full-time",
           "location": "Lisbon, Portugal",
+          "keyFeatures": [
+            "Maintaining and improving monolithic backend services built with Jakarta EE and Payara Server, focusing on stability and performance optimization",
+            "Contributing to the migration of legacy systems into more scalable microservices architectures using Quarkus and cloud-native solutions",
+            "Developing and maintaining backend integrations and distributed systems using Java, SQL, and asynchronous communication patterns",
+            "Working with multiple AWS services including S3, VPC, RDS, API Gateway, SQS, DynamoDB, Lambda, and ECS",
+            "Deploying and managing containerized applications using Kubernetes",
+            "Participating in production support, incident resolution, performance analysis, and 24/7 on-call rotations for enterprise-scale systems, troubleshooting critical issues and ensuring system reliability and availability",
+            "Onboarding and mentoring new team members, supporting knowledge sharing and team integration",
+            "Contributing to code quality improvements using SonarQube and following agile methodologies with Scrum",
+            "Leveraging AI-assisted development tools to accelerate debugging, technical analysis, and software delivery, workflows"
+          ],
           "startMonth": "October",
           "startYear": 2025,
           "endMonth": "",
@@ -18,7 +29,7 @@
     },
     {
       "name": "Capgemini Portugal",
-      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Capgemini_logo.svg/1280px-Capgemini_logo.svg.png",
+      "logo": "https://www.capgemini.com/pt-en/wp-content/themes/capgemini2025/assets/images/capgeminiBlue.svg",
       "positions": [
         {
           "title": "Full Stack Developer",
