@@ -1,28 +1,28 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .educationList {
-  margin-top: 0.95rem;
+  margin-top: 1.15rem;
   display: grid;
   gap: 0.88rem;
 }
 
 .education {
-  padding: 1.1rem 1.15rem;
+  padding: 1.3rem 1.4rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-soft);
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
 }
 
 .education:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
 }
 
 .university {

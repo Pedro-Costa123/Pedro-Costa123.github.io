@@ -1,28 +1,28 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .languages {
-  margin-top: 0.95rem;
+  margin-top: 1.15rem;
   display: grid;
-  gap: 0.88rem;
-}
-
-.language {
-  padding: 1.02rem 1.1rem;
+  gap: 0;
+  padding: 0.25rem 1.25rem;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
-.language:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
+.language {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.language:last-child {
+  border-bottom: 0;
 }
 
 .languageHeader {
@@ -44,7 +44,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-radius: 999px;
+  border-radius: 6px;
   border: 1px solid color-mix(in srgb, var(--header_color) 26%, transparent);
   background: color-mix(in srgb, var(--header_color) 12%, transparent);
   padding: 0.34rem 0.66rem;
@@ -62,12 +62,12 @@
 
   .languages {
     margin-top: 0.82rem;
-    gap: 0.72rem;
+    gap: 0;
+    padding: 0.15rem 0.9rem;
   }
 
   .language {
-    padding: 0.9rem;
-    border-radius: 14px;
+    padding: 0.85rem 0;
   }
 
   .name {

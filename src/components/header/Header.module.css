@@ -6,46 +6,56 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding: 16px clamp(1rem, 3vw, 2rem);
-  min-height: 76px;
-  background: color-mix(in srgb, var(--surface-glass) 84%, var(--body_background));
+  gap: 32px;
+  padding: 14px clamp(1.25rem, 4vw, 3rem);
+  min-height: 72px;
+  background: var(--surface-glass);
   border-bottom: 1px solid var(--border-soft);
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-soft);
 }
 
-.brandWrapper {
-  min-width: 172px;
-  transition: opacity 0.22s ease;
+.brandButton {
+  display: grid;
+  gap: 2px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .brandTitle {
-  margin: 0;
   color: var(--body_color);
-  font-size: clamp(1.35rem, 2.3vw, 1.65rem);
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.12rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
-.brandHidden {
-  opacity: 0;
-  pointer-events: none;
+.brandRole {
+  color: var(--text-subtle);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brandButton:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 5px;
+  border-radius: 4px;
 }
 
 .headerNavUl {
   list-style: none;
   margin: 0;
-  padding: 6px;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 6px;
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--surface-muted) 86%, transparent);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 26%, transparent);
+  gap: 4px;
 }
 
 .headerNavLi {
@@ -55,49 +65,30 @@
 .headerNavButton {
   color: var(--text-muted);
   border: none;
-  border-radius: 999px;
-  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  padding: 10px 13px;
   background: transparent;
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  transition: background-color 0.22s ease, transform 0.22s ease, color 0.22s ease;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .headerNavButton:hover {
   color: var(--body_color);
-  background-color: color-mix(in srgb, var(--header_color) 15%, transparent);
-  transform: translateY(-1px);
+  background-color: var(--surface-hover);
 }
 
 .buttonActive {
-  color: var(--body_color);
-  background-color: color-mix(in srgb, var(--header_color) 24%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--header_color) 35%, transparent);
+  color: var(--header_color);
+  background-color: color-mix(in srgb, var(--header_color) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--header_color) 24%, transparent);
 }
 
 .headerNavButton:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
-}
-
-.notHomePage {
-  justify-content: flex-end;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeInElement {
-  animation: fadeIn 0.35s ease-out;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -106,7 +97,7 @@
   }
 
   .headerNavButton {
-    padding: 8px 12px;
+    padding: 8px 10px;
     font-size: 0.86rem;
   }
 }

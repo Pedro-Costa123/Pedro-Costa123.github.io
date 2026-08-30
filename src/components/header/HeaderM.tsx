@@ -36,9 +36,14 @@ const Header = () => {
   return (
     <header className={classes.mainHeader}>
       <Navbar collapseOnSelect expand="sm" className={classes.headerNavUl}>
-        <Navbar.Brand>
-          <h1 className={classes.brandTitle}>Pedro Costa</h1>
-        </Navbar.Brand>
+        <button
+          className={classes.brandButton}
+          type="button"
+          onClick={() => changeTab("Home")}
+          aria-label="Go to home"
+        >
+          <span className={classes.brandTitle}>Pedro Costa</span>
+        </button>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className={classes.toggleButton} />
         <Navbar.Collapse id="basic-navbar-nav" className={classes.collapsePanel}>
           <Nav className={classes.navLinks}>
@@ -53,6 +58,7 @@ const Header = () => {
                     event.preventDefault();
                     changeTab(item.value);
                   }}
+                  aria-current={isActive ? "page" : undefined}
                   className={`${classes.headerNavLi} ${
                     isActive ? classes.activeLink : ""
                   }`}

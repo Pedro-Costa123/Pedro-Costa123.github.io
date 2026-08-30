@@ -46,7 +46,7 @@ const Education = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Education</h4>
+        <h1 className={classes.contentTitle}>Education</h1>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -57,7 +57,7 @@ const Education = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Education</h4>
+        <h1 className={classes.contentTitle}>Education</h1>
         <Loading />
       </>
     );
@@ -65,7 +65,7 @@ const Education = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Education</h4>
+      <h1 className={classes.contentTitle}>Education</h1>
       <div className={classes.educationList}>
         {schooling.map((schooling) => (
           <article

@@ -48,7 +48,7 @@ const Certifications = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Certifications</h4>
+        <h2 className={classes.contentTitle}>Certifications</h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -59,7 +59,7 @@ const Certifications = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Certifications</h4>
+        <h2 className={classes.contentTitle}>Certifications</h2>
         <Loading />
       </>
     );
@@ -67,7 +67,7 @@ const Certifications = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Certifications</h4>
+      <h2 className={classes.contentTitle}>Certifications</h2>
       <div className={classes.certifications}>
         <ul className={classes.list}>
           {certifications.map((certification) => (

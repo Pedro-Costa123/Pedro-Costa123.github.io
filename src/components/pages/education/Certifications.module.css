@@ -1,12 +1,17 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .certifications {
-  margin-top: 0.95rem;
+  margin-top: 1.15rem;
+  padding: 0.25rem 1.25rem;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-soft);
 }
 
 .list {
@@ -14,21 +19,16 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.84rem;
+  gap: 0;
 }
 
 .item {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
-  padding: 1.05rem 1.1rem;
-  background: var(--surface-card);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1rem 0;
 }
 
-.item:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
+.item:last-child {
+  border-bottom: 0;
 }
 
 .titleCert {
@@ -41,13 +41,19 @@
 .titleCert a {
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid color-mix(in srgb, var(--header_color) 28%, transparent);
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .titleCert a:hover {
   color: var(--header_color);
   border-color: color-mix(in srgb, var(--header_color) 42%, transparent);
+}
+
+.titleCert a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 .dateCert {
@@ -69,15 +75,15 @@
 
   .certifications {
     margin-top: 0.82rem;
+    padding: 0.15rem 0.9rem;
   }
 
   .list {
-    gap: 0.72rem;
+    gap: 0;
   }
 
   .item {
-    padding: 0.9rem;
-    border-radius: 14px;
+    padding: 0.85rem 0;
   }
 
   .titleCert {

@@ -32,8 +32,8 @@ const JobData = ({ job }: JobDataProps) => {
       {job.description && <p className={classes.description}>{job.description}</p>}
       {job.keyFeatures && job.keyFeatures.length > 0 && (
         <section className={classes.featureSection}>
-          <p className={classes.sectionLabel}>Key Features</p>
-          <ul className={classes.description}>
+          <h4 className={classes.sectionLabel}>Responsibilities</h4>
+          <ul className={`${classes.description} ${classes.featureList}`}>
             {job.keyFeatures.map((feature, index) => (
               <li key={index} className={classes.featureItem}>
                 {feature}

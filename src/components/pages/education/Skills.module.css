@@ -1,23 +1,28 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .skills {
-  margin-top: 0.95rem;
+  margin-top: 1.15rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.88rem;
+  gap: 1rem;
 }
 
 .skillGroup {
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
-  padding: 1rem 1.05rem;
+  padding: 1.2rem 1.25rem;
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
+  transition: border-color 0.18s ease;
+}
+
+.skillGroup:hover {
+  border-color: var(--border-strong);
 }
 
 .groupTitle {
@@ -44,13 +49,13 @@
   gap: 0.54rem;
   font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.3rem 0.28rem;
-  border-radius: 8px;
+  padding: 0.36rem 0.4rem;
+  border-radius: 6px;
   transition: background-color 0.2s ease;
 }
 
 .skillItem:hover {
-  background-color: color-mix(in srgb, var(--header_color) 13%, transparent);
+  background-color: var(--surface-hover);
 }
 
 .logo {

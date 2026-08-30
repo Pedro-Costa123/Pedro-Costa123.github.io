@@ -13,16 +13,15 @@ const Home = () => {
   return (
     <div className={classes.homeText}>
       <header className={classes.header}>
-        <p className={classes.welcomeText}>Welcome to My Website</p>
+        <p className={classes.welcomeText}>Software Engineer · Lisbon, Portugal</p>
 
         <h1 className={classes.typing_animation}>
-          <span className={classes.introText}>Hi, I&apos;m </span>
           Pedro Costa
         </h1>
 
         <h2 className={classes.subtitle}>
-          <span className={classes.showFullLine}>Software Developer | Tech Enthusiast | Problem Solver</span>
-          <span className={classes.showMobileOnly}>Software Developer</span>
+          <span className={classes.showFullLine}>Backend systems · Cloud integrations · Production reliability</span>
+          <span className={classes.showMobileOnly}>Backend and cloud engineering</span>
         </h2>
 
         <div className={classes.dividerRow} aria-hidden="true">

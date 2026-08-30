@@ -1,7 +1,7 @@
 {
   "about": [
     "Software Engineer focused on backend and cloud development, with experience in Java, AWS, Kubernetes, Quarkus, and enterprise-scale systems.",
-    "Passionate about solving complex problems, building reliable software, and continuously learning new technologies.",
+    "My work includes maintaining Java services, moving legacy workloads toward Quarkus-based services, integrating AWS infrastructure, and supporting production incidents and on-call operations.",
     "Currently working at Critical Techworks as a Full Stack Developer."
   ]
 }

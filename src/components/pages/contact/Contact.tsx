@@ -99,8 +99,8 @@ const Contact = () => {
   }
 
   return (
-    <>
-      <h4 className={classes.contentTitle}>Contact</h4>
+    <section className={classes.contact}>
+      <h1 className={classes.contentTitle}>Contact</h1>
       <form className={classes.contactForm} onSubmit={handleSubmit} noValidate>
         <div className={classes.fieldGroup}>
           <label className={classes.label} htmlFor="email">
@@ -114,9 +114,11 @@ const Contact = () => {
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             required
+            aria-invalid={formValidation.email}
+            aria-describedby={formValidation.email ? "email-error" : undefined}
           />
           {formValidation.email && (
-            <p className={classes.error}>Please enter a valid email address</p>
+            <p className={classes.error} id="email-error">Please enter a valid email address</p>
           )}
         </div>
         <div className={classes.fieldGroup}>
@@ -131,9 +133,11 @@ const Contact = () => {
             value={subject}
             onChange={(event) => setSubject(event.target.value)}
             required
+            aria-invalid={formValidation.subject}
+            aria-describedby={formValidation.subject ? "subject-error" : undefined}
           />
           {formValidation.subject && (
-            <p className={classes.error}>Subject cannot be empty</p>
+            <p className={classes.error} id="subject-error">Subject cannot be empty</p>
           )}
         </div>
         <div className={classes.fieldGroup}>
@@ -147,14 +151,16 @@ const Contact = () => {
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             required
+            aria-invalid={formValidation.message}
+            aria-describedby={formValidation.message ? "message-error" : undefined}
           ></textarea>
           {formValidation.message && (
-            <p className={classes.error}>Message cannot be empty</p>
+            <p className={classes.error} id="message-error">Message cannot be empty</p>
           )}
         </div>
-        <input className={classes.submitButton} type="submit" value="Submit" />
+        <button className={classes.submitButton} type="submit">Send message</button>
       </form>
-    </>
+    </section>
   );
 };
 

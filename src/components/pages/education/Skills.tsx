@@ -48,7 +48,7 @@ const Skills = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Skills</h4>
+        <h2 className={classes.contentTitle}>Skills</h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -59,7 +59,7 @@ const Skills = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Skills</h4>
+        <h2 className={classes.contentTitle}>Skills</h2>
         <Loading />
       </>
     );
@@ -67,10 +67,10 @@ const Skills = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Skills</h4>
+      <h2 className={classes.contentTitle}>Skills</h2>
       <div className={classes.skills}>
         <section className={classes.skillGroup}>
-          <h5 className={classes.groupTitle}>Frameworks</h5>
+          <h3 className={classes.groupTitle}>Frameworks</h3>
           <ul className={classes.list}>
             {frameworks.map((framework) => (
               <li className={classes.skillItem} key={framework.name}>
@@ -85,7 +85,7 @@ const Skills = () => {
           </ul>
         </section>
         <section className={classes.skillGroup}>
-          <h5 className={classes.groupTitle}>Programming Languages</h5>
+          <h3 className={classes.groupTitle}>Programming Languages</h3>
           <ul className={classes.list}>
             {pLanguages.map((language) => (
               <li className={classes.skillItem} key={language.name}>

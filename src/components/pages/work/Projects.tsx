@@ -47,7 +47,7 @@ const Projects = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Projects</h4>
+        <h2 className={classes.contentTitle}>Projects</h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -58,7 +58,7 @@ const Projects = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Projects</h4>
+        <h2 className={classes.contentTitle}>Projects</h2>
         <Loading />
       </>
     );
@@ -66,12 +66,12 @@ const Projects = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Projects</h4>
+      <h2 className={classes.contentTitle}>Projects</h2>
       <div className={classes.projectsList}>
         {projects.map((project) => (
           <article className={classes.projects} key={project.name}>
             <div className={classes.projectHeader}>
-              <p className={classes.projectTitle}>{project.name}</p>
+              <h3 className={classes.projectTitle}>{project.name}</h3>
               {project.endMonth === "" && project.endYear === 0 ? (
                 <p className={classes.dates}>
                   {project.startMonth} {project.startYear} - Present

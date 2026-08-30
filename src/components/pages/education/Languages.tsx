@@ -46,7 +46,7 @@ const Languages = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Languages</h4>
+        <h2 className={classes.contentTitle}>Languages</h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -57,7 +57,7 @@ const Languages = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Languages</h4>
+        <h2 className={classes.contentTitle}>Languages</h2>
         <Loading />
       </>
     );
@@ -65,7 +65,7 @@ const Languages = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Languages</h4>
+      <h2 className={classes.contentTitle}>Languages</h2>
       <div className={classes.languages}>
         {languages.map((language) => {
           return (

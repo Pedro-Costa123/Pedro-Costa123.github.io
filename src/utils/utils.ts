@@ -41,15 +41,18 @@ export const workTime = (
   );
 
   const yearsPassed = Math.floor(monthsPassed / 12);
+  const remainingMonths = monthsPassed % 12;
+  const yearLabel = yearsPassed === 1 ? "year" : "years";
+  const monthLabel = remainingMonths === 1 ? "month" : "months";
 
   if (monthsPassed === 1) {
     return `1 month`;
   } else if (yearsPassed === 0) {
     return `${monthsPassed} months`;
   } else if (monthsPassed % 12 === 0) {
-    return `${yearsPassed} years`;
+    return `${yearsPassed} ${yearLabel}`;
   } else {
-    return `${yearsPassed} years and ${monthsPassed % 12} months`;
+    return `${yearsPassed} ${yearLabel} and ${remainingMonths} ${monthLabel}`;
   }
 };
 

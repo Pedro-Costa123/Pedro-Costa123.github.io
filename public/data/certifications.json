@@ -1,7 +1,7 @@
 {
   "certifications": [
     {
-      "name": "Github Copilot",
+      "name": "GitHub Copilot",
       "month": "Apr",
       "year": 2025,
       "monthExpiration": "Apr",
@@ -9,8 +9,8 @@
       "url": "https://www.credly.com/badges/9f9b505c-308a-4835-bbf6-b6430a581728/linked_in_profile"
     },
     {
-      "name": "Professional Scrum Master II (PSM I)",
-      "month": "Fev",
+      "name": "Professional Scrum Master II (PSM II)",
+      "month": "Feb",
       "year": 2025,
       "monthExpiration": "",
       "yearExpiration": 0,
@@ -26,7 +26,7 @@
     },
     {
       "name": "Professional Scrum Developer™ I (PSD I)",
-      "month": "Fev",
+      "month": "Feb",
       "year": 2024,
       "monthExpiration": "",
       "yearExpiration": 0,
@@ -74,7 +74,7 @@
       "url": ""
     },
     {
-      "name": "Cambrige English Level 1 Certificate in ESOL International (First) - B2",
+      "name": "Cambridge English Level 1 Certificate in ESOL International (First) - B2",
       "month": "Jun",
       "year": 2018,
       "monthExpiration": "",

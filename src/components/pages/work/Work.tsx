@@ -52,7 +52,7 @@ const Work = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Work</h4>
+        <h1 className={classes.contentTitle}>Work</h1>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -63,7 +63,7 @@ const Work = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Work</h4>
+        <h1 className={classes.contentTitle}>Work</h1>
         <LoadingSpinner />
       </>
     );
@@ -71,21 +71,21 @@ const Work = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Work</h4>
+      <h1 className={classes.contentTitle}>Work</h1>
       <div className={classes.workList}>
         {companies.map((company) => (
           <article className={classes.works} key={company.name}>
             <div className={classes.companyContainer}>
               <div className={classes.companyInfo}>
                 <div className={classes.companyHeader}>
-                  <p className={classes.workTitle}>{company.name}</p>
+                  <h2 className={classes.workTitle}>{company.name}</h2>
                 </div>
                 {company.positions.length > 1 ? (
                   <ul className={classes.jobList}>
                     {company.positions.map((job) => (
                       <li className={classes.job} key={job.title}>
                         <div className={classes.jobHeader}>
-                          <p className={classes.workTitleSub}>{job.title}</p>
+                          <h3 className={classes.workTitleSub}>{job.title}</h3>
                         </div>
                         <JobData job={job} />
                       </li>
@@ -95,7 +95,7 @@ const Work = () => {
                   company.positions.map((job) => (
                     <div className={classes.singleJob} key={job.title}>
                       <div className={classes.jobHeader}>
-                        <p className={classes.workTitleSub}>{job.title}</p>
+                        <h3 className={classes.workTitleSub}>{job.title}</h3>
                       </div>
                       <JobData job={job} />
                     </div>

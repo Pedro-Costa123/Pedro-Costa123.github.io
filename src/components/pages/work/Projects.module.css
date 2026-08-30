@@ -1,29 +1,29 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .projectsList {
   display: grid;
-  gap: 0.88rem;
-  margin-top: 0.95rem;
+  gap: 1rem;
+  margin-top: 1.15rem;
 }
 
 .projects {
   margin: 0;
-  padding: 1.08rem 1.12rem;
+  padding: clamp(1.2rem, 2.5vw, 1.55rem);
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
 }
 
 .projects:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
 }
 
 .projectHeader {
@@ -52,10 +52,7 @@
   font-size: 0.95rem;
   line-height: 1.68;
   color: var(--text-muted);
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  word-spacing: -0.02em;
+  max-width: 76ch;
 }
 
 .repositories {
@@ -95,7 +92,7 @@
   color: var(--text-muted);
   text-decoration: none;
   border: 1px solid color-mix(in srgb, var(--header_color) 26%, transparent);
-  border-radius: 999px;
+  border-radius: 6px;
   padding: 0.36rem 0.62rem;
   background: color-mix(in srgb, var(--header_color) 10%, transparent);
   transition: background-color 0.2s ease, color 0.2s ease;

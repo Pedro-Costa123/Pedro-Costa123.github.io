@@ -46,7 +46,7 @@ const About = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>About Me</h4>
+        <h1 className={classes.contentTitle}>About Me</h1>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -57,7 +57,7 @@ const About = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>About Me</h4>
+        <h1 className={classes.contentTitle}>About Me</h1>
         <Loading />
       </>
     );
@@ -70,7 +70,7 @@ const About = () => {
           <img className={classes.image} src={photo} alt="Pedro Costa" />
         </figure>
         <div className={classes.textContainer}>
-          <h4 className={classes.contentTitle}>About Me</h4>
+          <h1 className={classes.contentTitle}>About Me</h1>
           <div className={classes.copy}>
             {about.map((paragraph, index) => (
               <p

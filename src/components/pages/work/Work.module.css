@@ -1,19 +1,19 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .workList {
   display: grid;
-  gap: 0.88rem;
-  margin-top: 0.95rem;
+  gap: 1rem;
+  margin-top: 1.15rem;
 }
 
 .works {
   margin: 0;
-  padding: 1.1rem 1.15rem;
+  padding: clamp(1.2rem, 2.5vw, 1.65rem);
   width: 100%;
   box-sizing: border-box;
   border: 1px solid var(--border-soft);
@@ -62,7 +62,7 @@
   justify-self: end;
   align-self: start;
   object-fit: contain;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.14));
+  filter: none;
 }
 
 .jobList {
@@ -103,7 +103,7 @@
   color: var(--text-muted);
   padding: 0.32rem 0.58rem;
   border: 1px solid color-mix(in srgb, var(--header_color) 24%, transparent);
-  border-radius: 999px;
+  border-radius: 6px;
   background: color-mix(in srgb, var(--header_color) 10%, transparent);
 }
 
@@ -112,10 +112,7 @@
   font-size: 0.95rem;
   line-height: 1.68;
   color: var(--text-muted);
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  word-spacing: -0.02em;
+  max-width: 76ch;
 }
 
 ul.description {
@@ -127,8 +124,19 @@ ul.description {
   margin-top: 0.84rem;
 }
 
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1.6rem;
+  row-gap: 0.2rem;
+}
+
 .featureItem {
   margin-bottom: 0.38rem;
+}
+
+.featureItem::marker {
+  color: var(--header_color);
 }
 
 .sectionLabel {
@@ -174,13 +182,15 @@ ul.description {
     border-radius: 14px;
   }
 
-  .logo {
-    display: none;
+  .companyContainer {
+    grid-template-columns: minmax(0, 1fr) 76px;
+    gap: 0.75rem;
   }
 
-  .companyContainer {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.2rem;
+  .logo {
+    display: block;
+    max-width: 76px;
+    max-height: 42px;
   }
 
   .job {
@@ -195,6 +205,15 @@ ul.description {
   .description {
     font-size: 0.92rem;
     line-height: 1.63;
+  }
+
+  ul.description {
+    padding-left: 1rem;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+    row-gap: 0;
   }
 
   .dates {

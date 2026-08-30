@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "Pedro Costa - Portfolio Website",
-      "description": "My own portfolio website, built with React.js and TypeScript, deployed using Github pages with a custom domain. Using my own CSS classes, and a bit of Bootstrap. With the help of AWS (Lambda, SES, API), the user can send me emails just by filling a contact form.",
+      "description": "Personal portfolio built with React and TypeScript, deployed through GitHub Pages with a custom domain. The contact form integrates with AWS API Gateway, Lambda, and SES.",
       "startMonth": "Feb",
       "startYear": 2023,
       "endMonth": "",
@@ -16,7 +16,7 @@
     },
     {
       "name": "BestRide (startup) / Final Year Project",
-      "description": "BestRide's primary goal was to solve problems in the Tuk Tuk business - a business that was introduced in Lisbon for the relevance of tourism in the region. Problems ranged from lack of regulation, unfair prices and stabilization of human resources. All of this solved with the help of two mobile apps, one for tourists, one for drivers/companies. My role in this project was as a frontend developer using frameworks such as: Angular, Ionic. And AWS to host both apps and automatically start a new deploy when a push has been performed. Grade: 15 (1-20)",
+      "description": "Final-year project addressing operational challenges in Lisbon's Tuk Tuk sector through separate mobile applications for tourists and drivers or companies. I developed the frontend with Angular and Ionic and used AWS to host both applications and automate deployments. Grade: 15 (1-20).",
       "startMonth": "Sep",
       "startYear": 2021,
       "endMonth": "Sep",

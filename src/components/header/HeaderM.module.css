@@ -3,26 +3,32 @@
   top: 0;
   z-index: 55;
   display: block;
-  padding: 10px 10px 8px;
-  background: color-mix(in srgb, var(--surface-glass) 82%, var(--body_background));
+  padding: 8px;
+  background: var(--surface-glass);
   border-bottom: 1px solid var(--border-soft);
-  backdrop-filter: blur(12px);
 }
 
 .headerNavUl {
   margin: 0;
-  padding: 8px 10px;
-  border-radius: 16px;
-  border: 1px solid var(--border-soft);
-  background: color-mix(in srgb, var(--surface-muted) 88%, transparent);
+  padding: 9px 10px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--surface-glass);
   width: 100%;
-  box-shadow: var(--shadow-soft);
+}
+
+.brandButton {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
 }
 
 .brandTitle {
   margin: 0;
   color: var(--body_color);
-  font-size: 1.28rem;
+  font-size: 1.12rem;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
@@ -30,25 +36,24 @@
 .headerNavLi {
   text-align: left;
   color: var(--text-muted) !important;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 9px 10px !important;
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1.2;
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  transition: background-color 0.18s ease, color 0.18s ease;
 }
 
 .headerNavLi:hover,
 .headerNavLi:focus-visible {
   color: var(--body_color) !important;
-  background-color: color-mix(in srgb, var(--header_color) 15%, transparent);
-  transform: translateX(2px);
+  background-color: var(--surface-hover);
 }
 
 .activeLink {
-  color: var(--body_color) !important;
-  background-color: color-mix(in srgb, var(--header_color) 24%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--header_color) 30%, transparent);
+  color: var(--header_color) !important;
+  background-color: color-mix(in srgb, var(--header_color) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--header_color) 24%, transparent);
 }
 
 .toggleButton {
@@ -60,7 +65,9 @@
 }
 
 .collapsePanel {
-  margin-top: 10px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
 }
 
 .navLinks {
