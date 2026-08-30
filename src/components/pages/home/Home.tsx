@@ -12,24 +12,27 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <div className={classes.homeText}>
-      <header className={classes.header}>
-        <p className={classes.welcomeText}>Software Engineer · Lisbon, Portugal</p>
+      <section className={classes.header} aria-labelledby="hero-title">
+        <div className={classes.heroContent}>
+          <p className={classes.welcomeText}>
+            Software Engineer · Lisbon, Portugal
+          </p>
 
-        <h1 className={classes.typing_animation}>
-          Pedro Costa
-        </h1>
+          <h1 className={classes.headline} id="hero-title">
+            Pedro Costa
+          </h1>
 
-        <h2 className={classes.subtitle}>
-          <span className={classes.showFullLine}>Backend systems · Cloud integrations · Production reliability</span>
-          <span className={classes.showMobileOnly}>Backend and cloud engineering</span>
-        </h2>
+          <p className={classes.focus}>
+            Backend systems, cloud integrations, and production support.
+          </p>
 
-        <div className={classes.dividerRow} aria-hidden="true">
-          <hr className={classes.divider} />
-          <span className={classes.dividerDot} />
-          <hr className={classes.divider} />
+          <p className={classes.summary}>
+            I work with Java, Quarkus, AWS, Angular, and React—building APIs,
+            maintaining production services, and handling incidents and on-call
+            operations.
+          </p>
         </div>
-      </header>
+      </section>
     </div>
   );
 };
