@@ -1,11 +1,7 @@
-class Skill {
+type SkillGroup = {
   name: string;
-  logo: string;
+  description: string;
+  skills: string[];
+};
 
-  constructor(name: string, logo: string) {
-    this.name = name;
-    this.logo = logo;
-  }
-}
-
-export default Skill;
+export default SkillGroup;

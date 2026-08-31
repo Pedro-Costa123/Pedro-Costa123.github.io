@@ -1,33 +1,11 @@
 import { useEffect, useState } from "react";
-import classes from "./Skills.module.css";
-import Skill from "../../../models/skill";
+import SkillGroup from "../../../models/skill";
 import Loading from "../../others/Loading/Loading";
+import classes from "./Skills.module.css";
 
-/**
- * Skills Component
- *
- * This component fetches and displays a list of programming languages and frameworks.
- * It uses the useState and useEffect hooks from React, and CSS modules for styling.
- *
- * The component maintains five state variables: 'pLanguages', 'frameworks', 'loading', and 'error'.
- * 'pLanguages' and 'frameworks' are arrays of Skill objects representing programming languages and frameworks respectively.
- * 'loading' is a boolean indicating whether the data is currently being fetched.
- * 'error' is a boolean indicating whether an error occurred while fetching the data.
- *
- * The component includes a useEffect hook that fetches the data from 'data/skills.json' when the component mounts.
- * If the fetch is successful, 'pLanguages' is set to the 'programming_languages' property of the data, 'frameworks' is set to the 'frameworks' property of the data, and 'loading' is set to false.
- * If the fetch fails, 'error' is set to true, and 'loading' is set to false.
- *
- * The component conditionally renders different content based on the state.
- * If 'error' is true, it renders a message indicating that the data could not be loaded.
- * If 'loading' is true, it renders a loading spinner.
- * Otherwise, it renders a list of programming languages and a list of frameworks.
- * Each item in the list includes an image and the name of the programming language or framework.
- *
- */
+/** Loads and presents technologies by how they are used in engineering work. */
 const Skills = () => {
-  const [pLanguages, setPLanguages] = useState([] as Skill[]);
-  const [frameworks, setFrameworks] = useState([] as Skill[]);
+  const [groups, setGroups] = useState<SkillGroup[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -35,11 +13,10 @@ const Skills = () => {
     fetch("data/skills.json")
       .then((res) => res.json())
       .then((data) => {
-        setPLanguages(data.programming_languages);
-        setFrameworks(data.frameworks);
+        setGroups(data.groups);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
         setLoading(false);
       });
@@ -47,60 +24,59 @@ const Skills = () => {
 
   if (error) {
     return (
-      <>
-        <h2 className={classes.contentTitle}>Skills</h2>
+      <section aria-labelledby="skills-heading">
+        <h2 className={classes.contentTitle} id="skills-heading">
+          Skills &amp; Tech Stack
+        </h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
-      </>
+      </section>
     );
   }
 
   if (loading) {
     return (
-      <>
-        <h2 className={classes.contentTitle}>Skills</h2>
+      <section aria-labelledby="skills-heading">
+        <h2 className={classes.contentTitle} id="skills-heading">
+          Skills &amp; Tech Stack
+        </h2>
         <Loading />
-      </>
+      </section>
     );
   }
 
   return (
-    <>
-      <h2 className={classes.contentTitle}>Skills</h2>
-      <div className={classes.skills}>
-        <section className={classes.skillGroup}>
-          <h3 className={classes.groupTitle}>Frameworks</h3>
-          <ul className={classes.list}>
-            {frameworks.map((framework) => (
-              <li className={classes.skillItem} key={framework.name}>
-                <img
-                  className={classes.logo}
-                  src={framework.logo}
-                  alt={framework.name}
-                />
-                <span>{framework.name}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section className={classes.skillGroup}>
-          <h3 className={classes.groupTitle}>Programming Languages</h3>
-          <ul className={classes.list}>
-            {pLanguages.map((language) => (
-              <li className={classes.skillItem} key={language.name}>
-                <img
-                  className={classes.logo}
-                  src={language.logo}
-                  alt={language.name}
-                />
-                <span>{language.name}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+    <section aria-labelledby="skills-heading">
+      <h2 className={classes.contentTitle} id="skills-heading">
+        Skills &amp; Tech Stack
+      </h2>
+      <p className={classes.sectionIntro}>
+        Technologies grouped by the role they play in delivery, from application
+        code to production support.
+      </p>
+
+      <div className={classes.skillsMatrix}>
+        {groups.map((group, index) => (
+          <section className={classes.skillGroup} key={group.name}>
+            <header className={classes.groupHeader}>
+              <span className={classes.groupIndex} aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className={classes.groupTitle}>{group.name}</h3>
+            </header>
+            <p className={classes.groupDescription}>{group.description}</p>
+            <ul className={classes.skillList} aria-label={`${group.name} skills`}>
+              {group.skills.map((skill) => (
+                <li className={classes.skillItem} key={skill}>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </div>
-    </>
+    </section>
   );
 };
 
