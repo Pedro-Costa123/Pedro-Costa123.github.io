@@ -3,28 +3,7 @@ import classes from "./Education.module.css";
 import Schooling from "../../../models/schooling";
 import Loading from "../../others/Loading/Loading";
 
-/**
- * Education Component
- *
- * This component fetches and displays a list of educational qualifications.
- * It uses the useState and useEffect hooks from React, and CSS modules for styling.
- *
- * The component maintains three state variables: 'schooling', 'loading', and 'error'.
- * 'schooling' is an array of Schooling objects.
- * 'loading' is a boolean indicating whether the data is currently being fetched.
- * 'error' is a boolean indicating whether an error occurred while fetching the data.
- *
- * The component includes a useEffect hook that fetches the data from 'data/schooling.json' when the component mounts.
- * If the fetch is successful, 'schooling' is set to the 'schoolings' property of the data, and 'loading' is set to false.
- * If the fetch fails, 'error' is set to true, and 'loading' is set to false.
- *
- * The component conditionally renders different content based on the state.
- * If 'error' is true, it renders a message indicating that the data could not be loaded.
- * If 'loading' is true, it renders a loading spinner.
- * Otherwise, it renders a list of educational qualifications.
- * Each qualification includes the institution, degree, dates, and grade.
- *
- */
+/** Loads and presents Pedro's academic record from the public portfolio data. */
 const Education = () => {
   const [schooling, setSchooling] = useState([] as Schooling[]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +16,7 @@ const Education = () => {
         setSchooling(data.schoolings);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
         setLoading(false);
       });
@@ -45,46 +24,72 @@ const Education = () => {
 
   if (error) {
     return (
-      <>
-        <h1 className={classes.contentTitle}>Education</h1>
+      <section
+        className={classes.educationSection}
+        aria-labelledby="education-heading"
+      >
+        <h1 className={classes.contentTitle} id="education-heading">
+          Education
+        </h1>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
-      </>
+      </section>
     );
   }
 
   if (loading) {
     return (
-      <>
-        <h1 className={classes.contentTitle}>Education</h1>
+      <section
+        className={classes.educationSection}
+        aria-labelledby="education-heading"
+      >
+        <h1 className={classes.contentTitle} id="education-heading">
+          Education
+        </h1>
         <Loading />
-      </>
+      </section>
     );
   }
 
   return (
-    <>
-      <h1 className={classes.contentTitle}>Education</h1>
+    <section
+      className={classes.educationSection}
+      aria-labelledby="education-heading"
+    >
+      <h1 className={classes.contentTitle} id="education-heading">
+        Education
+      </h1>
       <div className={classes.educationList}>
         {schooling.map((schooling) => (
           <article
             className={classes.education}
             key={`${schooling.institution}-${schooling.degree}`}
           >
-            <p className={classes.university}>{schooling.institution}</p>
-            <p className={classes.degree}>{schooling.degree}</p>
-            <p className={classes.dates}>
-              {schooling.startMonth} {schooling.startYear} - {schooling.endMonth}{" "}
-              {schooling.endYear}
-            </p>
-            <p className={classes.grade}>
-              Grade: {schooling.grade} {schooling.scale}
-            </p>
+            <div className={classes.qualification}>
+              <h2 className={classes.university}>{schooling.institution}</h2>
+              <p className={classes.degree}>{schooling.degree}</p>
+            </div>
+
+            <dl className={classes.details}>
+              <div className={classes.detail}>
+                <dt>Period</dt>
+                <dd>
+                  {schooling.startMonth} {schooling.startYear} –{" "}
+                  {schooling.endMonth} {schooling.endYear}
+                </dd>
+              </div>
+              <div className={classes.detail}>
+                <dt>Final grade</dt>
+                <dd>
+                  {schooling.grade} <span>{schooling.scale}</span>
+                </dd>
+              </div>
+            </dl>
           </article>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
