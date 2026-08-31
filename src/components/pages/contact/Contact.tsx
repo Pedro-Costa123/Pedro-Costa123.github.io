@@ -2,34 +2,9 @@ import { useEffect, useState } from "react";
 
 import classes from "./Contact.module.css";
 
-/**
- * Contact Component
- *
- * This component renders a contact form and handles form submission.
- * It uses the useState and useEffect hooks from React, and CSS modules for styling.
- *
- * The component maintains several state variables: 'email', 'subject', 'message', 'formValidation', 'isFormSubmitted', and 'error'.
- * 'email', 'subject', and 'message' are the form inputs.
- * 'formValidation' is an object indicating whether each form input is valid.
- * 'isFormSubmitted' is a boolean indicating whether the form has been submitted.
- * 'error' is a boolean indicating whether an error occurred while sending the email.
- *
- * The component includes a useEffect hook that sends an email when the form is submitted and all form inputs are valid.
- * The email is sent by making a POST request to an AWS Lambda function.
- * If the request is successful, an alert is displayed and the page is refreshed.
- * If the request fails, 'error' is set to true.
- *
- * The component includes a handleSubmit function that validates the form inputs and sets 'isFormSubmitted' to true.
- * The function is attached to the 'onSubmit' event of the form.
- *
- * The component conditionally renders different content based on the state.
- * If 'error' is true, it renders a message indicating that an error occurred.
- * Otherwise, it renders the form.
- * The form includes input fields for 'email', 'subject', and 'message', and a submit button.
- * Each input field includes an 'onChange' event handler that updates the corresponding state variable.
- * If a form input is invalid when the form is submitted, an error message is displayed.
- *
- */
+const CONTACT_EMAIL = "pedrocostaalves@live.com.pt";
+
+/** Presents direct contact channels and preserves the existing message form. */
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -40,6 +15,7 @@ const Contact = () => {
     message: false,
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -50,6 +26,9 @@ const Contact = () => {
         !formValidation.message &&
         isFormSubmitted
       ) {
+        setIsSending(true);
+        setError(false);
+
         try {
           const response = await fetch(
             "https://ec0atsa0ic.execute-api.eu-west-3.amazonaws.com/default/SendAutoEmail",
@@ -69,8 +48,11 @@ const Contact = () => {
           } else {
             setError(true);
           }
-        } catch (error) {
+        } catch {
           setError(true);
+        } finally {
+          setIsSending(false);
+          setIsFormSubmitted(false);
         }
       }
     };
@@ -82,84 +64,163 @@ const Contact = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setFormValidation({
+    const nextValidation = {
       email: !/\S+@\S+\.\S+/.test(email),
       subject: !subject.trim(),
       message: !message.trim(),
-    });
-    setIsFormSubmitted(true);
+    };
+
+    setFormValidation(nextValidation);
+    setError(false);
+    setIsFormSubmitted(!Object.values(nextValidation).some(Boolean));
   };
 
-  if (error) {
-    return (
-      <p className={classes.errorSendingEmail}>
-        An error occurred while sending the message. Please try again later.
-      </p>
-    );
-  }
-
   return (
-    <section className={classes.contact}>
-      <h1 className={classes.contentTitle}>Contact</h1>
-      <form className={classes.contactForm} onSubmit={handleSubmit} noValidate>
-        <div className={classes.fieldGroup}>
-          <label className={classes.label} htmlFor="email">
-            Email:
-          </label>
-          <input
-            className={classes.input}
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-            aria-invalid={formValidation.email}
-            aria-describedby={formValidation.email ? "email-error" : undefined}
-          />
-          {formValidation.email && (
-            <p className={classes.error} id="email-error">Please enter a valid email address</p>
+    <section className={classes.contact} aria-labelledby="contact-heading">
+      <h1 className={classes.contentTitle} id="contact-heading">
+        Contact
+      </h1>
+      <p className={classes.sectionIntro}>
+        For software engineering roles or focused collaboration, email is the
+        most direct route.
+      </p>
+
+      <div className={classes.contactPanel}>
+        <aside className={classes.directContact} aria-labelledby="direct-heading">
+          <h2 className={classes.sectionTitle} id="direct-heading">
+            Direct contact
+          </h2>
+          <p className={classes.directIntro}>
+            Choose the channel that best fits the conversation.
+          </p>
+          <ul className={classes.contactLinks}>
+            <li>
+              <a className={classes.contactLink} href={`mailto:${CONTACT_EMAIL}`}>
+                <span className={classes.linkLabel}>Email</span>
+                <span className={classes.linkValue}>{CONTACT_EMAIL}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                className={classes.contactLink}
+                href="https://www.linkedin.com/in/pedro-m-da-costa/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className={classes.linkLabel}>LinkedIn</span>
+                <span className={classes.linkValue}>Professional profile</span>
+              </a>
+            </li>
+            <li>
+              <a
+                className={classes.contactLink}
+                href="https://github.com/Pedro-Costa123"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className={classes.linkLabel}>GitHub</span>
+                <span className={classes.linkValue}>Code and projects</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <div className={classes.formSection}>
+          <header className={classes.formHeader}>
+            <h2 className={classes.sectionTitle}>Send a message</h2>
+            <p>The form sends your message directly to my inbox.</p>
+          </header>
+
+          {error && (
+            <p className={classes.errorSendingEmail} role="alert">
+              The message could not be sent. Please use email or try again later.
+            </p>
           )}
+
+          <form className={classes.contactForm} onSubmit={handleSubmit} noValidate>
+            <div className={classes.fieldGroup}>
+              <label className={classes.label} htmlFor="email">
+                Your email
+              </label>
+              <input
+                className={classes.input}
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                autoComplete="email"
+                placeholder="you@example.com"
+                required
+                aria-invalid={formValidation.email}
+                aria-describedby={
+                  formValidation.email ? "email-error" : undefined
+                }
+              />
+              {formValidation.email && (
+                <p className={classes.error} id="email-error">
+                  Please enter a valid email address.
+                </p>
+              )}
+            </div>
+            <div className={classes.fieldGroup}>
+              <label className={classes.label} htmlFor="subject">
+                Subject
+              </label>
+              <input
+                className={classes.input}
+                type="text"
+                id="subject"
+                name="subject"
+                value={subject}
+                onChange={(event) => setSubject(event.target.value)}
+                placeholder="Role or project context"
+                required
+                aria-invalid={formValidation.subject}
+                aria-describedby={
+                  formValidation.subject ? "subject-error" : undefined
+                }
+              />
+              {formValidation.subject && (
+                <p className={classes.error} id="subject-error">
+                  Please add a subject.
+                </p>
+              )}
+            </div>
+            <div className={classes.fieldGroup}>
+              <label className={classes.label} htmlFor="message">
+                Message
+              </label>
+              <textarea
+                className={classes.input}
+                id="message"
+                name="message"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                placeholder="Share the relevant details."
+                rows={5}
+                required
+                aria-invalid={formValidation.message}
+                aria-describedby={
+                  formValidation.message ? "message-error" : undefined
+                }
+              />
+              {formValidation.message && (
+                <p className={classes.error} id="message-error">
+                  Please add a message.
+                </p>
+              )}
+            </div>
+            <button
+              className={classes.submitButton}
+              type="submit"
+              disabled={isSending}
+            >
+              {isSending ? "Sending…" : "Send message"}
+            </button>
+          </form>
         </div>
-        <div className={classes.fieldGroup}>
-          <label className={classes.label} htmlFor="subject">
-            Subject:
-          </label>
-          <input
-            className={classes.input}
-            type="text"
-            id="subject"
-            name="subject"
-            value={subject}
-            onChange={(event) => setSubject(event.target.value)}
-            required
-            aria-invalid={formValidation.subject}
-            aria-describedby={formValidation.subject ? "subject-error" : undefined}
-          />
-          {formValidation.subject && (
-            <p className={classes.error} id="subject-error">Subject cannot be empty</p>
-          )}
-        </div>
-        <div className={classes.fieldGroup}>
-          <label className={classes.label} htmlFor="message">
-            Message:
-          </label>
-          <textarea
-            className={classes.input}
-            id="message"
-            name="message"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-            required
-            aria-invalid={formValidation.message}
-            aria-describedby={formValidation.message ? "message-error" : undefined}
-          ></textarea>
-          {formValidation.message && (
-            <p className={classes.error} id="message-error">Message cannot be empty</p>
-          )}
-        </div>
-        <button className={classes.submitButton} type="submit">Send message</button>
-      </form>
+      </div>
     </section>
   );
 };
