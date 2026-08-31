@@ -1,3 +1,8 @@
+.certificationsSection {
+  width: min(100%, var(--content-tight));
+  margin: 0 auto;
+}
+
 .contentTitle {
   margin: 0;
   font-size: clamp(1.45rem, 2.5vw, 1.9rem);
@@ -7,41 +12,40 @@
 
 .certifications {
   margin-top: 1.15rem;
-  padding: 0.25rem 1.25rem;
+  overflow: hidden;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-md);
   background: var(--surface-card);
-  box-shadow: var(--shadow-soft);
+  box-shadow: inset 2px 0 0
+      color-mix(in srgb, var(--header_color) 72%, var(--accent-violet)),
+    var(--shadow-soft);
 }
 
 .list {
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0;
+  list-style: none;
 }
 
 .item {
+  min-width: 0;
+  padding: 0.92rem 1rem 1rem;
   border-bottom: 1px solid var(--border-soft);
-  padding: 1rem 0;
-}
-
-.item:last-child {
-  border-bottom: 0;
 }
 
 .titleCert {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1.35;
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .titleCert a {
-  text-decoration: none;
   color: inherit;
   border-bottom: 1px solid color-mix(in srgb, var(--header_color) 28%, transparent);
+  text-decoration: none;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -56,16 +60,50 @@
   border-radius: 3px;
 }
 
-.dateCert {
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
   margin: 0.68rem 0 0;
-  padding-top: 0.68rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  padding-top: 0.62rem;
   border-top: 1px solid var(--border-soft);
+}
+
+.metadata div {
+  display: grid;
+  gap: 0.14rem;
+}
+
+.metadata dt {
+  color: var(--header_color);
+  font-size: 0.6rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.metadata dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.79rem;
+  font-weight: 650;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .justify {
   margin-top: 0.7rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .item:nth-child(odd) {
+    border-right: 1px solid var(--border-soft);
+  }
+
+  .item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -75,22 +113,31 @@
 
   .certifications {
     margin-top: 0.82rem;
-    padding: 0.15rem 0.9rem;
+    border-radius: 14px;
   }
 
   .list {
-    gap: 0;
+    grid-template-columns: 1fr;
   }
 
   .item {
-    padding: 0.85rem 0;
+    padding: 0.82rem 0.9rem 0.88rem;
+  }
+
+  .item:last-child {
+    border-bottom: 0;
   }
 
   .titleCert {
-    font-size: 0.94rem;
+    font-size: 0.9rem;
   }
 
-  .dateCert {
-    font-size: 0.86rem;
+  .metadata {
+    margin-top: 0.58rem;
+    padding-top: 0.54rem;
+  }
+
+  .metadata dd {
+    font-size: 0.76rem;
   }
 }
