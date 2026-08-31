@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import classes from "./Work.module.css";
 import { loadCompanies } from "../../../utils/utils";
@@ -43,7 +42,7 @@ const Work = () => {
         setCompanies(loadedCompanies);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
         setLoading(false);
       });
@@ -72,40 +71,32 @@ const Work = () => {
   return (
     <>
       <h1 className={classes.contentTitle}>Work</h1>
+      <p className={classes.sectionIntro}>
+        Selected work framed around the engineering problem, the decisions
+        involved, and the practical effect on delivery and production support.
+      </p>
       <div className={classes.workList}>
-        {companies.map((company) => (
-          <article className={classes.works} key={company.name}>
-            <div className={classes.companyContainer}>
-              <div className={classes.companyInfo}>
-                <div className={classes.companyHeader}>
-                  <h2 className={classes.workTitle}>{company.name}</h2>
+        {companies.flatMap((company) =>
+          company.positions.map((job) => (
+            <article
+              className={classes.workCard}
+              key={`${company.name}-${job.title}-${job.startYear}`}
+            >
+              <header className={classes.cardHeader}>
+                <div className={classes.headingGroup}>
+                  <p className={classes.companyName}>{company.name}</p>
+                  <h2 className={classes.roleTitle}>{job.title}</h2>
                 </div>
-                {company.positions.length > 1 ? (
-                  <ul className={classes.jobList}>
-                    {company.positions.map((job) => (
-                      <li className={classes.job} key={job.title}>
-                        <div className={classes.jobHeader}>
-                          <h3 className={classes.workTitleSub}>{job.title}</h3>
-                        </div>
-                        <JobData job={job} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  company.positions.map((job) => (
-                    <div className={classes.singleJob} key={job.title}>
-                      <div className={classes.jobHeader}>
-                        <h3 className={classes.workTitleSub}>{job.title}</h3>
-                      </div>
-                      <JobData job={job} />
-                    </div>
-                  ))
-                )}
-              </div>
-              <img src={company.logo} alt={company.name} className={classes.logo} />
-            </div>
-          </article>
-        ))}
+                <img
+                  src={company.logo}
+                  alt={company.name}
+                  className={classes.logo}
+                />
+              </header>
+              <JobData job={job} />
+            </article>
+          ))
+        )}
       </div>
     </>
   );

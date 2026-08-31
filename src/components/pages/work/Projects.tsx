@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./Projects.module.css";
 import Project from "../../../models/project";
 import Loading from "../../others/Loading/Loading";
+import CaseStudyContent from "./CaseStudyContent";
 
 /**
  * Projects Component
@@ -38,7 +39,7 @@ const Projects = () => {
         setProjects(data.projects);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
         setLoading(false);
       });
@@ -67,9 +68,13 @@ const Projects = () => {
   return (
     <>
       <h2 className={classes.contentTitle}>Projects</h2>
+      <p className={classes.sectionIntro}>
+        Independent and academic work, documented with the same focus on
+        constraints, implementation choices, and practical outcomes.
+      </p>
       <div className={classes.projectsList}>
         {projects.map((project) => (
-          <article className={classes.projects} key={project.name}>
+          <article className={classes.projectCard} key={project.name}>
             <div className={classes.projectHeader}>
               <h3 className={classes.projectTitle}>{project.name}</h3>
               {project.endMonth === "" && project.endYear === 0 ? (
@@ -83,7 +88,10 @@ const Projects = () => {
                 </p>
               )}
             </div>
-            <p className={classes.description}>{project.description}</p>
+            <CaseStudyContent
+              caseStudy={project.caseStudy}
+              labelLevel="h4"
+            />
             <div className={classes.repositories}>
               <p className={classes.repoTitle}>Repositories</p>
               <ul className={classes.repoList}>

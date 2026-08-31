@@ -1,10 +1,11 @@
+import CaseStudy from "./case-study";
+
 class Job {
   title: string;
   company: string;
   type: string;
   location: string;
-  description: string;
-  keyFeatures: string[];
+  caseStudy: CaseStudy;
   startMonth: string;
   startYear: number;
   endMonth: string;
@@ -15,8 +16,7 @@ class Job {
     company: string,
     type: string,
     location: string,
-    description: string,
-    keyFeatures: string[],
+    caseStudy: CaseStudy,
     startMonth: string,
     startYear: number,
     endMonth: string,
@@ -26,8 +26,7 @@ class Job {
     this.company = company;
     this.type = type;
     this.location = location;
-    this.description = description;
-    this.keyFeatures = keyFeatures;
+    this.caseStudy = caseStudy;
     this.startMonth = startMonth;
     this.startYear = startYear;
     this.endMonth = endMonth;

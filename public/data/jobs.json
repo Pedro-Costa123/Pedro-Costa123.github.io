@@ -9,15 +9,30 @@
           "company": "Critical TechWorks",
           "type": "Full-time",
           "location": "Lisbon, Portugal",
-          "keyFeatures": [
-            "Maintaining Jakarta EE and Payara backend services, with a focus on stability and performance",
-            "Migrating legacy systems toward Quarkus-based, cloud-native microservices",
-            "Building backend integrations and distributed systems with Java, SQL, and asynchronous communication",
-            "Working with AWS services including S3, VPC, RDS, API Gateway, SQS, DynamoDB, Lambda, and ECS, alongside Kubernetes deployments",
-            "Handling production support, incident resolution, performance analysis, and 24/7 on-call rotations for enterprise systems",
-            "Onboarding and mentoring team members while improving code quality with SonarQube and Scrum practices",
-            "Using AI-assisted development tools for debugging, technical analysis, and delivery workflows"
-          ],
+          "caseStudy": {
+            "problem": "A production Java platform combines established Jakarta EE and Payara services with an ongoing move toward smaller Quarkus services. Changes have to account for live operational behavior, cloud dependencies, and on-call support.",
+            "work": [
+              "Maintain and improve Jakarta EE and Payara backend services.",
+              "Contribute to the move from legacy workloads toward Quarkus-based services.",
+              "Build Java, SQL, asynchronous, and AWS integrations while supporting incidents, performance analysis, and on-call rotations."
+            ],
+            "decisions": [
+              "Modernize incrementally so changes can be introduced alongside a running production platform.",
+              "Use asynchronous communication where services need to remain decoupled, while keeping integration behavior explicit.",
+              "Treat deployment, code quality, and operational support as part of the implementation."
+            ],
+            "impact": "Modernization stays connected to the behavior and constraints of the existing platform. Findings from production support also provide concrete input for stability and performance work.",
+            "technologies": [
+              "Java",
+              "Jakarta EE",
+              "Payara",
+              "Quarkus",
+              "SQL",
+              "AWS",
+              "Kubernetes",
+              "SonarQube"
+            ]
+          },
           "startMonth": "October",
           "startYear": 2025,
           "endMonth": "",
@@ -34,15 +49,29 @@
           "company": "Capgemini Portugal",
           "type": "Full-time",
           "location": "Lisbon, Portugal",
-          "description": "Moved from a junior Java role into backend development for a tolling project, taking responsibility for an epic within a larger Spring Boot system.",
-          "keyFeatures": [
-            "Implementing microservice communication with Kafka and OpenFeign",
-            "Integrating SFTP services and AWS S3",
-            "Working with Business Analysts and QA to clarify requirements and testing needs",
-            "Deploying development and QA environments and supporting incident root-cause analysis",
-            "Documenting technical solutions, APIs, and team practices",
-            "Maintaining legacy code, onboarding colleagues, and contributing review feedback"
-          ],
+          "caseStudy": {
+            "problem": "An enterprise Spring Boot backend needed new functionality within a larger system, plus dependable communication with internal services and external file and cloud integrations.",
+            "work": [
+              "Took responsibility for an epic within the backend and implemented its Spring Boot services.",
+              "Integrated Kafka, OpenFeign, SFTP services, and AWS S3.",
+              "Worked with Business Analysts and QA, deployed development and QA environments, documented APIs, and supported incident analysis."
+            ],
+            "decisions": [
+              "Use Kafka for asynchronous flows and OpenFeign for direct service-to-service calls.",
+              "Keep SFTP and S3 integrations behind backend boundaries instead of exposing their details to callers.",
+              "Document API behavior so development and QA shared the same contract."
+            ],
+            "impact": "Backend changes moved through development and QA with their integrations, documentation, and support context in place. The same ownership continued into incident analysis and legacy maintenance.",
+            "technologies": [
+              "Java",
+              "Spring Boot",
+              "Kafka",
+              "OpenFeign",
+              "AWS S3",
+              "SFTP",
+              "SQL"
+            ]
+          },
           "startMonth": "November",
           "startYear": 2023,
           "endMonth": "October",
@@ -53,8 +82,27 @@
           "company": "Capgemini Portugal",
           "type": "Internship",
           "location": "Lisbon, Portugal",
-          "description": "Contributed to an open-source migration for a banking system using Angular and Spring Boot. Documented and recreated the existing interface, replicated backend behavior, and moved database procedure logic into the application.",
-          "keyFeatures": [],
+          "caseStudy": {
+            "problem": "An existing business application needed to move toward an Angular and Spring Boot implementation while preserving the behavior users and downstream processes already relied on.",
+            "work": [
+              "Documented the existing interface and backend behavior before rebuilding it.",
+              "Recreated the frontend in Angular and the backend flow in Spring Boot.",
+              "Moved logic from database procedures into the application layer."
+            ],
+            "decisions": [
+              "Capture current behavior before changing technology, reducing ambiguity during the migration.",
+              "Separate frontend and backend responsibilities between Angular and Spring Boot.",
+              "Translate database procedure logic into application code that could be reviewed and maintained with the service."
+            ],
+            "impact": "The migration produced an application-layer version of the existing behavior and reduced how much business logic remained tied to database procedures.",
+            "technologies": [
+              "Java",
+              "Spring Boot",
+              "Angular",
+              "TypeScript",
+              "SQL"
+            ]
+          },
           "startMonth": "April",
           "startYear": 2023,
           "endMonth": "November",

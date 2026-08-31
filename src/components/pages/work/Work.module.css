@@ -1,222 +1,169 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+  color: var(--body_color);
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+}
+
+.sectionIntro {
+  max-width: 72ch;
+  margin: 0.62rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .workList {
   display: grid;
-  gap: 1rem;
-  margin-top: 1.15rem;
+  gap: 1.2rem;
+  margin-top: 1.35rem;
 }
 
-.works {
-  margin: 0;
-  padding: clamp(1.2rem, 2.5vw, 1.65rem);
+.workCard {
   width: 100%;
-  box-sizing: border-box;
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
 }
 
-.workTitle {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 800;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--header_color);
-}
-
-.workTitleSub {
-  margin: 0;
-  font-weight: 700;
-  font-size: 1.22rem;
-  line-height: 1.22;
-}
-
-.companyContainer {
+.cardHeader {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 120px;
   align-items: start;
-  gap: 1.1rem;
+  gap: 1.25rem;
 }
 
-.companyInfo {
+.headingGroup {
   min-width: 0;
 }
 
-.companyHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.95rem;
+.companyName {
+  margin: 0;
+  color: var(--header_color);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.roleTitle {
+  margin: 0.5rem 0 0;
+  color: var(--body_color);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 .logo {
   width: 100%;
   max-width: 120px;
-  max-height: 64px;
+  max-height: 58px;
   justify-self: end;
-  align-self: start;
   object-fit: contain;
-  filter: none;
-}
-
-.jobList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.job {
-  list-style: none;
-  margin: 1rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-soft);
-}
-
-.singleJob {
-  padding-top: 0.2rem;
-}
-
-.jobHeader {
-  display: flex;
-  margin-bottom: 0.78rem;
 }
 
 .metaRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-bottom: 0.84rem;
+  align-items: center;
+  gap: 0.48rem;
+  margin-top: 0.9rem;
+}
+
+.info,
+.timelineMeta {
+  margin: 0;
+  padding: 0.3rem 0.52rem;
+  border: 1px solid color-mix(in srgb, var(--header_color) 20%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--header_color) 7%, transparent);
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .info {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 700;
   letter-spacing: 0.045em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  padding: 0.32rem 0.58rem;
-  border: 1px solid color-mix(in srgb, var(--header_color) 24%, transparent);
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--header_color) 10%, transparent);
 }
 
-.description {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--text-muted);
-  max-width: 76ch;
-}
-
-ul.description {
-  margin-top: 0.5rem;
-  padding-left: 1.1rem;
-}
-
-.featureSection {
-  margin-top: 0.84rem;
-}
-
-.featureList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1.6rem;
-  row-gap: 0.2rem;
-}
-
-.featureItem {
-  margin-bottom: 0.38rem;
-}
-
-.featureItem::marker {
-  color: var(--header_color);
-}
-
-.sectionLabel {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--header_color);
-}
-
-.timeline {
-  margin-top: 0.92rem;
-  padding-top: 0.78rem;
-  border-top: 1px solid var(--border-soft);
-}
-
-.dates {
-  margin: 0.42rem 0 0;
-  font-size: 0.9rem;
+.timelineMeta {
   color: var(--text-subtle);
 }
 
 .justify {
   margin-top: 0.7rem;
+  color: var(--text-muted);
 }
 
 @media only screen and (max-width: 768px) {
   .contentTitle {
-    font-size: 1.2rem;
+    font-size: 1.55rem;
+  }
+
+  .sectionIntro {
+    margin-top: 0.5rem;
+    font-size: 0.92rem;
   }
 
   .workList {
-    margin-top: 0.82rem;
-    gap: 0.72rem;
+    gap: 0.9rem;
+    margin-top: 1rem;
   }
 
-  .works {
-    padding: 0.9rem;
+  .workCard {
+    padding: 1rem;
     border-radius: 14px;
   }
 
-  .companyContainer {
-    grid-template-columns: minmax(0, 1fr) 76px;
+  .cardHeader {
+    grid-template-columns: minmax(0, 1fr) 72px;
     gap: 0.75rem;
   }
 
   .logo {
-    display: block;
-    max-width: 76px;
-    max-height: 42px;
+    max-width: 72px;
+    max-height: 40px;
   }
 
-  .job {
-    margin-top: 0.9rem;
-    padding-top: 0.9rem;
+  .companyName {
+    font-size: 0.66rem;
   }
 
-  .workTitleSub {
-    font-size: 1.05rem;
+  .roleTitle {
+    margin-top: 0.4rem;
+    font-size: 1.22rem;
   }
 
-  .description {
-    font-size: 0.92rem;
-    line-height: 1.63;
+  .metaRow {
+    gap: 0.4rem;
+    margin-top: 0.75rem;
   }
 
-  ul.description {
-    padding-left: 1rem;
+  .info,
+  .timelineMeta {
+    font-size: 0.68rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .cardHeader {
+    grid-template-columns: minmax(0, 1fr) 58px;
   }
 
-  .featureList {
-    grid-template-columns: 1fr;
-    row-gap: 0;
+  .logo {
+    max-width: 58px;
   }
 
-  .dates {
-    font-size: 0.85rem;
+  .timelineMeta {
+    flex-basis: 100%;
+    width: fit-content;
   }
 }
