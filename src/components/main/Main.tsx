@@ -6,6 +6,7 @@ import classes from "./Main.module.css";
 
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
+import Systems from "../pages/about/Systems";
 import Education from "../pages/education/Education";
 import Certifications from "../pages/education/Certifications";
 import Languages from "../pages/education/Languages";
@@ -50,6 +51,9 @@ const Main = () => {
         <div className={classes.fadeInElement}>
           <div className={classes.centering}>
             <About />
+          </div>
+          <div className={classes.centering}>
+            <Systems />
           </div>
         </div>
       ) : (
