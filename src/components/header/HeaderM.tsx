@@ -23,6 +23,9 @@ const Header = () => {
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
+    window.requestAnimationFrame(() => {
+      document.getElementById("main-content")?.focus();
+    });
   };
 
   const navItems = [

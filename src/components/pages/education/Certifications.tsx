@@ -74,7 +74,12 @@ const Certifications = () => {
                   {certification.url === "" ? (
                     certification.name
                   ) : (
-                    <a href={certification.url} target="_blank" rel="noreferrer">
+                    <a
+                      href={certification.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${certification.name} (opens in a new tab)`}
+                    >
                       {certification.name}
                     </a>
                   )}

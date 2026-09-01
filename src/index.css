@@ -109,6 +109,26 @@ a {
   color: inherit;
 }
 
+.skipLink {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--body_color);
+  color: var(--body_background);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-180%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
 button,
 input,
 textarea {

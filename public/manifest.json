@@ -1,6 +1,6 @@
 {
   "short_name": "Pedro Costa",
-  "name": "Pedro Costa - Portfolio",
+  "name": "Pedro Costa | Software Engineer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,8 +8,8 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#080c12",
+  "background_color": "#080c12"
 }

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { Context } from "../../context/context";
 
@@ -37,8 +37,22 @@ import Contact from "../pages/contact/Contact";
 const Main = () => {
   const ContentCtx = useContext(Context);
 
+  useEffect(() => {
+    const activeView = ContentCtx.about
+      ? "About"
+      : ContentCtx.education
+        ? "Education"
+        : ContentCtx.work
+          ? "Work & Projects"
+          : ContentCtx.contact
+            ? "Contact"
+            : "Software Engineer";
+
+    document.title = `Pedro Costa | ${activeView}`;
+  }, [ContentCtx.about, ContentCtx.contact, ContentCtx.education, ContentCtx.work]);
+
   return (
-    <main className={classes.main}>
+    <main className={classes.main} id="main-content" tabIndex={-1}>
       {ContentCtx.home ? (
         <div className={classes.fadeInElement}>
           <Home />

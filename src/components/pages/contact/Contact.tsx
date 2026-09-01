@@ -105,7 +105,8 @@ const Contact = () => {
                 className={classes.contactLink}
                 href="https://www.linkedin.com/in/pedro-m-da-costa/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="Pedro Costa on LinkedIn (opens in a new tab)"
               >
                 <span className={classes.linkLabel}>LinkedIn</span>
                 <span className={classes.linkValue}>Professional profile</span>
@@ -116,7 +117,8 @@ const Contact = () => {
                 className={classes.contactLink}
                 href="https://github.com/Pedro-Costa123"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
+                aria-label="Pedro Costa on GitHub (opens in a new tab)"
               >
                 <span className={classes.linkLabel}>GitHub</span>
                 <span className={classes.linkValue}>Code and projects</span>

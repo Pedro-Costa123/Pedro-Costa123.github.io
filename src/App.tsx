@@ -47,6 +47,9 @@ const App = () => {
 
   return (
     <ContentProvider>
+      <a className="skipLink" href="#main-content">
+        Skip to main content
+      </a>
       {isMobile ? <HeaderM /> : <Header />}
       <Main />
       <Footer />
