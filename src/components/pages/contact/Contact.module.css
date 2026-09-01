@@ -212,6 +212,17 @@ textarea.input {
   line-height: 1.45;
 }
 
+.successSendingEmail {
+  margin: 0.85rem 0 0;
+  padding: 0.68rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--header_color) 42%, var(--border-soft));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--header_color) 8%, transparent);
+  color: var(--body_color);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
 [data-theme="dark"] .errorSendingEmail {
   color: #ff8f8f;
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
 import classes from "./Contact.module.css";
 
@@ -14,55 +14,14 @@ const Contact = () => {
     subject: false,
     message: false,
   });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const emailInput = useRef<HTMLInputElement>(null);
+  const subjectInput = useRef<HTMLInputElement>(null);
+  const messageInput = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => {
-    const sendEmail = async () => {
-      if (
-        !formValidation.email &&
-        !formValidation.subject &&
-        !formValidation.message &&
-        isFormSubmitted
-      ) {
-        setIsSending(true);
-        setError(false);
-
-        try {
-          const response = await fetch(
-            "https://ec0atsa0ic.execute-api.eu-west-3.amazonaws.com/default/SendAutoEmail",
-            {
-              mode: "cors",
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, subject, message }),
-            }
-          );
-
-          if (response.ok) {
-            window.alert("Email sent successfully");
-            window.location.href = "";
-          } else {
-            setError(true);
-          }
-        } catch {
-          setError(true);
-        } finally {
-          setIsSending(false);
-          setIsFormSubmitted(false);
-        }
-      }
-    };
-
-    if (isFormSubmitted) {
-      sendEmail();
-    }
-  }, [email, subject, message, isFormSubmitted, formValidation]);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextValidation = {
       email: !/\S+@\S+\.\S+/.test(email),
@@ -72,7 +31,51 @@ const Contact = () => {
 
     setFormValidation(nextValidation);
     setError(false);
-    setIsFormSubmitted(!Object.values(nextValidation).some(Boolean));
+    setSuccess(false);
+
+    if (nextValidation.email) {
+      emailInput.current?.focus();
+      return;
+    }
+
+    if (nextValidation.subject) {
+      subjectInput.current?.focus();
+      return;
+    }
+
+    if (nextValidation.message) {
+      messageInput.current?.focus();
+      return;
+    }
+
+    setIsSending(true);
+
+    try {
+      const response = await fetch(
+        "https://ec0atsa0ic.execute-api.eu-west-3.amazonaws.com/default/SendAutoEmail",
+        {
+          mode: "cors",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, subject, message }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Message request failed");
+      }
+
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setSuccess(true);
+    } catch {
+      setError(true);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -139,6 +142,12 @@ const Contact = () => {
             </p>
           )}
 
+          {success && (
+            <p className={classes.successSendingEmail} role="status">
+              Your message has been sent. Thank you for getting in touch.
+            </p>
+          )}
+
           <form className={classes.contactForm} onSubmit={handleSubmit} noValidate>
             <div className={classes.fieldGroup}>
               <label className={classes.label} htmlFor="email">
@@ -150,6 +159,7 @@ const Contact = () => {
                 id="email"
                 name="email"
                 value={email}
+                ref={emailInput}
                 onChange={(event) => setEmail(event.target.value)}
                 autoComplete="email"
                 placeholder="you@example.com"
@@ -175,6 +185,7 @@ const Contact = () => {
                 id="subject"
                 name="subject"
                 value={subject}
+                ref={subjectInput}
                 onChange={(event) => setSubject(event.target.value)}
                 placeholder="Role or project context"
                 required
@@ -198,6 +209,7 @@ const Contact = () => {
                 id="message"
                 name="message"
                 value={message}
+                ref={messageInput}
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Share the relevant details."
                 rows={5}

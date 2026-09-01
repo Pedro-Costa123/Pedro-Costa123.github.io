@@ -15,9 +15,10 @@ import classes from "./Loading.module.css";
  */
 const LoadingSpinner = () => {
   return (
-    <div className={classes.spinner}>
-      <div className={classes.double_bounce1}></div>
-      <div className={classes.double_bounce2}></div>
+    <div className={classes.spinner} role="status" aria-label="Loading content">
+      <div className={classes.double_bounce1} aria-hidden="true"></div>
+      <div className={classes.double_bounce2} aria-hidden="true"></div>
+      <span className={classes.visuallyHidden}>Loading content</span>
     </div>
   );
 };

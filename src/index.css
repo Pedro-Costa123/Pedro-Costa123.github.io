@@ -168,30 +168,6 @@ code {
   z-index: 1;
 }
 
-html[data-theme="light"] .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%231f2a31' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
-
-html[data-theme="dark"] .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2376abae' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
-
-html[data-theme="light"] .navbar-toggler {
-  border-color: color-mix(in srgb, var(--body_color) 65%, transparent) !important;
-}
-
-html[data-theme="dark"] .navbar-toggler {
-  border-color: color-mix(in srgb, var(--header_color) 58%, transparent) !important;
-}
-
-html[data-theme="light"] .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--focus-ring) 45%, transparent) !important;
-}
-
-html[data-theme="dark"] .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--focus-ring) 45%, transparent) !important;
-}
-
 @media only screen and (max-width: 600px) {
   body {
     letter-spacing: 0;
