@@ -49,8 +49,7 @@ const Work = () => {
     <>
       <h1 className={classes.contentTitle}>Work</h1>
       <p className={classes.sectionIntro}>
-        Selected work framed around the engineering problem, the decisions
-        involved, and the practical effect on delivery and production support.
+        A few examples of the systems and problems I’ve worked on.
       </p>
       <div className={classes.workList}>
         {companies.flatMap((company) =>

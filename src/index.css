@@ -38,6 +38,12 @@
   --content-tight: 880px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 [data-theme="light"] {
   color-scheme: light;
   --body_background: #f4f7fb;

@@ -13,12 +13,11 @@
 
 .sectionLabel {
   margin: 0;
-  color: var(--header_color);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  color: var(--body_color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.45;
-  text-transform: uppercase;
 }
 
 .primaryCopy {
@@ -50,10 +49,8 @@
 }
 
 .impact {
-  padding: 1rem 1.1rem;
+  padding: 0.15rem 0 0.15rem 1rem;
   border-left: 2px solid var(--header_color);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  background: color-mix(in srgb, var(--header_color) 6%, var(--surface-inset));
 }
 
 .impact .primaryCopy {
@@ -70,14 +67,16 @@
 }
 
 .technologyList li {
-  padding: 0.3rem 0.52rem;
-  border: 1px solid color-mix(in srgb, var(--header_color) 22%, transparent);
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--header_color) 8%, transparent);
   color: var(--text-muted);
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.03em;
+}
+
+.technologyList li + li::before {
+  margin: 0 0.45rem;
+  color: var(--header_color);
+  content: "·";
 }
 
 @media only screen and (max-width: 768px) {

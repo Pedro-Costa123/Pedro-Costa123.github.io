@@ -15,13 +15,13 @@ const CaseStudyContent = ({
   return (
     <div className={classes.caseStudy}>
       <section className={classes.problem}>
-        <Label className={classes.sectionLabel}>Problem</Label>
+        <Label className={classes.sectionLabel}>Context</Label>
         <p className={classes.primaryCopy}>{caseStudy.problem}</p>
       </section>
 
       <div className={classes.detailGrid}>
         <section className={classes.detailSection}>
-          <Label className={classes.sectionLabel}>What I worked on</Label>
+          <Label className={classes.sectionLabel}>Work</Label>
           <ul className={classes.detailList}>
             {caseStudy.work.map((item) => (
               <li key={item}>{item}</li>
@@ -30,7 +30,7 @@ const CaseStudyContent = ({
         </section>
 
         <section className={classes.detailSection}>
-          <Label className={classes.sectionLabel}>Technical decisions</Label>
+          <Label className={classes.sectionLabel}>Approach</Label>
           <ul className={classes.detailList}>
             {caseStudy.decisions.map((decision) => (
               <li key={decision}>{decision}</li>
@@ -40,12 +40,12 @@ const CaseStudyContent = ({
       </div>
 
       <section className={classes.impact}>
-        <Label className={classes.sectionLabel}>Practical impact</Label>
+        <Label className={classes.sectionLabel}>Outcome</Label>
         <p className={classes.primaryCopy}>{caseStudy.impact}</p>
       </section>
 
       <section className={classes.technologies}>
-        <Label className={classes.sectionLabel}>Technologies</Label>
+        <Label className={classes.sectionLabel}>Built with</Label>
         <ul className={classes.technologyList}>
           {caseStudy.technologies.map((technology) => (
             <li key={technology}>{technology}</li>

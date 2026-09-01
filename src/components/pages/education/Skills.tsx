@@ -51,21 +51,10 @@ const Skills = () => {
       <h2 className={classes.contentTitle} id="skills-heading">
         Skills &amp; Tech Stack
       </h2>
-      <p className={classes.sectionIntro}>
-        Technologies grouped by the role they play in delivery, from application
-        code to production support.
-      </p>
-
       <div className={classes.skillsMatrix}>
-        {groups.map((group, index) => (
+        {groups.map((group) => (
           <section className={classes.skillGroup} key={group.name}>
-            <header className={classes.groupHeader}>
-              <span className={classes.groupIndex} aria-hidden="true">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className={classes.groupTitle}>{group.name}</h3>
-            </header>
-            <p className={classes.groupDescription}>{group.description}</p>
+            <h3 className={classes.groupTitle}>{group.name}</h3>
             <ul className={classes.skillList} aria-label={`${group.name} skills`}>
               {group.skills.map((skill) => (
                 <li className={classes.skillItem} key={skill}>

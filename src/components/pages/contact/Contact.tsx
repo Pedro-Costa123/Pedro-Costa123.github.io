@@ -94,7 +94,7 @@ const Contact = () => {
             Direct contact
           </h2>
           <p className={classes.directIntro}>
-            Choose the channel that best fits the conversation.
+            Email, LinkedIn, or GitHub — whichever you prefer.
           </p>
           <ul className={classes.contactLinks}>
             <li>
@@ -133,7 +133,6 @@ const Contact = () => {
         <div className={classes.formSection}>
           <header className={classes.formHeader}>
             <h2 className={classes.sectionTitle}>Send a message</h2>
-            <p>The form sends your message directly to my inbox.</p>
           </header>
 
           {error && (

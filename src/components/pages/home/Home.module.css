@@ -6,39 +6,14 @@
 }
 
 .header {
-  position: relative;
   width: 100%;
-  margin: clamp(0.25rem, 1.6vw, 1.25rem) auto clamp(1rem, 2vw, 1.75rem);
-  padding: clamp(2rem, 4.5vw, 3.75rem);
+  margin: clamp(1.5rem, 7vw, 6rem) auto clamp(2rem, 5vw, 4rem);
+  padding: 0 clamp(0.5rem, 3vw, 2rem);
   text-align: left;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
-  background: var(--surface-card);
-  box-shadow: var(--shadow-elevated);
-  overflow: hidden;
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 3px;
-  background: var(--header_color);
-  opacity: 0.9;
 }
 
 .heroContent {
   max-width: 900px;
-}
-
-.welcomeText {
-  display: inline-block;
-  margin: 0 0 0.9rem;
-  font-size: clamp(0.72rem, 1.08vw, 0.82rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--header_color);
 }
 
 .headline {
@@ -46,7 +21,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
-  font-size: clamp(3.25rem, 6vw, 5.25rem);
+  font-size: clamp(2.8rem, 5.4vw, 4.85rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.045em;
@@ -74,10 +49,59 @@
   line-height: 1.72;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.15rem;
+  margin-top: 1.5rem;
+}
+
+.workButton {
+  padding: 0.68rem 1rem;
+  border: 1px solid var(--button_background);
+  border-radius: var(--radius-sm);
+  background: var(--button_background);
+  color: var(--button);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.profileLink img {
+  width: 16px;
+  height: 16px;
+  filter: var(--icons_color);
+}
+
+.workButton:hover {
+  background: var(--button_hover);
+  border-color: var(--button_hover);
+}
+
+.profileLink:hover {
+  color: var(--header_color);
+}
+
+.workButton:focus-visible,
+.profileLink:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
 @media only screen and (max-width: 1024px) {
   .header {
-    margin-top: 0.35rem;
-    padding: clamp(2rem, 4vw, 3rem);
+    margin-top: clamp(1rem, 5vw, 3rem);
   }
 
   .headline {
@@ -87,15 +111,8 @@
 
 @media only screen and (max-width: 768px) {
   .header {
-    margin: 0.25rem auto 0.8rem;
-    padding: 1.85rem 1.25rem 2rem;
-    border-radius: var(--radius-md);
-  }
-
-  .welcomeText {
-    margin-bottom: 0.65rem;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    margin: 1.6rem auto 2.4rem;
+    padding: 0.5rem;
   }
 
   .headline {
@@ -114,11 +131,15 @@
     font-size: 0.92rem;
     line-height: 1.62;
   }
+
+  .actions {
+    margin-top: 1.2rem;
+  }
 }
 
 @media only screen and (max-width: 420px) {
   .header {
-    padding: 1.55rem 1rem 1.7rem;
+    padding: 0.25rem;
   }
 
   .headline {

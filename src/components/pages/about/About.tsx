@@ -74,9 +74,8 @@ const About = () => {
       </figure>
 
       <div className={classes.textContainer}>
-        <p className={classes.eyebrow}>About</p>
         <h1 className={classes.contentTitle} id="about-title">
-          Full-stack work, with a backend and production focus.
+          Mostly backend. Full-stack when the job needs it.
         </h1>
         <p className={classes.intro}>{about.intro}</p>
 

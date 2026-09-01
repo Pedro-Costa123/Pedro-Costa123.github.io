@@ -47,8 +47,7 @@ const Projects = () => {
     <>
       <h2 className={classes.contentTitle}>Projects</h2>
       <p className={classes.sectionIntro}>
-        Independent and academic work, documented with the same focus on
-        constraints, implementation choices, and practical outcomes.
+        A small selection of independent and academic work.
       </p>
       <div className={classes.projectsList}>
         {projects.map((project) => (
