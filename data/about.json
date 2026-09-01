@@ -1,6 +1,6 @@
 {
   "about": {
-    "intro": "I'm a software engineer based in Portugal. I work across full-stack development, with most of my recent work focused on backend services, cloud integrations, and software that has to behave reliably in production.",
+    "intro": "I'm a software engineer based in Portugal. Most of my recent work has been on backend services, cloud integrations, and the kind of software that needs to behave reliably once it is live.",
     "systems": "My recent work includes maintaining Jakarta EE and Payara services, moving legacy workloads toward Quarkus, building API and AWS integrations, and supporting incidents and on-call rotations. I also work with Angular and React when a product needs frontend changes.",
     "approach": "I pay attention to what happens after deployment: how a service fails, how quickly an incident can be diagnosed, and whether another engineer can change the code safely. Reliability and maintainability are part of the implementation, not cleanup for later."
   }

@@ -19,8 +19,6 @@
         "SQS",
         "Lambda",
         "ECS",
-        "RDS",
-        "DynamoDB",
         "API Gateway",
         "Kubernetes"
       ]
