@@ -1,20 +1,49 @@
 {
-  "frameworks": [
-    { "name": "Spring Boot", "logo": "logo_skills/springboot.svg" },
-    { "name": "React.js", "logo": "logo_skills/react.svg" },
-    { "name": "Flutter", "logo": "logo_skills/flutter.svg" },
-    { "name": "Ionic", "logo": "logo_skills/ionic.svg" },
-    { "name": "Angular", "logo": "logo_skills/angular.svg" },
-    { "name": "Docker", "logo": "logo_skills/docker.svg" },
-    { "name": "AWS", "logo": "logo_skills/aws.svg" }
-  ],
-  "programming_languages": [
-    { "name": "Java", "logo": "logo_skills/java.svg" },
-    { "name": "TypeScript", "logo": "logo_skills/typescript.svg" },
-    { "name": "Dart", "logo": "logo_skills/dart.svg" },
-    { "name": "Python", "logo": "logo_skills/python.svg" },
-    { "name": "Kotlin", "logo": "logo_skills/kotlin.svg" },
-    { "name": "C/C++", "logo": "logo_skills/cplusplus.svg" },
-    { "name": "Git", "logo": "logo_skills/git.svg" }
+  "groups": [
+    {
+      "name": "Backend",
+      "description": "Building and maintaining Java services across established Jakarta EE platforms, Spring Boot applications, and Quarkus-based modernization.",
+      "skills": ["Java", "Spring Boot", "Quarkus", "Jakarta EE"]
+    },
+    {
+      "name": "Frontend",
+      "description": "Delivering typed interfaces and full-stack changes that keep frontend behavior aligned with backend APIs.",
+      "skills": ["Angular", "React", "TypeScript"]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "description": "Connecting application services to AWS storage, messaging, compute, data, and deployment infrastructure.",
+      "skills": [
+        "AWS",
+        "S3",
+        "SQS",
+        "Lambda",
+        "ECS",
+        "RDS",
+        "DynamoDB",
+        "API Gateway",
+        "Kubernetes"
+      ]
+    },
+    {
+      "name": "Databases",
+      "description": "Working with relational data and managed database services as part of backend delivery and migration work.",
+      "skills": ["SQL", "RDS", "DynamoDB"]
+    },
+    {
+      "name": "Engineering Quality",
+      "description": "Keeping changes reviewable and releasable through version control, automated checks, testing, and code review.",
+      "skills": ["Git", "SonarQube", "CI/CD", "Testing", "Code review"]
+    },
+    {
+      "name": "Production",
+      "description": "Investigating incidents and production behavior, then feeding those findings back into maintainability and support work.",
+      "skills": [
+        "Incident analysis",
+        "Observability",
+        "Maintainability",
+        "Production support"
+      ]
+    }
   ]
 }

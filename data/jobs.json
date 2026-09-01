@@ -9,17 +9,30 @@
           "company": "Critical TechWorks",
           "type": "Full-time",
           "location": "Lisbon, Portugal",
-          "keyFeatures": [
-            "Maintaining and improving monolithic backend services built with Jakarta EE and Payara Server, focusing on stability and performance optimization",
-            "Contributing to the migration of legacy systems into more scalable microservices architectures using Quarkus and cloud-native solutions",
-            "Developing and maintaining backend integrations and distributed systems using Java, SQL, and asynchronous communication patterns",
-            "Working with multiple AWS services including S3, VPC, RDS, API Gateway, SQS, DynamoDB, Lambda, and ECS",
-            "Deploying and managing containerized applications using Kubernetes",
-            "Participating in production support, incident resolution, performance analysis, and 24/7 on-call rotations for enterprise-scale systems, troubleshooting critical issues and ensuring system reliability and availability",
-            "Onboarding and mentoring new team members, supporting knowledge sharing and team integration",
-            "Contributing to code quality improvements using SonarQube and following agile methodologies with Scrum",
-            "Leveraging AI-assisted development tools to accelerate debugging, technical analysis, and software delivery, workflows"
-          ],
+          "caseStudy": {
+            "problem": "A production Java platform combines established Jakarta EE and Payara services with an ongoing move toward smaller Quarkus services. Changes have to account for live operational behavior, cloud dependencies, and on-call support.",
+            "work": [
+              "Maintain and improve Jakarta EE and Payara backend services.",
+              "Contribute to the move from legacy workloads toward Quarkus-based services.",
+              "Build Java, SQL, asynchronous, and AWS integrations while supporting incidents, performance analysis, and on-call rotations."
+            ],
+            "decisions": [
+              "Modernize incrementally so changes can be introduced alongside a running production platform.",
+              "Use asynchronous communication where services need to remain decoupled, while keeping integration behavior explicit.",
+              "Treat deployment, code quality, and operational support as part of the implementation."
+            ],
+            "impact": "Modernization stays connected to the behavior and constraints of the existing platform. Findings from production support also provide concrete input for stability and performance work.",
+            "technologies": [
+              "Java",
+              "Jakarta EE",
+              "Payara",
+              "Quarkus",
+              "SQL",
+              "AWS",
+              "Kubernetes",
+              "SonarQube"
+            ]
+          },
           "startMonth": "October",
           "startYear": 2025,
           "endMonth": "",
@@ -36,19 +49,29 @@
           "company": "Capgemini Portugal",
           "type": "Full-time",
           "location": "Lisbon, Portugal",
-          "description": "Continuation from the java junior developer position until 04/2024. Where my project changed to a tolling company doing only backend development. Solely responsible for an epic within a larger project, focusing on the development of a Spring Boot Java backend.",
-          "keyFeatures": [
-            "Designing and implementing communication with other microservices using Kafka and OpenFeign",
-            "Integrating with external services such as SFTP servers and AWS S3",
-            "Collaborating with Business Analysts to ensure clear understanding of project requirements",
-            "Assisting the QA team in identifying testing needs",
-            "Onboarding new colleagues",
-            "Deploying environments to dev and QA",
-            "Supporting incident management by analyzing root causes and providing quick resolutions",
-            "Documenting technical solutions, APIs, and best practices for internal knowledge sharing",
-            "Improving and maintaining existing legacy code",
-            "Providing constructive feedback on areas for improvement"
-          ],
+          "caseStudy": {
+            "problem": "An enterprise Spring Boot backend needed new functionality within a larger system, plus dependable communication with internal services and external file and cloud integrations.",
+            "work": [
+              "Took responsibility for an epic within the backend and implemented its Spring Boot services.",
+              "Integrated Kafka, OpenFeign, SFTP services, and AWS S3.",
+              "Worked with Business Analysts and QA, deployed development and QA environments, documented APIs, and supported incident analysis."
+            ],
+            "decisions": [
+              "Use Kafka for asynchronous flows and OpenFeign for direct service-to-service calls.",
+              "Keep SFTP and S3 integrations behind backend boundaries instead of exposing their details to callers.",
+              "Document API behavior so development and QA shared the same contract."
+            ],
+            "impact": "Backend changes moved through development and QA with their integrations, documentation, and support context in place. The same ownership continued into incident analysis and legacy maintenance.",
+            "technologies": [
+              "Java",
+              "Spring Boot",
+              "Kafka",
+              "OpenFeign",
+              "AWS S3",
+              "SFTP",
+              "SQL"
+            ]
+          },
           "startMonth": "November",
           "startYear": 2023,
           "endMonth": "October",
@@ -59,8 +82,27 @@
           "company": "Capgemini Portugal",
           "type": "Internship",
           "location": "Lisbon, Portugal",
-          "description": "Migration to Open-Source Solutions for Banking Client. Contributed to the migration of a banking client's existing system to more open-source and cost-effective solutions, utilizing Angular and Spring Boot. Successfully documented and recreated the current website design in Angular, and replicated the backend logic in Spring Boot. This involved transforming database procedures into more efficient and scalable solutions.",
-          "keyFeatures": [],
+          "caseStudy": {
+            "problem": "An existing business application needed to move toward an Angular and Spring Boot implementation while preserving the behavior users and downstream processes already relied on.",
+            "work": [
+              "Documented the existing interface and backend behavior before rebuilding it.",
+              "Recreated the frontend in Angular and the backend flow in Spring Boot.",
+              "Moved logic from database procedures into the application layer."
+            ],
+            "decisions": [
+              "Capture current behavior before changing technology, reducing ambiguity during the migration.",
+              "Separate frontend and backend responsibilities between Angular and Spring Boot.",
+              "Translate database procedure logic into application code that could be reviewed and maintained with the service."
+            ],
+            "impact": "The migration produced an application-layer version of the existing behavior and reduced how much business logic remained tied to database procedures.",
+            "technologies": [
+              "Java",
+              "Spring Boot",
+              "Angular",
+              "TypeScript",
+              "SQL"
+            ]
+          },
           "startMonth": "April",
           "startYear": 2023,
           "endMonth": "November",
