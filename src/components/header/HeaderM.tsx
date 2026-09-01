@@ -1,8 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import classes from "./HeaderM.module.css";
 import { Context } from "../../context/context";
-import { Navbar, Nav } from "react-bootstrap";
 
 /**
  * Header Mobile Component
@@ -20,9 +19,14 @@ import { Navbar, Nav } from "react-bootstrap";
  */
 const Header = () => {
   const ContentCtx = useContext(Context);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
+    setMenuOpen(false);
+    window.requestAnimationFrame(() => {
+      document.getElementById("main-content")?.focus();
+    });
   };
 
   const navItems = [
@@ -35,35 +39,53 @@ const Header = () => {
 
   return (
     <header className={classes.mainHeader}>
-      <Navbar collapseOnSelect expand="sm" className={classes.headerNavUl}>
-        <Navbar.Brand>
-          <h1 className={classes.brandTitle}>Pedro Costa</h1>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className={classes.toggleButton} />
-        <Navbar.Collapse id="basic-navbar-nav" className={classes.collapsePanel}>
-          <Nav className={classes.navLinks}>
+      <div className={classes.headerNavUl}>
+        <button
+          className={classes.brandButton}
+          type="button"
+          onClick={() => changeTab("Home")}
+          aria-label="Go to home"
+        >
+          <span className={classes.brandTitle}>Pedro Costa</span>
+        </button>
+        <button
+          className={classes.toggleButton}
+          type="button"
+          aria-controls="mobile-primary-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => setMenuOpen((isOpen) => !isOpen)}
+        >
+          <span className={classes.menuIcon} aria-hidden="true"></span>
+        </button>
+        <nav
+          id="mobile-primary-navigation"
+          className={classes.collapsePanel}
+          aria-label="Primary navigation"
+          hidden={!menuOpen}
+        >
+          <ul className={classes.navLinks}>
             {navItems.map((item) => {
               const isActive = ContentCtx[item.key];
 
               return (
-                <Nav.Link
-                  key={item.value}
-                  href="#"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    changeTab(item.value);
-                  }}
-                  className={`${classes.headerNavLi} ${
-                    isActive ? classes.activeLink : ""
-                  }`}
-                >
-                  {item.label}
-                </Nav.Link>
+                <li key={item.value}>
+                  <button
+                    type="button"
+                    onClick={() => changeTab(item.value)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`${classes.headerNavLi} ${
+                      isActive ? classes.activeLink : ""
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
               );
             })}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

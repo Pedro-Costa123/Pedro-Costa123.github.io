@@ -2,7 +2,29 @@
   "projects": [
     {
       "name": "Pedro Costa - Portfolio Website",
-      "description": "My own portfolio website, built with React.js and TypeScript, deployed using Github pages with a custom domain. Using my own CSS classes, and a bit of Bootstrap. With the help of AWS (Lambda, SES, API), the user can send me emails just by filling a contact form.",
+      "caseStudy": {
+        "problem": "I needed a small portfolio that could present my engineering background and accept contact messages without running a traditional application server.",
+        "work": [
+          "Built the responsive interface with React, TypeScript, and CSS Modules.",
+          "Kept portfolio content in repository-managed JSON files.",
+          "Connected the contact form to an AWS serverless email flow."
+        ],
+        "decisions": [
+          "Use GitHub Pages for static hosting and a custom domain.",
+          "Separate content from components so factual updates do not require layout changes.",
+          "Use API Gateway, Lambda, and SES for contact delivery instead of maintaining a dedicated backend."
+        ],
+        "impact": "The site remains a static deployment while still providing a direct contact path. Portfolio content stays versioned alongside the code.",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "CSS Modules",
+          "GitHub Pages",
+          "AWS API Gateway",
+          "AWS Lambda",
+          "AWS SES"
+        ]
+      },
       "startMonth": "Feb",
       "startYear": 2023,
       "endMonth": "",
@@ -16,7 +38,26 @@
     },
     {
       "name": "BestRide (startup) / Final Year Project",
-      "description": "BestRide's primary goal was to solve problems in the Tuk Tuk business - a business that was introduced in Lisbon for the relevance of tourism in the region. Problems ranged from lack of regulation, unfair prices and stabilization of human resources. All of this solved with the help of two mobile apps, one for tourists, one for drivers/companies. My role in this project was as a frontend developer using frameworks such as: Angular, Ionic. And AWS to host both apps and automatically start a new deploy when a push has been performed. Grade: 15 (1-20)",
+      "caseStudy": {
+        "problem": "This final-year project explored operational problems in Lisbon's Tuk Tuk sector, including inconsistent pricing and coordination between tourists, drivers, and companies.",
+        "work": [
+          "Developed separate frontend applications for tourists and professional users.",
+          "Built the mobile interfaces with Angular and Ionic.",
+          "Hosted both applications on AWS and automated deployments from repository changes."
+        ],
+        "decisions": [
+          "Separate the tourist and professional workflows instead of forcing both audiences into one interface.",
+          "Use Angular and Ionic to share a cross-platform frontend approach.",
+          "Automate deployment on code changes so both applications followed the same delivery process."
+        ],
+        "impact": "Delivered both frontend applications as the project implementation and received a final grade of 15/20.",
+        "technologies": [
+          "Angular",
+          "Ionic",
+          "TypeScript",
+          "AWS"
+        ]
+      },
       "startMonth": "Sep",
       "startYear": 2021,
       "endMonth": "Sep",

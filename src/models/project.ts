@@ -1,8 +1,9 @@
 import ProjectUrls from "./projects-urls";
+import CaseStudy from "./case-study";
 
 class Project {
   name: string;
-  description: string;
+  caseStudy: CaseStudy;
   startMonth: string;
   startYear: number;
   endMonth: string;
@@ -11,7 +12,7 @@ class Project {
 
   constructor(
     name: string,
-    description: string,
+    caseStudy: CaseStudy,
     startMonth: string,
     startYear: number,
     endMonth: string,
@@ -19,7 +20,7 @@ class Project {
     urls: ProjectUrls[]
   ) {
     this.name = name;
-    this.description = description;
+    this.caseStudy = caseStudy;
     this.startMonth = startMonth;
     this.startYear = startYear;
     this.endMonth = endMonth;

@@ -2,30 +2,9 @@ import { useEffect, useState } from "react";
 import classes from "./Projects.module.css";
 import Project from "../../../models/project";
 import Loading from "../../others/Loading/Loading";
+import CaseStudyContent from "./CaseStudyContent";
 
-/**
- * Projects Component
- *
- * This component fetches and displays a list of projects.
- * It uses the useState and useEffect hooks from React, and CSS modules for styling.
- *
- * The component maintains three state variables: 'projects', 'loading', and 'error'.
- * 'projects' is an array of Project objects.
- * 'loading' is a boolean indicating whether the data is currently being fetched.
- * 'error' is a boolean indicating whether an error occurred while fetching the data.
- *
- * The component includes a useEffect hook that fetches the data from 'data/projects.json' when the component mounts.
- * If the fetch is successful, 'projects' is set to the 'projects' property of the data, and 'loading' is set to false.
- * If the fetch fails, 'error' is set to true, and 'loading' is set to false.
- *
- * The component conditionally renders different content based on the state.
- * If 'error' is true, it renders a message indicating that the data could not be loaded.
- * If 'loading' is true, it renders a loading spinner.
- * Otherwise, it renders a list of projects.
- * Each project includes the name, dates, and description.
- * If the project is ongoing, the end date is displayed as 'Present'.
- *
- */
+/** Loads public project data and renders each project as a case study. */
 const Projects = () => {
   const [projects, setProjects] = useState([] as Project[]);
   const [loading, setLoading] = useState(true);
@@ -38,7 +17,7 @@ const Projects = () => {
         setProjects(data.projects);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true);
         setLoading(false);
       });
@@ -47,7 +26,7 @@ const Projects = () => {
   if (error) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Projects</h4>
+        <h2 className={classes.contentTitle}>Projects</h2>
         <p className={classes.justify}>
           Sorry, we couldn't load the information. Please, try again later.
         </p>
@@ -58,7 +37,7 @@ const Projects = () => {
   if (loading) {
     return (
       <>
-        <h4 className={classes.contentTitle}>Projects</h4>
+        <h2 className={classes.contentTitle}>Projects</h2>
         <Loading />
       </>
     );
@@ -66,12 +45,15 @@ const Projects = () => {
 
   return (
     <>
-      <h4 className={classes.contentTitle}>Projects</h4>
+      <h2 className={classes.contentTitle}>Projects</h2>
+      <p className={classes.sectionIntro}>
+        A small selection of independent and academic work.
+      </p>
       <div className={classes.projectsList}>
         {projects.map((project) => (
-          <article className={classes.projects} key={project.name}>
+          <article className={classes.projectCard} key={project.name}>
             <div className={classes.projectHeader}>
-              <p className={classes.projectTitle}>{project.name}</p>
+              <h3 className={classes.projectTitle}>{project.name}</h3>
               {project.endMonth === "" && project.endYear === 0 ? (
                 <p className={classes.dates}>
                   {project.startMonth} {project.startYear} - Present
@@ -83,7 +65,10 @@ const Projects = () => {
                 </p>
               )}
             </div>
-            <p className={classes.description}>{project.description}</p>
+            <CaseStudyContent
+              caseStudy={project.caseStudy}
+              labelLevel="h4"
+            />
             <div className={classes.repositories}>
               <p className={classes.repoTitle}>Repositories</p>
               <ul className={classes.repoList}>

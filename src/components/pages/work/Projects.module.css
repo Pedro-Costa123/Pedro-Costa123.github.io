@@ -1,85 +1,81 @@
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  color: var(--body_color);
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.03em;
+}
+
+.sectionIntro {
+  max-width: 72ch;
+  margin: 0.62rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .projectsList {
   display: grid;
-  gap: 0.88rem;
-  margin-top: 0.95rem;
+  gap: 1.2rem;
+  margin-top: 1.35rem;
 }
 
-.projects {
+.projectCard {
   margin: 0;
-  padding: 1.08rem 1.12rem;
+  padding: clamp(1.25rem, 3vw, 1.8rem);
   border: 1px solid var(--border-soft);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--surface-card);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
-}
-
-.projects:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
 }
 
 .projectHeader {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .projectTitle {
   margin: 0;
-  font-size: 1.18rem;
+  color: var(--body_color);
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
   font-weight: 700;
-  line-height: 1.25;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
 }
 
 .dates {
+  flex-shrink: 0;
   margin: 0;
-  font-size: 0.9rem;
   color: var(--text-subtle);
+  font-size: 0.82rem;
+  font-weight: 600;
   white-space: nowrap;
 }
 
-.description {
-  margin: 0.84rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.68;
-  color: var(--text-muted);
-  text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  word-spacing: -0.02em;
-}
-
 .repositories {
-  margin-top: 0.92rem;
-  padding-top: 0.8rem;
+  margin-top: 1.15rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border-soft);
 }
 
 .repoTitle {
-  margin: 0 0 0.45rem;
+  margin: 0 0 0.52rem;
+  color: var(--header_color);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--header_color);
 }
 
 .repoList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 0.48rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .repoItem {
@@ -88,22 +84,22 @@
 
 .repoLink {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  text-decoration: none;
-  border: 1px solid color-mix(in srgb, var(--header_color) 26%, transparent);
-  border-radius: 999px;
   padding: 0.36rem 0.62rem;
-  background: color-mix(in srgb, var(--header_color) 10%, transparent);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid color-mix(in srgb, var(--header_color) 24%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--header_color) 8%, transparent);
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .repoLink:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
   color: var(--body_color);
-  background: color-mix(in srgb, var(--header_color) 18%, transparent);
 }
 
 .repoLink:focus-visible {
@@ -113,39 +109,45 @@
 
 .justify {
   margin-top: 0.7rem;
+  color: var(--text-muted);
 }
 
 @media only screen and (max-width: 768px) {
   .contentTitle {
-    font-size: 1.2rem;
+    font-size: 1.55rem;
+  }
+
+  .sectionIntro {
+    margin-top: 0.5rem;
+    font-size: 0.92rem;
   }
 
   .projectsList {
-    margin-top: 0.82rem;
-    gap: 0.72rem;
+    gap: 0.9rem;
+    margin-top: 1rem;
   }
 
-  .projects {
-    padding: 0.9rem;
+  .projectCard {
+    padding: 1rem;
     border-radius: 14px;
   }
 
   .projectHeader {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.35rem;
   }
 
   .projectTitle {
-    font-size: 1.04rem;
+    font-size: 1.22rem;
   }
 
   .dates {
-    font-size: 0.84rem;
+    font-size: 0.76rem;
     white-space: normal;
   }
 
-  .description {
-    font-size: 0.92rem;
+  .repoLink {
+    font-size: 0.7rem;
   }
 }

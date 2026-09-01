@@ -1,0 +1,20 @@
+.systems { width: 100%; }
+.sectionHeader { display: grid; grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr); align-items: end; gap: clamp(1.5rem, 4vw, 3.5rem); }
+.title { margin: 0; font-size: clamp(1.75rem, 3vw, 2.45rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.08; }
+.intro { max-width: 68ch; margin: 0; color: var(--text-muted); font-size: 0.96rem; line-height: 1.68; }
+.architecture { margin-top: 1.25rem; }
+.flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+.node { min-width: 0; padding: 0.25rem 0; }
+.nodeTitle { margin: 0; font-size: 0.97rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.28; }
+.nodeSummary { margin: 0.52rem 0 0; color: var(--text-muted); font-size: 0.78rem; line-height: 1.55; }
+.technologyList { display: flex; flex-wrap: wrap; gap: 0.2rem 0; margin: 0.65rem 0 0; padding: 0; color: var(--body_color); list-style: none; }
+.technologyList li { font-size: 0.67rem; font-weight: 650; line-height: 1.45; }
+.technologyList li + li::before { margin: 0 0.38rem; color: var(--header_color); content: "·"; }
+.foundation { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--border-soft); }
+.foundationTitle { margin: 0; color: var(--body_color); font-size: 0.85rem; font-weight: 700; }
+.foundationCopy { margin: 0.26rem 0 0; color: var(--text-muted); font-size: 0.81rem; line-height: 1.5; }
+.foundationList { display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 0; justify-content: flex-end; margin: 0; padding: 0; list-style: none; }
+.foundationList li { color: var(--text-muted); font-size: 0.7rem; font-weight: 700; }
+.foundationList li + li::before { margin: 0 0.48rem; color: var(--header_color); content: "·"; }
+@media only screen and (max-width: 1000px) { .flow { grid-template-columns: 1fr; gap: 1rem; } .node { padding: 0.1rem 0 0.1rem 1.15rem; border-left: 1px solid var(--border-soft); } .nodeSummary { max-width: 72ch; } }
+@media only screen and (max-width: 768px) { .sectionHeader { grid-template-columns: 1fr; gap: 0.65rem; } .title { font-size: 1.65rem; } .intro { font-size: 0.92rem; line-height: 1.6; } .architecture { margin-top: 0.75rem; } .foundation { align-items: flex-start; flex-direction: column; gap: 0.72rem; } .foundationList { justify-content: flex-start; } }

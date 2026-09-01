@@ -1,59 +1,34 @@
-<p></p>
+# Pedro Costa — Portfolio
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+Professional portfolio for Pedro Costa, a software engineer focused on backend systems, cloud integrations, and reliable production software.
 
-<h1 align="center">Pedro Costa - Portfolio </h1>
+Live site: [pedro-costa.dev](https://pedro-costa.dev/)
 
-## Deployment
-https://pedro-costa.dev/
+## Stack
 
-## Built With
-* [![React][React.js]][React-url]
-* [![TypeScript][TypeScript.ts]][TypeScript-url]
+- React and TypeScript
+- Vite and CSS Modules
+- GitHub Pages with a custom domain
+- AWS API Gateway, Lambda, and SES for the contact form
 
+## Local development
 
-## Installation
-1. Clone the repo
-   ```
-   git clone https://github.com/Pedro-Costa123/Pedro-Costa123.github.io.git
-   ```
-3. Install NPM packages
-   ```
-   npm install
-   ```
-4. Run in local server
-   ```
-   npm start
-   ```
+```bash
+npm install
+npm start
+```
 
-## Acknowledgments
-* [GitHub Pages](https://pages.github.com)
+Create a production build with:
 
-* [React.js](https://reactjs.org/)
+```bash
+npm run build
+```
 
-* [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
+## Content and deployment
 
-* [React Bootstrap](https://react-bootstrap.github.io/)
+Portfolio content is stored in `public/data/`. The static site is deployed to GitHub Pages with `npm run deploy`.
 
-* [Deploying a React App to GitHub Pages](https://github.com/gitname/react-gh-pages)
+## Links
 
-* [AWS Lambda](https://aws.amazon.com/lambda/)
-
-* [AWS SES](https://aws.amazon.com/ses/)
-
-* [AWS API Gateway](https://aws.amazon.com/api-gateway/)
-
-* [Namecheap](https://www.namecheap.com/)
-
-
-
-
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/pedro-costa-a2173213b/
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-
-[TypeScript.ts]: https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square
-[TypeScript-url]: https://www.typescriptlang.org/
+- [LinkedIn](https://www.linkedin.com/in/pedro-m-da-costa/)
+- [GitHub](https://github.com/Pedro-Costa123)

@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import HeaderM from "./components/header/HeaderM";
 import Main from "./components/main/Main";
 import ContentProvider from "./context/context";
-import BackgroundParticles from "./components/others/BackgroundParticles/BackgroundParticles";
 
 /**
  * App Component
@@ -50,7 +47,9 @@ const App = () => {
 
   return (
     <ContentProvider>
-      <BackgroundParticles isMobile={isMobile} />
+      <a className="skipLink" href="#main-content">
+        Skip to main content
+      </a>
       {isMobile ? <HeaderM /> : <Header />}
       <Main />
       <Footer />

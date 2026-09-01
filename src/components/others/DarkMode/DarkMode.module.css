@@ -1,92 +1,60 @@
 .dark_mode {
-  margin-top: -20px;
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.dark_mode_label {
-  width: 65px;
-  height: 30px;
+.themeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.themeLabel {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.themeTrack {
   position: relative;
   display: block;
-  background: color-mix(in srgb, var(--surface-muted) 78%, var(--body_background));
-  border: 1px solid var(--border-soft);
-  border-radius: 200px;
-  box-shadow: inset 0 3px 10px color-mix(in srgb, #000 24%, transparent),
-    inset 0 -2px 8px color-mix(in srgb, #fff 20%, transparent);
-  cursor: pointer;
-  transition: 0.3s;
+  width: 44px;
+  height: 24px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface-inset);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
 }
 
-.dark_mode_label:after {
-  content: "";
-  width: 25px;
-  height: 25px;
+.themeThumb {
   position: absolute;
   top: 3px;
   left: 3px;
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--header_color) 45%, #fff),
-    color-mix(in srgb, var(--header_color) 65%, #111)
-  );
-  border-radius: 180px;
-  box-shadow: 0 5px 10px color-mix(in srgb, #000 26%, transparent);
-  transition: 0.3s;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--header_color);
+  box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s ease, background-color 0.18s ease;
 }
 
-.dark_mode_input {
-  width: 0;
-  height: 0;
-  visibility: hidden;
+.themeButton[aria-pressed="true"] .themeThumb {
+  transform: translateX(20px);
 }
 
-.dark_mode_input:checked + .dark_mode_label {
-  background: color-mix(in srgb, var(--surface-inset) 76%, var(--body_background));
-  border-color: color-mix(in srgb, var(--header_color) 40%, transparent);
+.themeButton:hover .themeTrack {
+  border-color: var(--header_color);
+  background: var(--surface-hover);
 }
 
-.dark_mode_input:checked + .dark_mode_label:after {
-  left: 62px;
-  transform: translateX(-100%);
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--header_color) 48%, #fff),
-    color-mix(in srgb, var(--header_color) 68%, #111)
-  );
-}
-
-.dark_mode_label:active:after {
-  width: 30px;
-}
-
-.dark_mode_label div {
-  position: absolute;
-  width: 20px;
-  top: 5px;
-  z-index: 100;
-}
-
-.dark_mode_label div.light {
-  left: 5px;
-  fill: color-mix(in srgb, var(--button) 85%, var(--body_color));
-  transition: 0.3s;
-}
-
-.dark_mode_label div.dark {
-  left: 40px;
-  fill: color-mix(in srgb, var(--text-subtle) 90%, var(--body_color));
-  transition: 0.3s;
-}
-
-.dark_mode_input:checked + .dark_mode_label div.light {
-  fill: color-mix(in srgb, var(--text-subtle) 90%, var(--body_color));
-}
-
-.dark_mode_input:checked + .dark_mode_label div.dark {
-  fill: color-mix(in srgb, var(--button) 85%, var(--body_color));
-}
-
-.dark_mode_input:focus-visible + .dark_mode_label {
+.themeButton:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }

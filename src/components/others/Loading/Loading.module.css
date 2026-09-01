@@ -5,13 +5,25 @@
   margin: 2.2rem auto;
 }
 
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .double_bounce1,
 .double_bounce2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--header_color) 72%, var(--body_color));
-  opacity: 0.55;
+  background: var(--header_color);
+  opacity: 0.42;
   position: absolute;
   top: 0;
   left: 0;

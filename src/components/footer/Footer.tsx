@@ -34,19 +34,19 @@ const Footer = () => {
             href="https://www.linkedin.com/in/pedro-m-da-costa/"
             className={classes.social_icon}
             target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn Profile"
+            rel="noopener noreferrer"
+            aria-label="Pedro Costa on LinkedIn (opens in a new tab)"
           >
-            <img src={linkedInLogo} alt="LinkedIn Profile" />
+            <img src={linkedInLogo} alt="" />
           </a>
           <a
             href="https://github.com/Pedro-Costa123"
             className={classes.social_icon}
             target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub Profile"
+            rel="noopener noreferrer"
+            aria-label="Pedro Costa on GitHub (opens in a new tab)"
           >
-            <img src={githubLogo} alt="GitHub Profile" />
+            <img src={githubLogo} alt="" />
           </a>
         </div>
       </div>

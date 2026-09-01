@@ -1,0 +1,102 @@
+.caseStudy {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 1.25rem;
+}
+
+.problem,
+.detailSection,
+.technologies {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.sectionLabel {
+  margin: 0;
+  color: var(--body_color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+.primaryCopy {
+  max-width: 76ch;
+  margin: 0.52rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.detailList {
+  display: grid;
+  gap: 0.52rem;
+  margin: 0.62rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+.detailList li::marker {
+  color: var(--header_color);
+}
+
+.impact {
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid var(--header_color);
+}
+
+.impact .primaryCopy {
+  color: var(--body_color);
+}
+
+.technologyList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.technologyList li {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.technologyList li + li::before {
+  margin: 0 0.45rem;
+  color: var(--header_color);
+  content: "·";
+}
+
+@media only screen and (max-width: 768px) {
+  .caseStudy {
+    gap: 0.95rem;
+    margin-top: 1rem;
+  }
+
+  .detailGrid {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+  }
+
+  .primaryCopy,
+  .detailList {
+    font-size: 0.9rem;
+    line-height: 1.62;
+  }
+
+  .impact {
+    padding: 0.9rem;
+  }
+}

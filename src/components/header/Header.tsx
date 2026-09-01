@@ -21,23 +21,22 @@ const Header = () => {
 
   const changeTab = (text: string) => {
     ContentCtx.changeContent(text);
+    window.requestAnimationFrame(() => {
+      document.getElementById("main-content")?.focus();
+    });
   };
 
-  const isHome = ContentCtx.home;
-
   return (
-    <header
-      className={`${classes.mainHeader} ${
-        !isHome ? "" : classes.notHomePage
-      }`}
-    >
-      <div
-        className={`${classes.brandWrapper} ${
-          isHome ? classes.brandHidden : classes.fadeInElement
-        }`}
+    <header className={classes.mainHeader}>
+      <button
+        className={classes.brandButton}
+        type="button"
+        onClick={() => changeTab("Home")}
+        aria-label="Go to home"
       >
-        <h2 className={classes.brandTitle}>Pedro Costa</h2>
-      </div>
+        <span className={classes.brandTitle}>Pedro Costa</span>
+        <span className={classes.brandRole}>Software Engineer</span>
+      </button>
       <nav aria-label="Primary navigation">
         <ul className={classes.headerNavUl}>
           <li className={classes.headerNavLi}>
@@ -46,6 +45,7 @@ const Header = () => {
                 ContentCtx.home ? classes.buttonActive : ""
               }`}
               type="button"
+              aria-current={ContentCtx.home ? "page" : undefined}
               onClick={() => {
                 changeTab("Home");
               }}
@@ -59,6 +59,7 @@ const Header = () => {
                 ContentCtx.about ? classes.buttonActive : ""
               }`}
               type="button"
+              aria-current={ContentCtx.about ? "page" : undefined}
               onClick={() => {
                 changeTab("About");
               }}
@@ -72,6 +73,7 @@ const Header = () => {
                 ContentCtx.education ? classes.buttonActive : ""
               }`}
               type="button"
+              aria-current={ContentCtx.education ? "page" : undefined}
               onClick={() => {
                 changeTab("Education");
               }}
@@ -85,6 +87,7 @@ const Header = () => {
                 ContentCtx.work ? classes.buttonActive : ""
               }`}
               type="button"
+              aria-current={ContentCtx.work ? "page" : undefined}
               onClick={() => {
                 changeTab("Work");
               }}
@@ -98,6 +101,7 @@ const Header = () => {
                 ContentCtx.contact ? classes.buttonActive : ""
               }`}
               type="button"
+              aria-current={ContentCtx.contact ? "page" : undefined}
               onClick={() => {
                 changeTab("Contact");
               }}

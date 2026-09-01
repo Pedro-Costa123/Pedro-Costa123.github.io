@@ -1,56 +1,87 @@
+.educationSection {
+  width: min(100%, var(--content-tight));
+  margin: 0 auto;
+}
+
 .contentTitle {
   margin: 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.74rem);
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .educationList {
-  margin-top: 0.95rem;
   display: grid;
   gap: 0.88rem;
+  margin-top: 1.15rem;
 }
 
 .education {
-  padding: 1.1rem 1.15rem;
-  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  padding: 1.1rem 1.25rem;
   border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
   background: var(--surface-card);
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.22s ease, border-color 0.22s ease;
-}
-
-.education:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--header_color) 28%, transparent);
+  box-shadow: inset 2px 0 0
+      color-mix(in srgb, var(--header_color) 72%, var(--accent-violet)),
+    var(--shadow-soft);
 }
 
 .university {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.04rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .degree {
-  margin: 0.34rem 0 0;
-  font-size: 0.98rem;
-  line-height: 1.62;
+  margin: 0.28rem 0 0;
   color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
-.dates {
-  margin: 0.74rem 0 0;
-  font-size: 0.91rem;
-  color: var(--text-subtle);
+.details {
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
-.grade {
-  margin: 0.82rem 0 0;
-  padding-top: 0.82rem;
-  font-size: 0.92rem;
+.detail {
+  margin: 0;
+  min-width: 7.4rem;
+}
+
+.detail + .detail {
+  margin-left: 1.25rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--border-soft);
+}
+
+.detail dt {
+  margin: 0;
+  color: var(--header_color);
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.detail dd {
+  margin: 0.28rem 0 0;
+  font-size: 0.87rem;
   font-weight: 700;
-  border-top: 1px solid var(--border-soft);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.detail dd span {
+  color: var(--text-subtle);
+  font-weight: 600;
 }
 
 .justify {
@@ -63,12 +94,14 @@
   }
 
   .educationList {
-    margin-top: 0.82rem;
     gap: 0.72rem;
+    margin-top: 0.82rem;
   }
 
   .education {
-    padding: 0.9rem;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 0.95rem 1rem;
     border-radius: 14px;
   }
 
@@ -77,6 +110,20 @@
   }
 
   .degree {
-    font-size: 0.95rem;
+    font-size: 0.91rem;
+  }
+
+  .details {
+    padding-top: 0.78rem;
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .detail {
+    min-width: 0;
+  }
+
+  .detail + .detail {
+    margin-left: 1rem;
+    padding-left: 1rem;
   }
 }

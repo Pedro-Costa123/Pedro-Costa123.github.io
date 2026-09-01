@@ -1,182 +1,152 @@
 .homeText {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  width: min(100%, var(--content-max));
+  margin: 0 auto;
 }
 
 .header {
-  position: relative;
-  width: min(100%, 900px);
-  margin: clamp(0.2rem, 2vw, 1.2rem) auto 0;
-  padding: clamp(1.2rem, 2.8vw, 2rem);
-  text-align: center;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--header_color) 20%, transparent), transparent 45%),
-    radial-gradient(circle at 87% 82%, color-mix(in srgb, var(--header_color) 14%, transparent), transparent 46%),
-    var(--surface-card);
-  box-shadow: var(--shadow-elevated);
-  overflow: hidden;
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    color-mix(in srgb, var(--header_color) 65%, transparent),
-    transparent
-  );
-  opacity: 0.8;
-}
-
-.header > * {
-  margin: 0;
-}
-
-.welcomeText {
-  display: inline-block;
-  margin-bottom: 0.95rem;
-  padding: 0.24rem 0.62rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--header_color) 28%, transparent);
-  font-size: clamp(0.68rem, 1.08vw, 0.79rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: color-mix(in srgb, var(--header_color) 9%, transparent);
-}
-
-.typing_animation {
-  display: block;
-  width: fit-content;
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  white-space: nowrap;
-  line-height: 1.05;
-  letter-spacing: 0.005em;
-  font-size: clamp(1.95rem, 4.6vw, 3.3rem);
-  font-weight: 700;
-  color: color-mix(in srgb, var(--body_color) 88%, var(--header_color));
-  animation: typing 3.8s steps(70, end);
-}
-
-.introText {
-  opacity: 0.84;
-  font-weight: 500;
-}
-
-.subtitle {
-  margin-top: 0.95rem;
-  font-size: clamp(1rem, 1.9vw, 1.2rem);
-  font-weight: 600;
-  line-height: 1.45;
-  letter-spacing: 0.012em;
-  color: var(--text-muted);
-}
-
-.dividerRow {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  column-gap: 0.56rem;
-  margin-top: 1.05rem;
-}
-
-.divider {
   width: 100%;
+  margin: clamp(1.5rem, 7vw, 6rem) auto clamp(2rem, 5vw, 4rem);
+  padding: 0 clamp(0.5rem, 3vw, 2rem);
+  text-align: left;
+}
+
+.heroContent {
+  max-width: 900px;
+}
+
+.headline {
+  display: block;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
-  border: 0;
-  border-top: 1px solid color-mix(in srgb, var(--header_color) 24%, transparent);
+  font-size: clamp(2.8rem, 5.4vw, 4.85rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: var(--body_color);
+  text-wrap: balance;
 }
 
-.dividerDot {
-  width: 0.38rem;
-  height: 0.38rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--header_color) 74%, var(--body_color));
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--header_color) 14%, transparent);
+.focus {
+  max-width: 760px;
+  margin: 1.25rem 0 0;
+  color: var(--body_color);
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: clamp(1.08rem, 1.65vw, 1.32rem);
+  font-weight: 600;
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
-@keyframes typing {
-  from {
-    width: 0;
+.summary {
+  max-width: 720px;
+  margin: 0.78rem 0 0;
+  color: var(--text-muted);
+  font-size: clamp(0.96rem, 1.25vw, 1.04rem);
+  line-height: 1.72;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.15rem;
+  margin-top: 1.5rem;
+}
+
+.workButton {
+  padding: 0.68rem 1rem;
+  border: 1px solid var(--button_background);
+  border-radius: var(--radius-sm);
+  background: var(--button_background);
+  color: var(--button);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.profileLink img {
+  width: 16px;
+  height: 16px;
+  filter: var(--icons_color);
+}
+
+.workButton:hover {
+  background: var(--button_hover);
+  border-color: var(--button_hover);
+}
+
+.profileLink:hover {
+  color: var(--header_color);
+}
+
+.workButton:focus-visible,
+.profileLink:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    margin-top: clamp(1rem, 5vw, 3rem);
   }
 
-  to {
-    width: 100%;
-  }
-}
-
-.typing_animation::after {
-  content: "|";
-  display: inline-block;
-  color: color-mix(in srgb, var(--header_color) 78%, var(--body_color));
-  animation: blink-caret 0.78s infinite;
-}
-
-.showFullLine {
-  display: inline;
-}
-
-.showMobileOnly {
-  display: none;
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
+  .headline {
+    font-size: clamp(3rem, 7vw, 4.6rem);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .header {
-    width: min(100%, 700px);
-    padding: 1.1rem 0.95rem 1rem;
-    border-radius: 18px;
+    margin: 1.6rem auto 2.4rem;
+    padding: 0.5rem;
   }
 
-  .welcomeText {
-    margin-bottom: 0.7rem;
+  .headline {
+    font-size: clamp(2.65rem, 12.5vw, 4rem);
+    line-height: 1.02;
   }
 
-  .typing_animation {
-    animation: typing 2.45s steps(50, end);
-    font-size: clamp(1.45rem, 8.1vw, 2.2rem);
-    line-height: 1.1;
+  .focus {
+    margin-top: 0.95rem;
+    font-size: 1.05rem;
+    line-height: 1.38;
   }
 
-  .subtitle {
-    margin-top: 0.72rem;
-    font-size: 0.96rem;
-    line-height: 1.4;
+  .summary {
+    margin-top: 0.65rem;
+    font-size: 0.92rem;
+    line-height: 1.62;
   }
 
-  .dividerRow {
-    margin-top: 0.82rem;
+  .actions {
+    margin-top: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .header {
+    padding: 0.25rem;
   }
 
-  .dividerDot {
-    width: 0.3rem;
-    height: 0.3rem;
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--header_color) 12%, transparent);
+  .headline {
+    font-size: clamp(2.4rem, 12vw, 3rem);
   }
 
-  .showFullLine {
-    display: none;
-  }
-
-  .showMobileOnly {
-    display: inline;
+  .focus {
+    font-size: 1rem;
   }
 }

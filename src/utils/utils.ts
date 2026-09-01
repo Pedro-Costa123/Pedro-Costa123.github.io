@@ -26,30 +26,38 @@ export const workTime = (
   endMonth: string,
   endYear: string
 ) => {
-  const date1 = new Date(`${startMonth} 1, ${startYear}`);
-  let date2;
-  if (endMonth === "" && endYear === "0") {
-    date2 = new Date();
-  } else {
-    date2 = new Date(`${endMonth} 1, ${endYear}`);
+  const startDate = new Date(`${startMonth} 1, ${startYear}`);
+  const endDate =
+    endMonth === "" && endYear === "0"
+      ? new Date()
+      : new Date(`${endMonth} 1, ${endYear}`);
+
+  let monthsPassed =
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+    endDate.getMonth() -
+    startDate.getMonth();
+
+  if (endDate.getDate() < startDate.getDate()) {
+    monthsPassed -= 1;
   }
 
-  const timeDifference = date2.getTime() - date1.getTime();
-
-  const monthsPassed = Math.floor(
-    timeDifference / (1000 * 60 * 60 * 24 * 30) + 1
-  );
+  monthsPassed = Math.max(0, monthsPassed);
 
   const yearsPassed = Math.floor(monthsPassed / 12);
+  const remainingMonths = monthsPassed % 12;
+  const yearLabel = yearsPassed === 1 ? "year" : "years";
+  const monthLabel = remainingMonths === 1 ? "month" : "months";
 
-  if (monthsPassed === 1) {
+  if (monthsPassed === 0) {
+    return "Less than a month";
+  } else if (monthsPassed === 1) {
     return `1 month`;
   } else if (yearsPassed === 0) {
     return `${monthsPassed} months`;
   } else if (monthsPassed % 12 === 0) {
-    return `${yearsPassed} years`;
+    return `${yearsPassed} ${yearLabel}`;
   } else {
-    return `${yearsPassed} years and ${monthsPassed % 12} months`;
+    return `${yearsPassed} ${yearLabel} and ${remainingMonths} ${monthLabel}`;
   }
 };
 
@@ -81,8 +89,7 @@ export const loadCompanies = (data: any): Company[] => {
         job.company,
         job.type,
         job.location,
-        job.description,
-        job.keyFeatures,
+        job.caseStudy,
         job.startMonth,
         job.startYear,
         job.endMonth,

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { Context } from "../../context/context";
 
@@ -6,6 +6,7 @@ import classes from "./Main.module.css";
 
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
+import Systems from "../pages/about/Systems";
 import Education from "../pages/education/Education";
 import Certifications from "../pages/education/Certifications";
 import Languages from "../pages/education/Languages";
@@ -36,8 +37,22 @@ import Contact from "../pages/contact/Contact";
 const Main = () => {
   const ContentCtx = useContext(Context);
 
+  useEffect(() => {
+    const activeView = ContentCtx.about
+      ? "About"
+      : ContentCtx.education
+        ? "Education"
+        : ContentCtx.work
+          ? "Work & Projects"
+          : ContentCtx.contact
+            ? "Contact"
+            : "Software Engineer";
+
+    document.title = `Pedro Costa | ${activeView}`;
+  }, [ContentCtx.about, ContentCtx.contact, ContentCtx.education, ContentCtx.work]);
+
   return (
-    <main className={classes.main}>
+    <main className={classes.main} id="main-content" tabIndex={-1}>
       {ContentCtx.home ? (
         <div className={classes.fadeInElement}>
           <Home />
@@ -50,6 +65,9 @@ const Main = () => {
         <div className={classes.fadeInElement}>
           <div className={classes.centering}>
             <About />
+          </div>
+          <div className={classes.centering}>
+            <Systems />
           </div>
         </div>
       ) : (
