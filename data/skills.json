@@ -3,7 +3,7 @@
     {
       "name": "Backend",
       "description": "Building and maintaining Java services across established Jakarta EE platforms, Spring Boot applications, and Quarkus-based modernization.",
-      "skills": ["Java", "Spring Boot", "Quarkus", "Jakarta EE"]
+      "skills": ["Java", "Spring Boot", "Quarkus", "Jakarta EE", "Python"]
     },
     {
       "name": "Frontend",
