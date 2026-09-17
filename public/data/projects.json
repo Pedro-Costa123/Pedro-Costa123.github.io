@@ -29,10 +29,45 @@
       "startYear": 2023,
       "endMonth": "",
       "endYear": 0,
-      "urls" :[
+      "urls": [
         {
           "name": "Pedro-Costa123.github.io",
           "url": "https://github.com/Pedro-Costa123/Pedro-Costa123.github.io"
+        }
+      ]
+    },
+    {
+      "name": "KT Transcriber",
+      "caseStudy": {
+        "problem": "Long technical knowledge-transfer recordings were difficult to search and reuse, especially when they contained project-specific terminology and multiple speakers.",
+        "work": [
+          "Built a local-first Python transcription pipeline using faster-whisper with the large-v3 model.",
+          "Added technical hotwords, optional speaker diarization with pyannote, and conservative speaker smoothing for cleaner transcripts.",
+          "Containerized the workflow with Docker for Windows with NVIDIA GPU acceleration and macOS CPU execution."
+        ],
+        "decisions": [
+          "Keep transcription local instead of sending recordings to an external transcription API.",
+          "Keep the clean Whisper transcript separate from the speaker-aware version while preserving JSON as the canonical structured output."
+        ],
+        "impact": "Successfully tested the pipeline on multiple real technical KT recordings, producing reusable Markdown, JSON, TXT, SRT, and VTT outputs with optional speaker attribution.",
+        "technologies": [
+          "Python",
+          "faster-whisper",
+          "pyannote",
+          "FFmpeg",
+          "Docker",
+          "CUDA",
+          "PyTorch"
+        ]
+      },
+      "startMonth": "Sep",
+      "startYear": 2026,
+      "endMonth": "",
+      "endYear": 0,
+      "urls": [
+        {
+          "name": "KT-Transcriber",
+          "url": "https://github.com/Pedro-Costa123/KT-Transcriber"
         }
       ]
     },
@@ -51,18 +86,13 @@
           "Automate deployment on code changes so both applications followed the same delivery process."
         ],
         "impact": "Delivered both frontend applications as the project implementation and received a final grade of 15/20.",
-        "technologies": [
-          "Angular",
-          "Ionic",
-          "TypeScript",
-          "AWS"
-        ]
+        "technologies": ["Angular", "Ionic", "TypeScript", "AWS"]
       },
       "startMonth": "Sep",
       "startYear": 2021,
       "endMonth": "Sep",
       "endYear": 2022,
-      "urls" :[
+      "urls": [
         {
           "name": "TFC-BestRide-Frontend-Professional",
           "url": "https://github.com/Pedro-Costa-Uni-Projects/TFC-BestRide-Frontend-Professional"
