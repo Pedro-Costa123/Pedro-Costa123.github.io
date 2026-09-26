@@ -75,7 +75,7 @@ const About = () => {
 
       <div className={classes.textContainer}>
         <h1 className={classes.contentTitle} id="about-title">
-          Mostly backend. Full-stack when the job needs it.
+          Engineering reliable systems, end to end.
         </h1>
         <p className={classes.intro}>{about.intro}</p>
 
